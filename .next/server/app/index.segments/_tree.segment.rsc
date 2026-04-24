@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0ms88nmq7p6d4.css","style"]
+:HL["/_next/static/chunks/12nkzxu.hk2km.css","style"]
 :HL["/assets/cassio-logo.jpg","image"]
 :HL["/assets/delivery.jpg","image"]
 :HL["/assets/service-washfold.jpg","image"]
@@ -6,4 +6,4 @@
 :HL["/assets/service-drycleaning.jpg","image"]
 :HL["/assets/section-towels.jpg","image"]
 :HL["/assets/service-ironing.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"yLG2CGS8Dp_TveIm9F76s"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"mvpxMNsdHN9j5YzA7ojt4"}

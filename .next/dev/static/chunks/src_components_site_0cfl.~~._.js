@@ -20,45 +20,36 @@ function Hero() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "relative overflow-hidden bg-primary text-primary-foreground",
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
-                autoPlay: true,
-                muted: true,
-                loop: true,
-                playsInline: true,
-                className: "absolute inset-0 h-full w-full object-cover opacity-25",
-                poster: "/assets/hero-woman.jpg",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("source", {
-                    src: "https://videos.pexels.com/video-files/4108807/4108807-uhd_2560_1440_25fps.mp4",
-                    type: "video/mp4"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/site/Hero.jsx",
-                    lineNumber: 18,
-                    columnNumber: 9
-                }, this)
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                "aria-hidden": "true",
+                className: "absolute inset-0 bg-cover bg-center opacity-25",
+                style: {
+                    backgroundImage: "url('/assets/hero-woman.jpg')"
+                }
             }, void 0, false, {
                 fileName: "[project]/src/components/site/Hero.jsx",
-                lineNumber: 10,
+                lineNumber: 9,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/85"
             }, void 0, false, {
                 fileName: "[project]/src/components/site/Hero.jsx",
-                lineNumber: 20,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full bg-brand/30 blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/components/site/Hero.jsx",
-                lineNumber: 23,
+                lineNumber: 17,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "pointer-events-none absolute -right-10 bottom-10 h-80 w-80 rounded-full bg-sun/40 blur-3xl"
             }, void 0, false, {
                 fileName: "[project]/src/components/site/Hero.jsx",
-                lineNumber: 24,
+                lineNumber: 18,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -86,14 +77,14 @@ function Hero() {
                                         className: "h-2 w-2 animate-pulse rounded-full bg-sun"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                        lineNumber: 34,
+                                        lineNumber: 28,
                                         columnNumber: 13
                                     }, this),
                                     "Now serving London | 24h delivery"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 33,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -102,7 +93,7 @@ function Hero() {
                                     "Premium dry cleaning,",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                        lineNumber: 40,
+                                        lineNumber: 34,
                                         columnNumber: 13
                                     }, this),
                                     "picked up at your",
@@ -112,13 +103,13 @@ function Hero() {
                                         children: "door."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                        lineNumber: 42,
+                                        lineNumber: 36,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 38,
+                                lineNumber: 32,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -126,7 +117,7 @@ function Hero() {
                                 children: "Fast, eco-friendly garment care with free pickup & delivery in 24 hours across London. Loved by 50,000+ happy customers."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 45,
+                                lineNumber: 39,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -141,13 +132,13 @@ function Hero() {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                                lineNumber: 55,
+                                                lineNumber: 49,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                        lineNumber: 50,
+                                        lineNumber: 44,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -156,13 +147,13 @@ function Hero() {
                                         children: "Explore services"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                        lineNumber: 57,
+                                        lineNumber: 51,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 49,
+                                lineNumber: 43,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -179,12 +170,12 @@ function Hero() {
                                                 className: "h-9 w-9 rounded-full border-2 border-primary bg-gradient-to-br from-cream to-brand"
                                             }, i, false, {
                                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                                lineNumber: 68,
+                                                lineNumber: 62,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                        lineNumber: 66,
+                                        lineNumber: 60,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -197,12 +188,12 @@ function Hero() {
                                                         className: "h-4 w-4 fill-current"
                                                     }, i, false, {
                                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                                        lineNumber: 74,
+                                                        lineNumber: 68,
                                                         columnNumber: 19
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                                lineNumber: 72,
+                                                lineNumber: 66,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -212,32 +203,32 @@ function Hero() {
                                                         children: "4.9/5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                                        lineNumber: 77,
+                                                        lineNumber: 71,
                                                         columnNumber: 24
                                                     }, this),
                                                     " | 12,400 reviews"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                                lineNumber: 77,
+                                                lineNumber: 71,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/site/Hero.jsx",
-                                        lineNumber: 71,
+                                        lineNumber: 65,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 65,
+                                lineNumber: 59,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site/Hero.jsx",
-                        lineNumber: 27,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -260,7 +251,7 @@ function Hero() {
                                 className: "blob absolute inset-0 -z-0 bg-cream/90"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 89,
+                                lineNumber: 83,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -271,7 +262,7 @@ function Hero() {
                                 className: "relative z-10 mx-auto w-full object-contain"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 90,
+                                lineNumber: 84,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -297,12 +288,12 @@ function Hero() {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                                lineNumber: 107,
+                                                lineNumber: 101,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site/Hero.jsx",
-                                            lineNumber: 106,
+                                            lineNumber: 100,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -313,7 +304,7 @@ function Hero() {
                                                     children: "Earliest pickup"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/site/Hero.jsx",
-                                                    lineNumber: 110,
+                                                    lineNumber: 104,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -321,24 +312,24 @@ function Hero() {
                                                     children: "Today, 12:00 - 15:00"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/site/Hero.jsx",
-                                                    lineNumber: 111,
+                                                    lineNumber: 105,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/site/Hero.jsx",
-                                            lineNumber: 109,
+                                            lineNumber: 103,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/site/Hero.jsx",
-                                    lineNumber: 105,
+                                    lineNumber: 99,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 99,
+                                lineNumber: 93,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -364,12 +355,12 @@ function Hero() {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                                lineNumber: 124,
+                                                lineNumber: 118,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site/Hero.jsx",
-                                            lineNumber: 123,
+                                            lineNumber: 117,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -380,7 +371,7 @@ function Hero() {
                                                     children: "100% eco-friendly"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/site/Hero.jsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 121,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -388,36 +379,36 @@ function Hero() {
                                                     children: "Safe for delicate fabrics"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/site/Hero.jsx",
-                                                    lineNumber: 128,
+                                                    lineNumber: 122,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/site/Hero.jsx",
-                                            lineNumber: 126,
+                                            lineNumber: 120,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/site/Hero.jsx",
-                                    lineNumber: 122,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/site/Hero.jsx",
-                                lineNumber: 116,
+                                lineNumber: 110,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/site/Hero.jsx",
-                        lineNumber: 83,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/site/Hero.jsx",
-                lineNumber: 26,
+                lineNumber: 20,
                 columnNumber: 7
             }, this)
         ]

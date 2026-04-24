@@ -6,17 +6,11 @@ import { ArrowRight, Leaf, Star, Zap } from "lucide-react";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-primary text-primary-foreground">
-      {/* Background video loop */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover opacity-25"
-        poster="/assets/hero-woman.jpg"
-      >
-        <source src="https://videos.pexels.com/video-files/4108807/4108807-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-      </video>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center opacity-25"
+        style={{ backgroundImage: "url('/assets/hero-woman.jpg')" }}
+      />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/85" />
 
       {/* Floating decorative blobs */}
