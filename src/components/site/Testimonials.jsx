@@ -23,7 +23,7 @@ export function Testimonials() {
                   <Star key={i} className="h-4 w-4 fill-current" />
                 ))}
               </div>
-              <blockquote className="flex-1 font-display text-lg leading-relaxed text-navy">"{r.quote}"</blockquote>
+              <blockquote className="flex-1 font-display text-lg leading-relaxed text-navy">&ldquo;{r.quote}&rdquo;</blockquote>
               <figcaption className="flex items-center gap-3 border-t border-border pt-5">
                 <img src={r.img} alt={r.name} loading="lazy" className="h-12 w-12 rounded-full object-cover" />
                 <div>
