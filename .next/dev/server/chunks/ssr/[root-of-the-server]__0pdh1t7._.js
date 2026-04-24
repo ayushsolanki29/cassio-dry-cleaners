@@ -16,6 +16,32 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
 ;
 ;
+const navItems = [
+    {
+        label: "Services",
+        href: "/#services"
+    },
+    {
+        label: "How it works",
+        href: "/#how-it-works"
+    },
+    {
+        label: "Areas",
+        href: "/#areas"
+    },
+    {
+        label: "Business",
+        href: "/#business"
+    },
+    {
+        label: "About",
+        href: "/about"
+    },
+    {
+        label: "Blog",
+        href: "/#blog"
+    }
+];
 function Header() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
         className: "sticky top-0 z-50 bg-primary text-primary-foreground",
@@ -32,7 +58,7 @@ function Header() {
                             className: "h-11 w-11 rounded-full ring-2 ring-white/30"
                         }, void 0, false, {
                             fileName: "[project]/src/components/site/Header.jsx",
-                            lineNumber: 8,
+                            lineNumber: 17,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -44,78 +70,62 @@ function Header() {
                                     children: "."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site/Header.jsx",
-                                    lineNumber: 10,
+                                    lineNumber: 19,
                                     columnNumber: 19
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/site/Header.jsx",
-                            lineNumber: 9,
+                            lineNumber: 18,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/site/Header.jsx",
-                    lineNumber: 7,
+                    lineNumber: 16,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                    className: "hidden items-center gap-8 md:flex",
-                    children: [
-                        "Services",
-                        "How it works",
-                        "Areas",
-                        "Business"
-                    ].map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: `#${item.toLowerCase().replace(/\s/g, "-")}`,
+                    className: "hidden items-center gap-6 md:flex",
+                    children: navItems.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                            href: item.href,
                             className: "text-sm font-medium text-white/90 transition hover:text-white",
-                            children: item
-                        }, item, false, {
+                            children: item.label
+                        }, item.label, false, {
                             fileName: "[project]/src/components/site/Header.jsx",
-                            lineNumber: 16,
+                            lineNumber: 25,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/site/Header.jsx",
-                    lineNumber: 14,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex items-center gap-3",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: "#login",
-                            className: "hidden text-sm font-medium text-white/90 hover:text-white sm:inline",
-                            children: "Log in"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/site/Header.jsx",
-                            lineNumber: 23,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: "#book",
-                            className: "rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary shadow-soft transition hover:scale-105 hover:shadow-pop",
-                            children: "Book now"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/site/Header.jsx",
-                            lineNumber: 24,
-                            columnNumber: 11
-                        }, this)
-                    ]
-                }, void 0, true, {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                        href: "/contact",
+                        className: "rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary shadow-soft transition hover:scale-105 hover:shadow-pop",
+                        children: "Contact us"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/site/Header.jsx",
+                        lineNumber: 32,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/src/components/site/Header.jsx",
-                    lineNumber: 22,
+                    lineNumber: 31,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/site/Header.jsx",
-            lineNumber: 6,
+            lineNumber: 15,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/site/Header.jsx",
-        lineNumber: 5,
+        lineNumber: 14,
         columnNumber: 5
     }, this);
 }
@@ -2006,7 +2016,9 @@ __turbopack_context__.s([
     ()=>Blog
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-rsc] (ecmascript) <export default as ArrowRight>");
+;
 ;
 ;
 const posts = [
@@ -2031,6 +2043,7 @@ const posts = [
 ];
 function Blog() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "blog",
         className: "bg-secondary py-14",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "mx-auto max-w-7xl px-6",
@@ -2045,7 +2058,7 @@ function Blog() {
                                     children: "From the blog"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site/Blog.jsx",
-                                    lineNumber: 15,
+                                    lineNumber: 16,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -2053,17 +2066,17 @@ function Blog() {
                                     children: "Care tips & stories"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site/Blog.jsx",
-                                    lineNumber: 16,
+                                    lineNumber: 17,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/site/Blog.jsx",
-                            lineNumber: 14,
+                            lineNumber: 15,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: "#blog",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                            href: "/#blog",
                             className: "inline-flex items-center gap-2 font-display font-semibold text-primary",
                             children: [
                                 "All articles",
@@ -2071,19 +2084,19 @@ function Blog() {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site/Blog.jsx",
-                                    lineNumber: 20,
+                                    lineNumber: 21,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/site/Blog.jsx",
-                            lineNumber: 18,
+                            lineNumber: 19,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/site/Blog.jsx",
-                    lineNumber: 13,
+                    lineNumber: 14,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2100,12 +2113,12 @@ function Blog() {
                                         className: "h-full w-full object-cover transition duration-500 group-hover:scale-105"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/site/Blog.jsx",
-                                        lineNumber: 28,
+                                        lineNumber: 29,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/site/Blog.jsx",
-                                    lineNumber: 27,
+                                    lineNumber: 28,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2116,7 +2129,7 @@ function Blog() {
                                             children: p.tag
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site/Blog.jsx",
-                                            lineNumber: 31,
+                                            lineNumber: 32,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2124,7 +2137,7 @@ function Blog() {
                                             children: p.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/site/Blog.jsx",
-                                            lineNumber: 32,
+                                            lineNumber: 33,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2135,35 +2148,35 @@ function Blog() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/site/Blog.jsx",
-                                            lineNumber: 33,
+                                            lineNumber: 34,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/site/Blog.jsx",
-                                    lineNumber: 30,
+                                    lineNumber: 31,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, p.title, true, {
                             fileName: "[project]/src/components/site/Blog.jsx",
-                            lineNumber: 26,
+                            lineNumber: 27,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/components/site/Blog.jsx",
-                    lineNumber: 24,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/site/Blog.jsx",
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/site/Blog.jsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 5
     }, this);
 }
