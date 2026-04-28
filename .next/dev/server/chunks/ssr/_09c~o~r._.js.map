@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/laragon/www/cassio-dry-cleaner/frontend/app/layout.jsx"],"sourcesContent":["import \"./globals.css\";\n\nexport const metadata = {\n  title: \"Cassio Dry Cleaners | Premium laundry and dry cleaning\",\n  description: \"Premium dry cleaning, wash & fold, and ironing in 24 hours. Free pickup and delivery across London.\",\n  authors: [{ name: \"Cassio Dry Cleaners\" }],\n};\n\nexport default function RootLayout({ children }) {\n  return (\n    <html lang=\"en\">\n      <body>{children}</body>\n    </html>\n  );\n}\n"],"names":["metadata","title","description","authors","name","RootLayout","children","lang"],"mappings":";;;;;;;;;AAEO,MAAMA,WAAW;IACtBC,OAAO;IACPC,aAAa;IACbC,SAAS;QAAC;YAAEC,MAAM;QAAsB;KAAE;AAC5C;AAEe,SAASC,WAAW,EAAEC,QAAQ,EAAE;IAC7C,qBACE,8OAAC;QAAKC,MAAK;kBACT,cAAA,8OAAC;sBAAMD;;;;;;;;;;;AAGb"}},
-    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/laragon/www/cassio-dry-cleaner/frontend/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
-}
