@@ -13,7 +13,7 @@ export function ServiceTestimonial({ service }) {
   return (
     <TestimonialSlider
       title="What our customers say"
-      subtitle={`See why customers love our ${service.name.toLowerCase()} service.`}
+      subtitle={`See why customers love our ${service.title.toLowerCase()} service.`}
       testimonials={testimonials}
       backgroundColor="bg-white"
       autoSlide={true}
