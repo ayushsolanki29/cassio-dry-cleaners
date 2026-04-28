@@ -1,40 +1,59 @@
-import { Star } from "lucide-react";
+import { TestimonialSlider } from "@/components/common/TestimonialSlider";
 
-const reviews = [
-  { name: "Emma Walker", role: "Shoreditch, London", img: "/assets/testimonial-1.jpg", quote: "Cassio has completely changed my weekends. My silk dresses come back perfect every time. Pickup is right on time!" },
-  { name: "James Bennett", role: "Chelsea, London", img: "/assets/testimonial-2.jpg", quote: "Used Cassio for my wedding suits - the attention to detail was incredible. Worth every penny. Highly recommend." },
-  { name: "Sophie Clarke", role: "Notting Hill, London", img: "/assets/testimonial-3.jpg", quote: "The 24-hour turnaround is unreal. Booked at 8pm, clothes back next evening, neatly packed. Smooth experience." },
+const testimonials = [
+  { 
+    name: "Emma Walker", 
+    role: "Shoreditch, London", 
+    image: "/assets/testimonial-1.jpg", 
+    quote: "Cassio has completely changed my weekends. My silk dresses come back perfect every time. Pickup is right on time!",
+    rating: 5
+  },
+  { 
+    name: "James Bennett", 
+    role: "Chelsea, London", 
+    image: "/assets/testimonial-2.jpg", 
+    quote: "Used Cassio for my wedding suits - the attention to detail was incredible. Worth every penny. Highly recommend.",
+    rating: 5
+  },
+  { 
+    name: "Sophie Clarke", 
+    role: "Notting Hill, London", 
+    image: "/assets/testimonial-3.jpg", 
+    quote: "The 24-hour turnaround is unreal. Scheduled at 8pm, clothes back next evening, neatly packed. Smooth experience.",
+    rating: 5
+  },
+  { 
+    name: "Michael Chen", 
+    role: "Canary Wharf, London", 
+    image: "/assets/testimonial-2.jpg", 
+    quote: "Perfect for busy professionals. The app makes scheduling so easy and the quality is consistently excellent. Game changer!",
+    rating: 5
+  },
+  { 
+    name: "Sarah Johnson", 
+    role: "Kensington, London", 
+    image: "/assets/testimonial-1.jpg", 
+    quote: "Cassio handles my designer pieces with such care. The eco-friendly approach is a bonus. Outstanding service every time.",
+    rating: 5
+  },
+  { 
+    name: "David Wilson", 
+    role: "Greenwich, London", 
+    image: "/assets/testimonial-3.jpg", 
+    quote: "Tried many dry cleaners in London, but Cassio is in a league of its own. Professional, reliable, and convenient.",
+    rating: 5
+  }
 ];
 
 export function Testimonials() {
   return (
-    <section className="bg-cream py-14">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-8 text-center">
-          <span className="text-sm font-semibold uppercase tracking-wider text-brand">Loved by 50,000+</span>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">What our customers say</h2>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          {reviews.map((r) => (
-            <figure key={r.name} className="flex flex-col gap-5 rounded-3xl bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-card">
-              <div className="flex gap-1 text-sun">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
-                ))}
-              </div>
-              <blockquote className="flex-1 font-display text-lg leading-relaxed text-navy">&ldquo;{r.quote}&rdquo;</blockquote>
-              <figcaption className="flex items-center gap-3 border-t border-border pt-5">
-                <img src={r.img} alt={r.name} loading="lazy" className="h-12 w-12 rounded-full object-cover" />
-                <div>
-                  <p className="font-semibold text-navy">{r.name}</p>
-                  <p className="text-sm text-muted-foreground">{r.role}</p>
-                </div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-    </section>
+    <TestimonialSlider
+      title="What our customers say"
+      subtitle="Join 50,000+ satisfied customers who trust Cassio with their precious garments."
+      testimonials={testimonials}
+      backgroundColor="bg-cream"
+      autoSlide={true}
+      slideInterval={5000}
+    />
   );
 }

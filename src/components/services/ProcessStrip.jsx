@@ -42,10 +42,15 @@ export function ProcessStrip() {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step) => (
+        <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, index) => (
             <div key={step.num} className="relative flex flex-col items-center text-center">
-              <div className={`mb-5 grid h-20 w-20 place-items-center rounded-2xl ${step.bg} text-brand shadow-soft`}>
+              {/* Connecting Line - Only between icons (not before first, not after last) */}
+              {index < steps.length - 1 && (
+                <div className="absolute left-1/2 top-10 hidden h-0.5 w-full bg-gradient-to-r from-cream/30 to-cream/30 lg:block" />
+              )}
+              
+              <div className={`relative z-10 mb-5 grid h-20 w-20 place-items-center rounded-2xl ${step.bg} text-brand shadow-soft`}>
                 <step.Icon className="h-10 w-10" />
               </div>
               <span className="absolute left-1/2 top-8 -translate-x-1/2 font-display text-6xl font-bold text-white/5">

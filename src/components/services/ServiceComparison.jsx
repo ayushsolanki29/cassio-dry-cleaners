@@ -46,9 +46,9 @@ const tiers = [
 
 export function ServiceComparison() {
   return (
-    <section className="bg-white py-14">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 text-center">
+    <section className="flex h-screen items-center bg-white">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
+        <div className="mb-8 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Service tiers</span>
           <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
             Choose the right service for you
@@ -71,11 +71,11 @@ export function ServiceComparison() {
                   Most Popular
                 </div>
               )}
-              <div className="p-8">
-                <h3 className="font-display text-3xl font-semibold text-navy">{tier.name}</h3>
+              <div className="p-6">
+                <h3 className="font-display text-2xl font-semibold text-navy">{tier.name}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{tier.tagline}</p>
 
-                <ul className="mt-8 space-y-3">
+                <ul className="mt-6 space-y-2">
                   {tier.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-mint text-brand">
@@ -86,7 +86,7 @@ export function ServiceComparison() {
                   ))}
                 </ul>
 
-                <div className="mt-8">
+                <div className="mt-6">
                   <a
                     href="/contact"
                     className={`block w-full rounded-full py-3 text-center font-semibold transition ${

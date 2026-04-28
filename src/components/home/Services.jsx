@@ -36,8 +36,8 @@ export function Services() {
                 <h3 className="font-display text-xl font-semibold text-navy">{s.title}</h3>
                 <p className="text-sm text-muted-foreground">{s.desc}</p>
                 <div className="mt-auto flex items-center justify-end pt-2">
-                  <a href="#book" className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
-                    Book
+                  <a href="/services" className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                    Order
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>

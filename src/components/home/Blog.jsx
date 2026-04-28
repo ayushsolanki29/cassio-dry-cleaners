@@ -16,7 +16,7 @@ export function Blog() {
             <span className="text-sm font-semibold uppercase tracking-wider text-brand">From the blog</span>
             <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">Care tips & stories</h2>
           </div>
-          <Link href="/#blog" className="inline-flex items-center gap-2 font-display font-semibold text-primary">
+          <Link href="/blog" className="inline-flex items-center gap-2 font-display font-semibold text-primary">
             All articles
             <ArrowRight className="h-4 w-4" />
           </Link>

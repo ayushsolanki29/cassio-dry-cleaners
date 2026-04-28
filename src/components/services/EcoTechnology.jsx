@@ -9,9 +9,9 @@ const ecoFeatures = [
 
 export function EcoTechnology() {
   return (
-    <section className="bg-mint py-14">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+    <section className="flex h-screen items-center bg-mint">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
+        <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="space-y-6">
             <div>
               <span className="text-sm font-semibold uppercase tracking-wider text-brand">Eco-friendly commitment</span>
@@ -23,11 +23,11 @@ export function EcoTechnology() {
               </p>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               {ecoFeatures.map((feature) => (
                 <div key={feature.title} className="flex gap-3">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white text-brand shadow-soft">
-                    <feature.Icon className="h-6 w-6" />
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-brand shadow-soft">
+                    <feature.Icon className="h-5 w-5" />
                   </span>
                   <div>
                     <h3 className="font-display text-base font-semibold text-navy">{feature.title}</h3>
@@ -44,7 +44,7 @@ export function EcoTechnology() {
               src="/assets/section-towels.jpg"
               alt="Eco-friendly cleaning at Cassio Dry Cleaners"
               loading="lazy"
-              className="relative z-10 w-full rounded-3xl object-cover shadow-card"
+              className="relative z-10 h-96 w-full rounded-3xl object-cover shadow-card"
             />
           </div>
         </div>

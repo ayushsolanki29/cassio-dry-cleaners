@@ -70,9 +70,9 @@ const services = [
 
 export function ServicesGrid() {
   return (
-    <section id="services-grid" className="bg-white py-14">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 max-w-2xl">
+    <section id="services-grid" className="flex h-screen items-center bg-white">
+      <div className="mx-auto w-full max-w-7xl px-6 py-6">
+        <div className="mb-6 max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Complete care solutions</span>
           <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
             Every service you need, delivered with care
@@ -82,31 +82,31 @@ export function ServicesGrid() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-3 md:grid-cols-4 lg:grid-cols-4">
           {services.map((s) => (
             <Link
               key={s.title}
               href={`/services/${s.slug}`}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
-              <div className={`relative h-48 overflow-hidden ${s.bg}`}>
+              <div className={`relative h-24 overflow-hidden ${s.bg}`}>
                 <img
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
-                <div className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-white/90 text-brand shadow-soft">
-                  <s.Icon className="h-5 w-5" />
+                <div className="absolute right-2 top-2 grid h-6 w-6 place-items-center rounded-full bg-white/90 text-brand shadow-soft">
+                  <s.Icon className="h-3 w-3" />
                 </div>
               </div>
-              <div className="flex flex-1 flex-col gap-3 p-6">
-                <h3 className="font-display text-xl font-semibold text-navy">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
-                <div className="mt-auto flex items-center justify-end pt-2">
-                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition group-hover:gap-2">
+              <div className="flex flex-1 flex-col gap-1 p-3">
+                <h3 className="font-display text-base font-semibold text-navy">{s.title}</h3>
+                <p className="text-xs text-muted-foreground">{s.desc.length > 60 ? s.desc.substring(0, 60) + '...' : s.desc}</p>
+                <div className="mt-auto flex items-center justify-end pt-1">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition group-hover:gap-2">
                     Learn more
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-3 w-3" />
                   </span>
                 </div>
               </div>

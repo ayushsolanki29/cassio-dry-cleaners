@@ -12,6 +12,7 @@ import { Fabrics } from "@/components/home/Fabrics";
 import { Testimonials } from "@/components/home/Testimonials";
 import { Areas } from "@/components/home/Areas";
 import { AppDownload } from "@/components/home/AppDownload";
+import { Gallery } from "@/components/home/Gallery";
 import { Eco } from "@/components/home/Eco";
 import { Business } from "@/components/home/Business";
 import { Faq } from "@/components/home/Faq";
@@ -37,6 +38,7 @@ export default function Home() {
       <Testimonials />
       <Areas />
       <AppDownload />
+      <Gallery />
       <Eco />
       <Business />
       <Faq />

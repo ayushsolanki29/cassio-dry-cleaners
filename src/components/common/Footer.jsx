@@ -1,9 +1,36 @@
 ﻿import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const cols = [
-  { title: "Services", links: ["Dry cleaning", "Wash & fold", "Ironing", "Premium care", "Business plans"] },
-  { title: "Company", links: ["About us", "Careers", "Press", "Sustainability", "Blog"] },
-  { title: "Support", links: ["Help center", "Contact us", "Track order", "Areas served", "FAQs"] },
+  { 
+    title: "Services", 
+    links: [
+      { name: "Dry cleaning", href: "/services" },
+      { name: "Wash & fold", href: "/services" },
+      { name: "Ironing", href: "/services" },
+      { name: "Premium care", href: "/services" },
+      { name: "Business plans", href: "/business" }
+    ] 
+  },
+  { 
+    title: "Company", 
+    links: [
+      { name: "About us", href: "/about" },
+      { name: "Careers", href: "/about" },
+      { name: "Press", href: "/about" },
+      { name: "Sustainability", href: "/about" },
+      { name: "Blog", href: "/blog" }
+    ] 
+  },
+  { 
+    title: "Support", 
+    links: [
+      { name: "Help center", href: "/contact" },
+      { name: "Contact us", href: "/contact" },
+      { name: "Track order", href: "/contact" },
+      { name: "Areas served", href: "/areas" },
+      { name: "FAQs", href: "/contact" }
+    ] 
+  },
 ];
 
 const socials = [
@@ -40,7 +67,7 @@ export function Footer() {
               <h4 className="font-display text-lg font-semibold text-cream">{c.title}</h4>
               <ul className="mt-4 space-y-2 text-sm text-white/70">
                 {c.links.map((l) => (
-                  <li key={l}><a href={`#${l}`} className="transition hover:text-cream">{l}</a></li>
+                  <li key={l.name}><a href={l.href} className="transition hover:text-cream">{l.name}</a></li>
                 ))}
               </ul>
             </div>
@@ -50,9 +77,9 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/60 md:flex-row">
           <p>(c) 2026 Cassio Dry Cleaners. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#privacy" className="hover:text-white">Privacy</a>
-            <a href="#terms" className="hover:text-white">Terms</a>
-            <a href="#cookies" className="hover:text-white">Cookies</a>
+            <a href="/about" className="hover:text-white">Privacy</a>
+            <a href="/about" className="hover:text-white">Terms</a>
+            <a href="/about" className="hover:text-white">Cookies</a>
           </div>
         </div>
       </div>

@@ -42,14 +42,14 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#book"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-pop transition hover:scale-105"
             >
-              Book pickup
+              Schedule pickup
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#services"
+              href="/services"
               className="rounded-full bg-white/15 px-7 py-4 text-base font-semibold text-white backdrop-blur transition hover:bg-white/25"
             >
               Explore services
@@ -89,7 +89,7 @@ export function Hero() {
             className="relative z-10 mx-auto w-full object-contain"
           />
 
-          {/* Floating booking chip */}
+          {/* Floating scheduling chip */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

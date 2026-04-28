@@ -11,7 +11,7 @@ export function Areas() {
             <span className="text-sm font-semibold uppercase tracking-wider text-brand">Service areas</span>
             <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">Now serving across the city</h2>
           </div>
-          <a href="#all-areas" className="inline-flex items-center gap-2 font-display font-semibold text-primary">
+          <a href="/areas" className="inline-flex items-center gap-2 font-display font-semibold text-primary">
             View all areas
             <ArrowRight className="h-4 w-4" />
           </a>

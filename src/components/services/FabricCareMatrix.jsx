@@ -9,15 +9,13 @@ const matrix = [
   { fabric: "Leather", drycleaning: false, washfold: false, ironing: false, premium: true },
   { fabric: "Suede", drycleaning: false, washfold: false, ironing: false, premium: true },
   { fabric: "Polyester", drycleaning: true, washfold: true, ironing: true, premium: false },
-  { fabric: "Denim", drycleaning: true, washfold: true, ironing: true, premium: false },
-  { fabric: "Sequined", drycleaning: true, washfold: false, ironing: false, premium: true },
 ];
 
 export function FabricCareMatrix() {
   return (
-    <section className="bg-white py-14">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10 text-center">
+    <section className="flex h-screen items-center bg-white">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
+        <div className="mb-8 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Fabric expertise</span>
           <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
             The right care for every fabric

@@ -11,16 +11,16 @@ const features = [
 
 export function FeaturedSpotlight() {
   return (
-    <section className="bg-cream py-14">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-10 lg:grid-cols-2">
+    <section className="flex h-screen items-center bg-cream">
+      <div className="mx-auto w-full max-w-7xl px-6 py-8">
+        <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="relative">
             <div className="blob absolute inset-0 -z-0 bg-mint" />
             <img
               src="/assets/service-drycleaning.jpg"
               alt="Professional dry cleaning service by Cassio"
               loading="lazy"
-              className="relative z-10 w-full rounded-3xl object-cover shadow-card"
+              className="relative z-10 h-96 w-full rounded-3xl object-cover shadow-card"
             />
             <div className="absolute -bottom-4 -right-4 z-20 rounded-2xl bg-white p-4 shadow-pop">
               <div className="flex items-center gap-3">

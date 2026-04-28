@@ -20,7 +20,7 @@ export function Business() {
             Laundry solutions for hotels, gyms &amp; offices.
           </h2>
           <p className="mt-4 text-foreground/80">
-            Custom plans, dedicated account managers and bulk pricing, built around your operation.
+            Custom plans, dedicated account managers and flexible rates, built around your operation.
           </p>
 
           <ul className="mt-6 space-y-3">
@@ -34,7 +34,7 @@ export function Business() {
             ))}
           </ul>
 
-          <a href="#contact-sales" className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy px-7 py-3 font-display font-semibold text-white transition hover:scale-105">
+          <a href="/business" className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy px-7 py-3 font-display font-semibold text-white transition hover:scale-105">
             Talk to sales
             <ArrowRight className="h-4 w-4" />
           </a>
