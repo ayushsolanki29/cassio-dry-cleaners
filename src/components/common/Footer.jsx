@@ -4,31 +4,34 @@ const cols = [
   { 
     title: "Services", 
     links: [
-      { name: "Dry cleaning", href: "/services" },
-      { name: "Wash & fold", href: "/services" },
-      { name: "Ironing", href: "/services" },
-      { name: "Premium care", href: "/services" },
-      { name: "Business plans", href: "/business" }
+      { name: "Dry Cleaning", href: "/services/dry-cleaning" },
+      { name: "Wash & Fold", href: "/services/wash-fold" },
+      { name: "Ironing Service", href: "/services/ironing" },
+      { name: "Premium Care", href: "/services/premium-care" },
+      { name: "Wedding Dresses", href: "/services/wedding-dress" },
+      { name: "Leather & Suede", href: "/services/leather-suede" },
+      { name: "Curtains & Home", href: "/services/curtains-home" },
+      { name: "Shoe Care", href: "/services/shoe-care" }
     ] 
   },
   { 
     title: "Company", 
     links: [
-      { name: "About us", href: "/about" },
-      { name: "Careers", href: "/about" },
-      { name: "Press", href: "/about" },
-      { name: "Sustainability", href: "/about" },
+      { name: "About Us", href: "/about" },
+      { name: "How It Works", href: "/how-it-works" },
+      { name: "Areas Served", href: "/areas" },
+      { name: "Business Services", href: "/business" },
       { name: "Blog", href: "/blog" }
     ] 
   },
   { 
     title: "Support", 
     links: [
-      { name: "Help center", href: "/contact" },
-      { name: "Contact us", href: "/contact" },
-      { name: "Track order", href: "/contact" },
-      { name: "Areas served", href: "/areas" },
-      { name: "FAQs", href: "/contact" }
+      { name: "Contact Us", href: "/contact" },
+      { name: "Services", href: "/services" },
+      { name: "FAQs", href: "/contact" },
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Terms & Conditions", href: "/terms" }
     ] 
   },
 ];
@@ -75,11 +78,10 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/60 md:flex-row">
-          <p>(c) 2026 Cassio Dry Cleaners. All rights reserved.</p>
+          <p>&copy; 2026 Cassio Dry Cleaners. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="/about" className="hover:text-white">Privacy</a>
-            <a href="/about" className="hover:text-white">Terms</a>
-            <a href="/about" className="hover:text-white">Cookies</a>
+            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white">Terms & Conditions</a>
           </div>
         </div>
       </div>

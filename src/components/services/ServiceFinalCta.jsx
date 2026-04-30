@@ -1,71 +1,44 @@
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 export function ServiceFinalCta() {
   return (
-    <section className="flex h-screen items-center bg-primary text-white">
-      <div className="mx-auto w-full max-w-7xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left Content */}
-          <div className="space-y-6">
-            <div className="mb-6">
-              <img 
-                src="/assets/cassio-logo.jpg" 
-                alt="Cassio Dry Cleaners" 
-                className="h-16 w-auto object-contain opacity-90"
-              />
-            </div>
-            <span className="inline-flex rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold backdrop-blur">
-              Ready to experience premium care
-            </span>
-            <h2 className="font-display text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
-              Get in touch with Cassio today
-            </h2>
-            <p className="text-lg text-white/85 lg:text-xl">
-              Join 50,000+ satisfied customers who trust Cassio Dry Cleaners for expert garment care. Free pickup & delivery in 24-48 hours.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="/contact" 
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 font-display text-base font-semibold shadow-pop transition hover:scale-105"
-              >
-                Contact us now
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a 
-                href="tel:+442012345678" 
-                className="inline-flex items-center gap-2 rounded-full bg-white/15 px-8 py-4 font-display text-base font-semibold backdrop-blur transition hover:bg-white/25"
-              >
-                <PhoneCall className="h-4 w-4" />
-                Call Cassio
-              </a>
-            </div>
+    <section className="bg-background py-12">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="relative overflow-hidden rounded-3xl bg-primary p-12 md:p-16 lg:p-20">
+          {/* Circular gradient waves - positioned bottom left */}
+          <div className="pointer-events-none absolute bottom-0 left-0 h-[550px] w-[550px] -translate-x-1/4 translate-y-1/4">
+            <div className="absolute inset-0 rounded-full bg-white/10" />
+            <div className="absolute inset-10 rounded-full bg-white/10" />
+            <div className="absolute inset-20 rounded-full bg-white/10" />
+            <div className="absolute inset-30 rounded-full bg-white/10" />
           </div>
 
-          {/* Right Image */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl">
-              <img
-                src="/assets/service-drycleaning.jpg"
-                alt="Professional dry cleaning services by Cassio"
-                className="h-96 w-full object-cover lg:h-[500px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
-            </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute -right-4 -top-4 rounded-2xl bg-white/90 p-4 shadow-pop backdrop-blur-sm">
-              <div className="text-center">
-                <p className="font-display text-2xl font-bold text-brand">Expert</p>
-                <p className="text-xs text-navy">Care guaranteed</p>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white/90 p-4 shadow-pop backdrop-blur-sm">
-              <div className="text-center">
-                <p className="font-display text-2xl font-bold text-sun">Free</p>
-                <p className="text-xs text-navy">Pickup & delivery</p>
-              </div>
+          <div className="relative z-10 ml-auto max-w-2xl text-right">
+            <h2 className="font-display text-4xl font-bold text-white md:text-5xl">
+              Ready to try our services?
+            </h2>
+            <p className="mt-4 text-lg text-white/90">
+              Professional garment care with free pickup & delivery. Experience the difference.
+            </p>
+
+            <div className="mt-8 flex flex-wrap justify-end gap-4">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-primary transition-all hover:scale-105"
+              >
+                Schedule Pickup
+                <div className="grid h-8 w-8 place-items-center rounded-full bg-primary/20">
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </a>
+
+              <a
+                href="tel:01494445291"
+                className="inline-flex items-center gap-3 rounded-full border-2 border-white/30 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+              >
+                <Phone className="h-5 w-5" />
+                01494 445291
+              </a>
             </div>
           </div>
         </div>

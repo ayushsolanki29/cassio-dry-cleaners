@@ -1,9 +1,9 @@
-import { Home, Heart, Sparkles } from "lucide-react";
+import { Home, CheckCircle, Award } from "lucide-react";
 
 const features = [
   { Icon: Home, text: "Convenient home pickup & delivery" },
-  { Icon: Heart, text: "Personalized service for families" },
-  { Icon: Sparkles, text: "Premium care for luxury garments" }
+  { Icon: CheckCircle, text: "Personalized service for families" },
+  { Icon: Award, text: "Premium care for luxury garments" }
 ];
 
 export function ResidentialHighlight() {

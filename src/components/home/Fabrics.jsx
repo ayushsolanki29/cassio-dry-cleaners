@@ -1,4 +1,4 @@
-import { Sparkles, Shield, Droplets, Wind } from "lucide-react";
+import { Award, Shield, Droplets, Wind } from "lucide-react";
 
 const fabricTypes = [
   { 
@@ -12,7 +12,7 @@ const fabricTypes = [
     name: "Silk & Satin", 
     image: "/assets/service-premium.jpg", 
     description: "Delicate luxury fabrics handled by experts",
-    icon: Sparkles,
+    icon: Award,
     color: "from-lilac to-lilac/70"
   },
   { 
@@ -47,7 +47,7 @@ export function Fabrics() {
           <div className="flex h-full flex-col justify-center space-y-6">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-brand/10 px-4 py-2 text-sm font-semibold text-brand">
-                <Sparkles className="h-4 w-4" />
+                <Award className="h-4 w-4" />
                 Fabric Expertise
               </span>
               <h2 className="mt-4 font-display text-4xl font-semibold leading-tight text-navy md:text-5xl">

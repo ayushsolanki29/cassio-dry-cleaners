@@ -1,29 +1,29 @@
-import { MessageSquare, FileCheck, Truck, Sparkles } from "lucide-react";
+import { MessageSquare, FileCheck, Truck, CheckCircle } from "lucide-react";
 
 const steps = [
   { 
-    num: "1", 
+    num: "01",
     title: "Consultation", 
     desc: "Discuss your business needs with our team",
     Icon: MessageSquare
   },
   { 
-    num: "2", 
+    num: "02",
     title: "Custom proposal", 
     desc: "Receive tailored service plan and pricing",
     Icon: FileCheck
   },
   { 
-    num: "3", 
+    num: "03",
     title: "Setup & training", 
     desc: "Onboard your team and establish processes",
     Icon: Truck
   },
   { 
-    num: "4", 
+    num: "04",
     title: "Go live", 
     desc: "Start receiving Cassio's professional service",
-    Icon: Sparkles
+    Icon: CheckCircle
   }
 ];
 

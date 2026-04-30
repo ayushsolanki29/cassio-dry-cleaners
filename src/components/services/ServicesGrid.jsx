@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Wind, Droplet, Crown, Heart, Package, Home, ShoppingBag } from "lucide-react";
+import { ArrowRight, Package, Wind, Droplet, Award, Gift, Box, Home, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 
 const services = [
@@ -8,7 +8,7 @@ const services = [
     desc: "Expert care for suits, dresses, and delicate garments using eco-friendly solvents.", 
     img: "/assets/service-drycleaning.jpg", 
     bg: "bg-mint",
-    Icon: Sparkles
+    Icon: Package
   },
   { 
     title: "Wash & Fold", 
@@ -32,7 +32,7 @@ const services = [
     desc: "White-glove handling for luxury, couture, and designer pieces.", 
     img: "/assets/service-premium.jpg", 
     bg: "bg-cream",
-    Icon: Crown
+    Icon: Award
   },
   { 
     title: "Wedding Dress", 
@@ -40,7 +40,7 @@ const services = [
     desc: "Specialized cleaning and preservation for bridal gowns and formal attire.", 
     img: "/assets/service-premium.jpg", 
     bg: "bg-mint",
-    Icon: Heart
+    Icon: Gift
   },
   { 
     title: "Leather & Suede", 

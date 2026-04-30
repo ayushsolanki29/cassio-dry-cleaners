@@ -1,4 +1,4 @@
-import { Shield, Clock, Leaf, Star, Zap, Award, Sparkles } from "lucide-react";
+import { Shield, Clock, Leaf, Star, CheckCircle, Award, Package, ShoppingBag, Home } from "lucide-react";
 
 // Map icon names to actual components
 const iconMap = {
@@ -6,14 +6,14 @@ const iconMap = {
   Clock,
   Leaf,
   Star,
-  Zap,
+  CheckCircle,
   Award,
-  Sparkles,
-  Crown: Award,
-  Heart: Star,
-  Package: Sparkles,
-  ShoppingBag: Sparkles,
-  Home: Sparkles
+  Package,
+  ShoppingBag,
+  Home,
+  Box: Package,
+  Gift: Award,
+  TrendingUp: Award
 };
 
 export function ServiceBenefits({ service }) {
@@ -29,7 +29,7 @@ export function ServiceBenefits({ service }) {
 
         <div className="grid gap-6 md:grid-cols-3">
           {service.benefits.map((benefit) => {
-            const IconComponent = iconMap[benefit.iconName] || Sparkles;
+            const IconComponent = iconMap[benefit.iconName] || CheckCircle;
             return (
               <div key={benefit.title} className="rounded-2xl bg-white/10 p-6 backdrop-blur">
                 <div className="mb-4 inline-grid h-14 w-14 place-items-center rounded-xl bg-cream text-brand">

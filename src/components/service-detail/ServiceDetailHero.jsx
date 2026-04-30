@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, Shield, Leaf, Sparkles } from "lucide-react";
+import { ArrowLeft, Clock, Shield, Leaf, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export function ServiceDetailHero({ service }) {
@@ -27,7 +27,7 @@ export function ServiceDetailHero({ service }) {
         >
           <div>
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-medium backdrop-blur">
-              <Sparkles className="h-4 w-4 text-sun" />
+              <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
               Cassio Dry Cleaners
             </div>
             <h1 className="font-display text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">

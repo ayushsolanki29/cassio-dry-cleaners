@@ -1,10 +1,10 @@
-import { Sparkles, Droplet, Wind, Crown, Heart, Package, Home, ShoppingBag, Shield, Clock, Leaf, Star, Zap, Award } from "lucide-react";
+import { Package, Droplet, Wind, Award, Gift, Box, Home, ShoppingBag, Shield, Clock, Leaf, Star, CheckCircle, TrendingUp } from "lucide-react";
 
 export const servicesData = {
   "dry-cleaning": {
     title: "Dry Cleaning",
     slug: "dry-cleaning",
-    Icon: Sparkles,
+    Icon: Package,
     description: "Professional dry cleaning for suits, dresses, and delicate garments using eco-friendly solvents that protect fabrics.",
     image: "/assets/service-drycleaning.jpg",
     overview: "Our dry cleaning service at Cassio uses advanced eco-friendly solvents to clean your most delicate garments without water. Perfect for suits, dresses, silk, wool, and other fabrics that require special care.",
@@ -22,7 +22,7 @@ export const servicesData = {
 
     benefits: [
       { Icon: Shield, title: "Fabric Protection", description: "Gentle cleaning that preserves fabric integrity and color" },
-      { Icon: Sparkles, title: "Deep Cleaning", description: "Removes dirt, oils, and odors that water can't handle" },
+      { Icon: CheckCircle, title: "Deep Cleaning", description: "Removes dirt, oils, and odors that water can't handle" },
       { Icon: Leaf, title: "Eco-Friendly", description: "100% biodegradable solvents safe for you and the planet" }
     ],
 
@@ -149,7 +149,7 @@ export const servicesData = {
     ],
 
     benefits: [
-      { Icon: Zap, title: "Professional Finish", description: "Commercial equipment for crisp, lasting results" },
+      { Icon: CheckCircle, title: "Professional Finish", description: "Commercial equipment for crisp, lasting results" },
       { Icon: Clock, title: "Time Efficient", description: "Save hours of ironing time every week" },
       { Icon: Award, title: "Expert Technique", description: "Trained professionals handle every garment" }
     ],
@@ -196,7 +196,7 @@ export const servicesData = {
   "premium-care": {
     title: "Premium Care",
     slug: "premium-care",
-    Icon: Crown,
+    Icon: Award,
     description: "White-glove handling for luxury, couture, and designer garments with specialized cleaning techniques.",
     image: "/assets/service-premium.jpg",
     overview: "Cassio's Premium Care service provides the highest level of garment care for your most valuable pieces. From designer couture to luxury fabrics, we handle each item with meticulous attention and specialized techniques.",
@@ -213,7 +213,7 @@ export const servicesData = {
     ],
 
     benefits: [
-      { Icon: Crown, title: "Luxury Expertise", description: "Specialized training in high-end garment care" },
+      { Icon: Award, title: "Luxury Expertise", description: "Specialized training in high-end garment care" },
       { Icon: Shield, title: "Maximum Protection", description: "Enhanced insurance for valuable pieces" },
       { Icon: Star, title: "Personalized Service", description: "Dedicated specialist for your garments" }
     ],
@@ -260,7 +260,7 @@ export const servicesData = {
   "wedding-dress": {
     title: "Wedding Dress Cleaning",
     slug: "wedding-dress",
-    Icon: Heart,
+    Icon: Gift,
     description: "Specialized cleaning and preservation for bridal gowns, ensuring your precious memories are protected.",
     image: "/assets/service-premium.jpg",
     overview: "Your wedding dress deserves the best care. Cassio Dry Cleaners specializes in bridal gown cleaning and preservation, using museum-quality techniques to protect your precious memories for years to come.",
@@ -277,7 +277,7 @@ export const servicesData = {
     ],
 
     benefits: [
-      { Icon: Heart, title: "Bridal Specialists", description: "Expert care for wedding gowns and formal wear" },
+      { Icon: Gift, title: "Bridal Specialists", description: "Expert care for wedding gowns and formal wear" },
       { Icon: Shield, title: "Preservation Quality", description: "Museum-standard techniques for lasting protection" },
       { Icon: Star, title: "Memory Protection", description: "Safeguard your special day for generations" }
     ],
@@ -324,7 +324,7 @@ export const servicesData = {
   "leather-suede": {
     title: "Leather & Suede Care",
     slug: "leather-suede",
-    Icon: Package,
+    Icon: Box,
     description: "Expert cleaning and restoration for leather jackets, suede coats, and luxury leather accessories.",
     image: "/assets/service-drycleaning.jpg",
     overview: "Leather and suede require specialized care that standard dry cleaning can't provide. Cassio's leather experts use professional techniques to clean, condition, and restore your leather and suede garments.",
@@ -341,8 +341,8 @@ export const servicesData = {
     ],
 
     benefits: [
-      { Icon: Package, title: "Leather Experts", description: "Specialized training in leather and suede care" },
-      { Icon: Sparkles, title: "Restoration", description: "Bring faded or worn leather back to life" },
+      { Icon: Box, title: "Leather Experts", description: "Specialized training in leather and suede care" },
+      { Icon: TrendingUp, title: "Restoration", description: "Bring faded or worn leather back to life" },
       { Icon: Shield, title: "Protection", description: "Conditioning extends leather lifespan" }
     ],
 
@@ -406,7 +406,7 @@ export const servicesData = {
 
     benefits: [
       { Icon: Home, title: "Home Specialists", description: "Expert care for all household textiles" },
-      { Icon: Sparkles, title: "Deep Cleaning", description: "Remove dust, allergens, and odors" },
+      { Icon: CheckCircle, title: "Deep Cleaning", description: "Remove dust, allergens, and odors" },
       { Icon: Clock, title: "Convenient", description: "We handle the heavy lifting and transport" }
     ],
 
@@ -470,7 +470,7 @@ export const servicesData = {
 
     benefits: [
       { Icon: ShoppingBag, title: "Shoe Experts", description: "Specialized care for all footwear types" },
-      { Icon: Sparkles, title: "Restoration", description: "Bring worn shoes back to life" },
+      { Icon: TrendingUp, title: "Restoration", description: "Bring worn shoes back to life" },
       { Icon: Shield, title: "Protection", description: "Extend the life of your footwear" }
     ],
 

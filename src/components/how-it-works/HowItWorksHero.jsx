@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Clock, MapPin, Shield } from "lucide-react";
+import { ArrowRight, CheckCircle, Clock, MapPin, Shield, Calendar, Truck, Package } from "lucide-react";
 
 export function HowItWorksHero() {
   return (
@@ -29,7 +29,7 @@ export function HowItWorksHero() {
           >
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
-                <Sparkles className="h-4 w-4 text-sun" />
+                <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
                 Cassio Process
               </span>
             </div>
@@ -48,19 +48,19 @@ export function HowItWorksHero() {
             <div className="space-y-2">
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
                 <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mint text-navy">
-                  <span className="font-display text-sm font-semibold">1</span>
+                  <Calendar className="h-4 w-4" />
                 </div>
                 <span className="text-sm font-medium">Schedule pickup online</span>
               </div>
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
                 <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sun text-navy">
-                  <span className="font-display text-sm font-semibold">2</span>
+                  <CheckCircle className="h-4 w-4" />
                 </div>
                 <span className="text-sm font-medium">We collect & clean</span>
               </div>
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
                 <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-lilac text-navy">
-                  <span className="font-display text-sm font-semibold">3</span>
+                  <Package className="h-4 w-4" />
                 </div>
                 <span className="text-sm font-medium">Delivered fresh to your door</span>
               </div>

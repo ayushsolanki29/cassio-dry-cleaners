@@ -17,12 +17,7 @@ export function PressRecognition() {
           </h2>
         </div>
 
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-12 opacity-60">
-          <img src="/assets/cassio-logo.jpg" alt="Press logo" className="h-8 w-auto object-contain grayscale" />
-          <img src="/assets/cassio-logo.jpg" alt="Press logo" className="h-8 w-auto object-contain grayscale" />
-          <img src="/assets/cassio-logo.jpg" alt="Press logo" className="h-8 w-auto object-contain grayscale" />
-          <img src="/assets/cassio-logo.jpg" alt="Press logo" className="h-8 w-auto object-contain grayscale" />
-        </div>
+       
 
         <div className="grid gap-6 md:grid-cols-3">
           {press.map((item) => (

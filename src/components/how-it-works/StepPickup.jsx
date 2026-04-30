@@ -10,19 +10,25 @@ export function StepPickup() {
   return (
     <section className="flex h-screen items-center bg-white">
       <div className="mx-auto w-full max-w-7xl px-6 py-8">
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div>
-            <div className="relative">
-              <div className="blob absolute inset-0 bg-sun" />
-              <img
-                src="/assets/delivery.jpg"
-                alt="Cassio pickup service"
-                className="relative z-10 h-80 w-full rounded-3xl object-cover shadow-card"
-              />
+        <div className="grid items-stretch gap-8 lg:grid-cols-2">
+          <div className="flex items-stretch">
+            <div className="relative w-full overflow-hidden rounded-3xl shadow-card bg-navy">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/assets/step-pickup.mp4" type="video/mp4" />
+                <source src="/assets/step-pickup.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col justify-center">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand font-display text-lg font-bold text-white">
               2
             </span>

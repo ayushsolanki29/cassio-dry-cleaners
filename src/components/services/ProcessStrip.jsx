@@ -1,4 +1,4 @@
-import { Package, Sparkles, Truck, CheckCircle } from "lucide-react";
+import { Package, CheckCircle, Truck, Award } from "lucide-react";
 
 const steps = [
   { 
@@ -19,7 +19,7 @@ const steps = [
     num: "03", 
     title: "Expert cleaning", 
     desc: "Your items are cleaned with precision using eco-friendly methods.",
-    Icon: Sparkles,
+    Icon: CheckCircle,
     bg: "bg-lilac"
   },
   { 

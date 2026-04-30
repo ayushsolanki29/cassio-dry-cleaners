@@ -13,14 +13,14 @@ const matrix = [
 
 export function FabricCareMatrix() {
   return (
-    <section className="flex h-screen items-center bg-white">
-      <div className="mx-auto w-full max-w-7xl px-6 py-8">
-        <div className="mb-8 text-center">
+    <section className="bg-white py-20">
+      <div className="mx-auto w-full max-w-7xl px-6">
+        <div className="mb-10 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Fabric expertise</span>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-navy md:text-4xl">
             The right care for every fabric
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
             Cassio Dry Cleaners uses specialized treatments tailored to each fabric type, ensuring optimal results without damage.
           </p>
         </div>

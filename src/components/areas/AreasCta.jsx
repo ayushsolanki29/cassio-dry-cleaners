@@ -1,68 +1,44 @@
-import { ArrowRight, PhoneCall } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 
 export function AreasCta() {
   return (
-    <section className="flex h-screen items-center bg-primary text-white">
-      <div className="mx-auto w-full max-w-7xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Left Content */}
-          <div className="space-y-6">
-            <div className="mb-6">
-              <img 
-                src="/assets/cassio-logo.jpg" 
-                alt="Cassio Dry Cleaners" 
-                className="h-16 w-auto object-contain opacity-90"
-              />
-            </div>
-            <h2 className="font-display text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
-              Ready for Cassio service in your area?
-            </h2>
-            <p className="text-lg text-white/85 lg:text-xl">
-              Experience professional dry cleaning with free pickup & delivery across London. Contact Cassio Dry Cleaners today and discover premium garment care in your neighborhood.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="/contact" 
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 font-display text-base font-semibold shadow-pop transition hover:scale-105"
-              >
-                Check availability
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a 
-                href="tel:+442012345678" 
-                className="inline-flex items-center gap-2 rounded-full bg-white/15 px-8 py-4 font-display text-base font-semibold backdrop-blur transition hover:bg-white/25"
-              >
-                <PhoneCall className="h-4 w-4" />
-                Call Cassio
-              </a>
-            </div>
+    <section className="bg-background py-12">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-tr from-mint to-brand p-12 md:p-16 lg:p-20">
+          {/* Circular gradient waves - positioned bottom right */}
+          <div className="pointer-events-none absolute bottom-0 right-0 h-[550px] w-[550px] translate-x-1/4 translate-y-1/4">
+            <div className="absolute inset-0 rounded-full bg-white/10" />
+            <div className="absolute inset-10 rounded-full bg-white/10" />
+            <div className="absolute inset-20 rounded-full bg-white/10" />
+            <div className="absolute inset-30 rounded-full bg-white/10" />
           </div>
 
-          {/* Right Image */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl">
-              <img
-                src="/assets/delivery.jpg"
-                alt="Cassio delivery service across London areas"
-                className="h-96 w-full object-cover lg:h-[500px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/20 to-transparent" />
-            </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute -right-4 -top-4 rounded-2xl bg-white/90 p-4 shadow-pop backdrop-blur-sm">
-              <div className="text-center">
-                <p className="font-display text-2xl font-bold text-brand">All</p>
-                <p className="text-xs text-navy">London areas</p>
-              </div>
-            </div>
-            
-            <div className="absolute -bottom-4 -left-4 rounded-2xl bg-white/90 p-4 shadow-pop backdrop-blur-sm">
-              <div className="text-center">
-                <p className="font-display text-2xl font-bold text-sun">Local</p>
-                <p className="text-xs text-navy">Service team</p>
-              </div>
+          <div className="relative z-10 max-w-2xl">
+            <h2 className="font-display text-4xl font-bold text-white md:text-5xl">
+              Service in your area?
+            </h2>
+            <p className="mt-4 text-lg text-white/90">
+              Experience professional dry cleaning with free pickup & delivery across London.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-brand transition-all hover:scale-105"
+              >
+                Check Availability
+                <div className="grid h-8 w-8 place-items-center rounded-full bg-brand/20">
+                  <ArrowRight className="h-4 w-4" />
+                </div>
+              </a>
+
+              <a
+                href="tel:01494445291"
+                className="inline-flex items-center gap-3 rounded-full border-2 border-white/30 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
+              >
+                <Phone className="h-5 w-5" />
+                01494 445291
+              </a>
             </div>
           </div>
         </div>

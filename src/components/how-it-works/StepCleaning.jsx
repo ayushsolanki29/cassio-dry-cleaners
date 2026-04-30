@@ -1,7 +1,7 @@
-import { Sparkles, Leaf, Award } from "lucide-react";
+import { CheckCircle, Leaf, Award } from "lucide-react";
 
 const features = [
-  { Icon: Sparkles, text: "Expert inspection and stain treatment" },
+  { Icon: CheckCircle, text: "Expert inspection and stain treatment" },
   { Icon: Leaf, text: "Eco-friendly cleaning with biodegradable solvents" },
   { Icon: Award, text: "Hand-finished pressing for perfect results" }
 ];
@@ -10,8 +10,8 @@ export function StepCleaning() {
   return (
     <section className="flex h-screen items-center bg-lilac">
       <div className="mx-auto w-full max-w-7xl px-6 py-8">
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="order-2 lg:order-1">
+        <div className="grid items-stretch gap-8 lg:grid-cols-2">
+          <div className="order-2 lg:order-1 flex flex-col justify-center">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand font-display text-lg font-bold text-white">
               3
             </span>
@@ -34,14 +34,20 @@ export function StepCleaning() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              <div className="blob absolute inset-0 bg-cream" />
-              <img
-                src="/assets/service-drycleaning.jpg"
-                alt="Cassio cleaning specialists"
-                className="relative z-10 h-80 w-full rounded-3xl object-cover shadow-card"
-              />
+          <div className="order-1 lg:order-2 flex items-stretch">
+            <div className="relative w-full overflow-hidden rounded-3xl shadow-card bg-navy">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/assets/step-cleaning.mp4" type="video/mp4" />
+                <source src="/assets/step-cleaning.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

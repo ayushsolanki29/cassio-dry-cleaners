@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 export function ServiceFabrics({ service }) {
   return (
@@ -25,7 +25,7 @@ export function ServiceFabrics({ service }) {
                 className={`${bgColor} group rounded-2xl p-6 text-center transition hover:scale-105`}
               >
                 <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-white text-brand shadow-soft">
-                  <Sparkles className="h-5 w-5" />
+                  <CheckCircle className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-sm font-semibold text-navy">{fabric}</h3>
               </div>

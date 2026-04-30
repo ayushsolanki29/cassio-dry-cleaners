@@ -1,12 +1,10 @@
 import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
 import { ContactHero } from "@/components/contact/ContactHero";
-import { ContactMethods } from "@/components/contact/ContactMethods";
-import { ContactForm } from "@/components/contact/ContactForm";
-import { OfficeLocations } from "@/components/contact/OfficeLocations";
-import { MapIllustration } from "@/components/contact/MapIllustration";
+import { ContactSection } from "@/components/contact/ContactSection";
 import { SupportHours } from "@/components/contact/SupportHours";
 import { ContactFaq } from "@/components/contact/ContactFaq";
+import { CaseStudy } from "@/components/business/CaseStudy";
 import { SocialLinks } from "@/components/contact/SocialLinks";
 import { ContactCta } from "@/components/contact/ContactCta";
 
@@ -20,12 +18,10 @@ export default function ContactPage() {
     <main className="min-h-screen bg-background">
       <Header />
       <ContactHero />
-      <ContactMethods />
-      <ContactForm />
-      <OfficeLocations />
-      <MapIllustration />
+      <ContactSection />
       <SupportHours />
       <ContactFaq />
+      <CaseStudy />
       <SocialLinks />
       <ContactCta />
       <Footer />

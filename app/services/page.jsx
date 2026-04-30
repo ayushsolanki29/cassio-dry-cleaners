@@ -14,6 +14,7 @@ import { ServiceTestimonials } from "@/components/services/ServiceTestimonials";
 import { ServiceFaq } from "@/components/services/ServiceFaq";
 import { ServiceAreasTeaser } from "@/components/services/ServiceAreasTeaser";
 import { ServiceFinalCta } from "@/components/services/ServiceFinalCta";
+import { servicesData } from "@/data/servicesData";
 
 export const metadata = {
   title: "Services — Cassio Dry Cleaners | Professional Garment Care",
@@ -21,21 +22,32 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
+  // Convert servicesData object to array and remove Icon components
+  const services = Object.values(servicesData).map(({ Icon, benefits, ...service }) => ({
+    ...service,
+    iconName: Icon?.name || 'Package',
+    // Convert benefits to plain objects without Icon components
+    benefits: benefits?.map(({ Icon: BenefitIcon, ...benefit }) => ({
+      ...benefit,
+      iconName: BenefitIcon?.name || 'Shield'
+    })) || []
+  }));
+
   return (
     <main className="min-h-screen bg-background">
       <Header />
-      <ServiceHero />
+      <ServiceHero services={services} />
       <ServiceTrustStrip />
-      <ServicesGrid />
-      <FeaturedSpotlight />
-      <FabricCareMatrix />
+      <ServicesGrid services={services} />
+      <FeaturedSpotlight services={services} />
+      <FabricCareMatrix services={services} />
       <ProcessStrip />
-      <ServiceComparison />
+      <ServiceComparison services={services} />
       <EcoTechnology />
       <ServiceStats />
-      <GarmentGallery />
-      <ServiceTestimonials />
-      <ServiceFaq />
+      <GarmentGallery services={services} />
+      <ServiceTestimonials services={services} />
+      <ServiceFaq services={services} />
       <ServiceAreasTeaser />
       <ServiceFinalCta />
       <Footer />

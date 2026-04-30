@@ -10,8 +10,8 @@ export function StepScheduling() {
   return (
     <section className="flex h-screen items-center bg-cream">
       <div className="mx-auto w-full max-w-7xl px-6 py-8">
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="order-2 lg:order-1">
+        <div className="grid items-stretch gap-8 lg:grid-cols-2">
+          <div className="order-2 lg:order-1 flex flex-col justify-center">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand font-display text-lg font-bold text-white">
               1
             </span>
@@ -34,14 +34,20 @@ export function StepScheduling() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              <div className="blob absolute inset-0 bg-mint" />
-              <img
-                src="/assets/app-mockup.jpg"
-                alt="Schedule pickup with Cassio"
-                className="relative z-10 h-80 w-full rounded-3xl object-cover shadow-card"
-              />
+          <div className="order-1 lg:order-2 flex items-stretch">
+            <div className="relative w-full overflow-hidden rounded-3xl shadow-card bg-navy">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                controls
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/assets/step-scheduling.mp4" type="video/mp4" />
+                <source src="/assets/step-scheduling.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>

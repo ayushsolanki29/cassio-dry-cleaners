@@ -11,11 +11,20 @@ export function Services() {
   return (
     <section id="services" className="bg-white py-14">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-8 max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-wider text-brand">Our services</span>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
-            Professional garment care for every need
-          </h2>
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div className="max-w-2xl">
+            <span className="text-sm font-semibold uppercase tracking-wider text-brand">Our services</span>
+            <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
+              Professional garment care for every need
+            </h2>
+          </div>
+          <a
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-soft transition hover:scale-105"
+          >
+            View All
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

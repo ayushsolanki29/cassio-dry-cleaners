@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, Users, Target, Leaf } from "lucide-react";
+import { Users, Target, Leaf, CheckCircle, TrendingUp, Award } from "lucide-react";
 
 export function AboutHero() {
   return (
@@ -29,7 +29,7 @@ export function AboutHero() {
           >
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
-                <Heart className="h-4 w-4 text-sun" />
+                <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
                 About Cassio
               </span>
             </div>
@@ -45,20 +45,20 @@ export function AboutHero() {
             {/* Timeline Highlights */}
             <div className="space-y-2">
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mint text-navy">
-                  <span className="text-xs font-semibold">2018</span>
+                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mint text-brand">
+                  <CheckCircle className="h-4 w-4" />
                 </div>
                 <span className="text-sm font-medium">Founded in Shoreditch</span>
               </div>
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sun text-navy">
-                  <span className="text-xs font-semibold">2022</span>
+                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sun text-brand">
+                  <TrendingUp className="h-4 w-4" />
                 </div>
                 <span className="text-sm font-medium">Expanded across London</span>
               </div>
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-lilac text-navy">
-                  <span className="text-xs font-semibold">2026</span>
+                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-lilac text-brand">
+                  <Award className="h-4 w-4" />
                 </div>
                 <span className="text-sm font-medium">50,000+ happy customers</span>
               </div>
@@ -88,7 +88,7 @@ export function AboutHero() {
                 <div className="space-y-4">
                   {/* Values Cards */}
                   <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-md">
-                    <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-mint text-navy">
+                    <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-mint text-white">
                       <Users className="h-5 w-5" />
                     </div>
                     <h3 className="font-display text-base font-semibold">Customer First</h3>
@@ -96,7 +96,7 @@ export function AboutHero() {
                   </div>
 
                   <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-md">
-                    <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-sun text-navy">
+                    <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-sun text-white">
                       <Target className="h-5 w-5" />
                     </div>
                     <h3 className="font-display text-base font-semibold">Quality Excellence</h3>
@@ -104,7 +104,7 @@ export function AboutHero() {
                   </div>
 
                   <div className="rounded-2xl bg-white/10 p-4 backdrop-blur-md">
-                    <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-lilac text-navy">
+                    <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-xl bg-lilac text-white">
                       <Leaf className="h-5 w-5" />
                     </div>
                     <h3 className="font-display text-base font-semibold">Eco-Conscious</h3>

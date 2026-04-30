@@ -18,8 +18,7 @@ export function ServiceCare({ service }) {
           <div className="space-y-4">
             {service.careTips.map((tip, i) => (
               <div key={i} className="flex gap-4 rounded-xl bg-white p-5 shadow-soft">
-                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand text-white font-display text-sm font-bold">
-                  {i + 1}
+                <span className="grid h-2 w-2 shrink-0 place-items-center rounded-full bg-brand mt-2">
                 </span>
                 <p className="text-base text-navy">{tip}</p>
               </div>

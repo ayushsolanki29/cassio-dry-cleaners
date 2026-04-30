@@ -1,4 +1,4 @@
-import { Check, Sparkles } from "lucide-react";
+import { Check, Award } from "lucide-react";
 
 const features = [
   "Eco-friendly solvents safe for all fabrics",
@@ -25,7 +25,7 @@ export function FeaturedSpotlight() {
             <div className="absolute -bottom-4 -right-4 z-20 rounded-2xl bg-white p-4 shadow-pop">
               <div className="flex items-center gap-3">
                 <div className="grid h-12 w-12 place-items-center rounded-full bg-brand text-white">
-                  <Sparkles className="h-6 w-6" />
+                  <Award className="h-6 w-6" />
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Trusted by</p>

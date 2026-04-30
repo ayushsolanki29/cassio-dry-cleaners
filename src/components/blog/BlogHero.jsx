@@ -29,7 +29,7 @@ export function BlogHero() {
           >
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
-                <BookOpen className="h-4 w-4 text-sun" />
+                <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
                 Cassio Blog
               </span>
             </div>

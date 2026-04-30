@@ -1,9 +1,9 @@
-import { Sparkles, Leaf, MapPin, Users, Camera } from "lucide-react";
+import { CheckCircle, Leaf, MapPin, Users, Camera } from "lucide-react";
 
 const categories = [
-  { name: "All Posts", Icon: Sparkles, active: true },
-  { name: "Garment Care", Icon: Sparkles },
-  { name: "Fabric Guide", Icon: Sparkles },
+  { name: "All Posts", Icon: CheckCircle, active: true },
+  { name: "Garment Care", Icon: CheckCircle },
+  { name: "Fabric Guide", Icon: CheckCircle },
   { name: "London Life", Icon: MapPin },
   { name: "Sustainability", Icon: Leaf },
   { name: "Behind the Scenes", Icon: Camera }

@@ -1,17 +1,92 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Package, CheckCircle } from "lucide-react";
+import { useState, useEffect } from "react";
+
+const services = [
+  {
+    name: "Dry Cleaning",
+    image: "/assets/service-drycleaning.jpg"
+  },
+  {
+    name: "Wash & Fold",
+    image: "/assets/service-washfold.jpg"
+  },
+  {
+    name: "Ironing",
+    image: "/assets/service-ironing.jpg"
+  },
+  {
+    name: "Premium Care",
+    image: "/assets/service-premium.jpg"
+  },
+  {
+    name: "Wedding Dresses",
+    image: "/assets/service-premium.jpg"
+  },
+  {
+    name: "Leather & Suede",
+    image: "/assets/service-drycleaning.jpg"
+  },
+  {
+    name: "Home Textiles",
+    image: "/assets/section-towels.jpg"
+  },
+  {
+    name: "Shoe Care",
+    image: "/assets/service-washfold.jpg"
+  }
+];
 
 export function ServiceHero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all images on component mount
+  useEffect(() => {
+    const imagePromises = services.map((service) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = service.image;
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    Promise.all(imagePromises)
+      .then(() => setImagesLoaded(true))
+      .catch((err) => console.error("Error preloading images:", err));
+  }, []);
+
+  useEffect(() => {
+    // Only start carousel after images are loaded
+    if (!imagesLoaded) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % services.length);
+    }, 4000); // Change every 4 seconds for smoother transitions
+
+    return () => clearInterval(interval);
+  }, [imagesLoaded]);
+
+  const currentService = services[currentIndex];
+
   return (
     <section className="relative flex h-screen items-center overflow-hidden bg-navy text-white">
-      {/* Background Image with Overlay */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/assets/service-drycleaning.jpg')" }}
-      />
+      {/* Background Image with Overlay - Auto-changing */}
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${currentService.image}')` }}
+        />
+      </AnimatePresence>
       <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-primary/90 to-navy/95" />
 
       {/* Decorative Elements */}
@@ -29,15 +104,25 @@ export function ServiceHero() {
           >
             <div>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
-                <Sparkles className="h-4 w-4 text-sun" />
+                <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
                 Cassio Dry Cleaners
               </span>
             </div>
 
             <h1 className="font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
-              Professional garment care
-              <br />
-              for <span className="text-sun">every fabric</span>
+              <span className="block whitespace-nowrap">Expert care for</span>
+              <AnimatePresence initial={false} mode="wait">
+                <motion.span
+                  key={currentIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="text-sun inline-block"
+                >
+                  {currentService.name}
+                </motion.span>
+              </AnimatePresence>
             </h1>
 
             <p className="max-w-xl text-lg leading-relaxed text-white/85">
@@ -45,20 +130,7 @@ export function ServiceHero() {
             </p>
 
             {/* Quick Features */}
-            <div className="flex flex-wrap gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-mint" />
-                <span>24-48h delivery</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-mint" />
-                <span>Eco-friendly</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="h-4 w-4 text-mint" />
-                <span>Expert care</span>
-              </div>
-            </div>
+          
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -88,11 +160,20 @@ export function ServiceHero() {
             <div className="relative">
               {/* Glassmorphism Card */}
               <div className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-2xl">
-                <img
-                  src="/assets/service-premium.jpg"
-                  alt="Premium garment care"
-                  className="h-80 w-full rounded-2xl object-cover shadow-lg"
-                />
+              <div className="relative h-80 w-full">
+                <AnimatePresence initial={false}>
+                  <motion.img
+                    key={currentIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                    src={currentService.image}
+                    alt={`${currentService.name} service`}
+                    className="absolute inset-0 h-full w-full rounded-2xl object-cover shadow-lg"
+                  />
+                </AnimatePresence>
+              </div>
                 
                 {/* Floating Stats */}
                 <div className="mt-4 grid grid-cols-3 gap-3">

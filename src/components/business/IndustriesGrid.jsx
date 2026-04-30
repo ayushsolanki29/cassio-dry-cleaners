@@ -1,4 +1,4 @@
-import { Hotel, Dumbbell, UtensilsCrossed, Sparkles, Briefcase, Heart } from "lucide-react";
+import { Hotel, Dumbbell, UtensilsCrossed, Star, Briefcase, Activity } from "lucide-react";
 
 const industries = [
   { 
@@ -22,7 +22,7 @@ const industries = [
   { 
     title: "Spas & Salons", 
     desc: "Robes, towels, and treatment linens",
-    Icon: Sparkles,
+    Icon: Star,
     color: "bg-cream"
   },
   { 
@@ -34,7 +34,7 @@ const industries = [
   { 
     title: "Healthcare", 
     desc: "Scrubs, lab coats, and medical linens",
-    Icon: Heart,
+    Icon: Activity,
     color: "bg-sun"
   }
 ];

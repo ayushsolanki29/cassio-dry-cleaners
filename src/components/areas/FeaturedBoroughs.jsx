@@ -13,25 +13,23 @@ const boroughs = [
 
 export function FeaturedBoroughs() {
   return (
-    <section className="flex h-screen items-center bg-cream">
-      <div className="mx-auto w-full max-w-7xl px-6 py-8">
-        <div className="mb-10 text-center">
+    <section className="bg-cream py-12 md:py-16 lg:py-20">
+      <div className="mx-auto w-full max-w-7xl px-6">
+        <div className="mb-8 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Featured areas</span>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-navy md:text-4xl lg:text-5xl">
             Popular London boroughs
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Cassio Dry Cleaners serves these and many more neighborhoods across London
-          </p>
+          
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-4">
           {boroughs.map((borough) => (
             <div
               key={borough.name}
-              className="group relative overflow-hidden rounded-3xl shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group relative overflow-hidden rounded-2xl md:rounded-3xl shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
-              <div className={`relative h-64 overflow-hidden ${borough.color}`}>
+              <div className={`relative h-48 md:h-56 overflow-hidden ${borough.color}`}>
                 <img
                   src={borough.image}
                   alt={borough.name}
@@ -39,12 +37,12 @@ export function FeaturedBoroughs() {
                 />
                 <div className="absolute inset-0 bg-navy/40" />
               </div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 text-white">
                 <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-xs font-medium backdrop-blur">
                   <MapPin className="h-3 w-3" />
                   Available now
                 </div>
-                <h3 className="font-display text-xl font-semibold">{borough.name}</h3>
+                <h3 className="font-display text-lg md:text-xl font-semibold">{borough.name}</h3>
               </div>
             </div>
           ))}
