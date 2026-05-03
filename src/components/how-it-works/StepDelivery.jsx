@@ -15,6 +15,7 @@ export function StepDelivery() {
             <div className="relative w-full overflow-hidden rounded-3xl shadow-card bg-navy">
               <video
                 className="absolute inset-0 h-full w-full object-cover"
+                poster="/assets/step-delivery.jpg"
                 controls
                 autoPlay
                 muted

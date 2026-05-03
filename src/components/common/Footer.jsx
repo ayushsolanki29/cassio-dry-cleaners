@@ -51,7 +51,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3">
               <img src="/assets/cassio-logo.jpg" alt="Cassio Dry Cleaners" className="h-12 w-12 rounded-full ring-2 ring-white/20" />
-              <span className="font-display text-2xl font-semibold">Cassio<span className="text-brand">.</span></span>
+              <span className="font-display text-2xl font-semibold">Cassio Dry Cleaners<span className="text-brand">.</span></span>
             </div>
             <p className="mt-4 max-w-sm text-sm text-white/70">
               Premium garment care, picked up at your door. Loved by thousands across London.
