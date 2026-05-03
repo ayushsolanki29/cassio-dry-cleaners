@@ -10,15 +10,6 @@ const fabricTypes = [
     description: "Natural fibers treated with gentle care",
     icon: Wind,
     accent: "bg-mint",
-    height: "h-56",
-  },
-  {
-    name: "Silk & Satin",
-    image: "/assets/service-premium.jpg",
-    description: "Delicate luxury fabrics handled by experts",
-    icon: Award,
-    accent: "bg-lilac",
-    height: "h-40",
   },
   {
     name: "Wool & Cashmere",
@@ -26,7 +17,13 @@ const fabricTypes = [
     description: "Premium materials with specialized cleaning",
     icon: Shield,
     accent: "bg-sun",
-    height: "h-44",
+  },
+  {
+    name: "Silk & Satin",
+    image: "/assets/service-premium.jpg",
+    description: "Delicate luxury fabrics handled by experts",
+    icon: Award,
+    accent: "bg-lilac",
   },
   {
     name: "Synthetic & Blends",
@@ -34,7 +31,6 @@ const fabricTypes = [
     description: "Modern fabrics with advanced care techniques",
     icon: Droplets,
     accent: "bg-brand",
-    height: "h-60",
   },
 ];
 
@@ -109,53 +105,44 @@ export function Fabrics() {
             </div>
           </div>
 
-          {/* ── Right: Pinterest masonry grid ── */}
-          <div className="columns-2 gap-4">
+          {/* ── Right: perfect 2×2 grid, all equal height ── */}
+          <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[480px]">
             {fabricTypes.map((fabric) => (
               <div
                 key={fabric.name}
-                className="mb-4 cursor-pointer"
-                style={{ breakInside: "avoid" }}
+                className="group relative overflow-hidden rounded-3xl cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.03]"
                 onMouseEnter={() => setHovered(fabric.name)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <div
-                  className={`
-                    group relative overflow-hidden rounded-3xl ${fabric.height}
-                    transition-transform duration-300 ease-out
-                    ${hovered === fabric.name ? "scale-[1.03]" : "scale-100"}
-                  `}
-                >
-                  {/* Full-bleed photo */}
-                  <img
-                    src={fabric.image}
-                    alt={fabric.name}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                {/* Full-bleed photo */}
+                <img
+                  src={fabric.image}
+                  alt={fabric.name}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
 
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
 
-                  {/* Top icon pill */}
-                  <div className="absolute left-3 top-3">
-                    <div className={`flex items-center gap-1.5 rounded-full ${fabric.accent} px-3 py-1.5 shadow-soft`}>
-                      <fabric.icon className="h-3.5 w-3.5 text-navy" />
-                    </div>
+                {/* Top icon pill */}
+                <div className="absolute left-3 top-3">
+                  <div className={`flex items-center gap-1.5 rounded-full ${fabric.accent} px-3 py-1.5 shadow-soft`}>
+                    <fabric.icon className="h-3.5 w-3.5 text-navy" />
                   </div>
+                </div>
 
-                  {/* Bottom text */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="font-display text-base font-bold text-white">
-                      {fabric.name}
-                    </h3>
-                    <p
-                      className={`mt-1 text-xs text-white/70 transition-all duration-300 ${
-                        hovered === fabric.name ? "max-h-10 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
-                      }`}
-                    >
-                      {fabric.description}
-                    </p>
-                  </div>
+                {/* Bottom text */}
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 className="font-display text-base font-bold text-white">
+                    {fabric.name}
+                  </h3>
+                  <p
+                    className={`mt-1 text-xs text-white/70 transition-all duration-300 ${
+                      hovered === fabric.name ? "max-h-10 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+                    }`}
+                  >
+                    {fabric.description}
+                  </p>
                 </div>
               </div>
             ))}
