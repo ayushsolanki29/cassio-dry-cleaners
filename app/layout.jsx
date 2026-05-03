@@ -1,4 +1,5 @@
 import "./globals.css";
+import { PageLoader } from "@/components/common/PageLoader";
 
 export const metadata = {
   title: "Cassio Dry Cleaners | Premium laundry and dry cleaning",
@@ -9,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <PageLoader />
+        {children}
+      </body>
     </html>
   );
 }
