@@ -2,9 +2,9 @@ import { MapPin, Clock } from "lucide-react";
 
 const locations = [
   {
-    name: "London HQ & Customer Service",
+    name: "Watford HQ & Customer Service",
     address: "123 Shoreditch High Street",
-    city: "London E1 6JE",
+    city: "Watford E1 6JE",
     hours: [
       "Monday - Friday: 8:00 AM - 8:00 PM",
       "Saturday: 9:00 AM - 6:00 PM",
@@ -14,7 +14,7 @@ const locations = [
   {
     name: "Processing Facility",
     address: "456 Commercial Road",
-    city: "London E14 7HG",
+    city: "Watford E14 7HG",
     hours: [
       "Monday - Friday: 6:00 AM - 10:00 PM",
       "Saturday: 7:00 AM - 8:00 PM",

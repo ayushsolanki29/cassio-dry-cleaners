@@ -23,7 +23,7 @@ export function CaseStudy() {
               </div>
 
               <blockquote className="font-display text-xl font-semibold leading-relaxed text-navy md:text-2xl lg:text-3xl">
-                "Cassio Dry Cleaners transformed our hotel's laundry operations. Their reliability and quality are unmatched in London."
+                "Cassio Dry Cleaners transformed our hotel's laundry operations. Their reliability and quality are unmatched in Watford."
               </blockquote>
 
               <div className="mt-6 md:mt-8 flex items-center gap-3 md:gap-4">
@@ -35,7 +35,7 @@ export function CaseStudy() {
                 <div>
                   <p className="text-sm md:text-base font-semibold text-navy">Michael Thompson</p>
                   <p className="text-xs md:text-sm text-muted-foreground">General Manager</p>
-                  <p className="text-xs md:text-sm font-medium text-brand">The Mayfair Hotel, London</p>
+                  <p className="text-xs md:text-sm font-medium text-brand">The Mayfair Hotel, Watford</p>
                 </div>
               </div>
             </div>

@@ -39,7 +39,7 @@ const benefits = [
   {
     icon: Users,
     title: "Trusted by 50k+",
-    description: "Join thousands of satisfied London customers",
+    description: "Join thousands of satisfied Watford customers",
     color: "bg-primary",
     iconColor: "text-white"
   }

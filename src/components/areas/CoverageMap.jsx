@@ -1,7 +1,7 @@
 import { MapPin, Truck, Clock, CheckCircle } from "lucide-react";
 
 const features = [
-  { Icon: MapPin, text: "Covering all 32 London boroughs" },
+  { Icon: MapPin, text: "Covering all 32 Watford boroughs" },
   { Icon: Truck, text: "Free pickup & delivery included" },
   { Icon: Clock, text: "24-48 hour turnaround time" },
   { Icon: CheckCircle, text: "Same-day service in select areas" }
@@ -16,7 +16,7 @@ export function CoverageMap() {
             <div className="blob absolute inset-0 bg-mint" />
             <img
               src="/assets/hero-woman.jpg"
-              alt="Cassio London coverage map"
+              alt="Cassio Watford coverage map"
               className="relative z-10 w-full h-[300px] md:h-[350px] lg:h-[400px] rounded-3xl object-cover shadow-card"
             />
             <div className="absolute -bottom-4 -right-4 z-20 rounded-2xl bg-white p-3 md:p-4 shadow-pop">
@@ -35,10 +35,10 @@ export function CoverageMap() {
           <div>
             <span className="text-sm font-semibold uppercase tracking-wider text-brand">Our coverage</span>
             <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
-              Cassio serves all of Greater London
+              Cassio serves all of Greater Watford
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              From Central London to the outer boroughs, Cassio Dry Cleaners provides professional garment care with free pickup and delivery across the entire city.
+              From Central Watford to the outer boroughs, Cassio Dry Cleaners provides professional garment care with free pickup and delivery across the entire city.
             </p>
 
             <div className="mt-6 space-y-3">

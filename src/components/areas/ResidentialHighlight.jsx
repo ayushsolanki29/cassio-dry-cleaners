@@ -23,10 +23,10 @@ export function ResidentialHighlight() {
           <div>
             <span className="text-sm font-semibold uppercase tracking-wider text-brand">Residential areas</span>
             <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
-              Premium service for London homes
+              Premium service for Watford homes
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              From Notting Hill to Chelsea, Cassio Dry Cleaners brings professional garment care to London's finest residential neighborhoods. Enjoy the convenience of doorstep service with luxury-level quality.
+              From Notting Hill to Chelsea, Cassio Dry Cleaners brings professional garment care to Watford's finest residential neighborhoods. Enjoy the convenience of doorstep service with luxury-level quality.
             </p>
 
             <div className="mt-8 space-y-4">

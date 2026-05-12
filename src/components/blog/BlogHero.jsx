@@ -41,7 +41,7 @@ export function BlogHero() {
             </h1>
 
             <p className="max-w-xl text-lg text-white/85">
-              Expert advice on garment care, fabric guides, and insights from the Cassio team in London.
+              Expert advice on garment care, fabric guides, and insights from the Cassio team in Watford.
             </p>
 
             {/* Blog Categories */}
@@ -53,7 +53,7 @@ export function BlogHero() {
                 Fabric Guide
               </span>
               <span className="rounded-full bg-lilac/20 px-3 py-1 text-sm font-medium text-lilac backdrop-blur-md">
-                London Life
+                Watford Life
               </span>
               <span className="rounded-full bg-cream/20 px-3 py-1 text-sm font-medium text-cream backdrop-blur-md">
                 Sustainability

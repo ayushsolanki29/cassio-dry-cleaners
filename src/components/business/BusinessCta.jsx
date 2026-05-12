@@ -23,7 +23,7 @@ export function BusinessCta() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 font-semibold text-brand-foreground transition-all hover:scale-105"
               >
                 Talk to Sales

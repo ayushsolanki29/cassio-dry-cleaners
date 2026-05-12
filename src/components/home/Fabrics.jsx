@@ -66,11 +66,11 @@ export function Fabrics() {
               <h2 className="font-display text-5xl font-bold leading-tight text-white md:text-6xl">
                 Every fabric
                 <br />
-                <span className="text-brand">deserves</span>
+                <span className="text-mint">deserves</span>
                 <br />
                 expert care
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-white/60">
+              <p className="mt-5 text-lg leading-relaxed text-white/70">
                 From everyday cotton to luxury cashmere, our specialists
                 understand the unique needs of every material in your wardrobe.
               </p>

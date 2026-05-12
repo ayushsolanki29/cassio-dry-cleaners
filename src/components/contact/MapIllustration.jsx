@@ -8,7 +8,7 @@ export function MapIllustration() {
           <div className="relative h-96 bg-secondary">
             <img
               src="/assets/hero-woman.jpg"
-              alt="Cassio locations in London"
+              alt="Cassio locations in Watford"
               className="h-full w-full object-cover opacity-30"
             />
             
@@ -18,7 +18,7 @@ export function MapIllustration() {
                   <MapPin className="h-10 w-10" />
                 </div>
                 <h3 className="font-display text-3xl font-semibold text-navy">
-                  Serving all of London
+                  Serving all of Watford
                 </h3>
                 <p className="mt-2 text-lg text-muted-foreground">
                   Free pickup & delivery across 32 boroughs

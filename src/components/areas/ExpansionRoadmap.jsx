@@ -19,7 +19,7 @@ export function ExpansionRoadmap() {
             Coming soon to more cities
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Cassio Dry Cleaners is expanding beyond London. Here's where we're headed next.
+            Cassio Dry Cleaners is expanding beyond Watford. Here's where we're headed next.
           </p>
         </div>
 
@@ -49,7 +49,7 @@ export function ExpansionRoadmap() {
 
         <div className="mt-10 text-center">
           <p className="text-base text-muted-foreground">
-            Want Cassio in your city? <a href="/contact" className="font-semibold text-brand hover:underline">Let us know</a>
+            Want Cassio in your city? <a href="/contact#contact-form" className="font-semibold text-brand hover:underline">Let us know</a>
           </p>
         </div>
       </div>

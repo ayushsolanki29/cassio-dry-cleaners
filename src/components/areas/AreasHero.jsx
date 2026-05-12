@@ -37,18 +37,18 @@ export function AreasHero() {
             <h1 className="font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
               Now serving
               <br />
-              <span className="text-sun">across London</span>
+              <span className="text-sun">across Watford</span>
             </h1>
 
             <p className="max-w-xl text-lg text-white/85">
-              Free pickup & delivery in 24-48 hours across Greater London. Cassio brings professional garment care to your neighborhood.
+              Free pickup & delivery in 24-48 hours across Greater Watford. Cassio brings professional garment care to your neighborhood.
             </p>
 
             {/* Coverage Highlights */}
             <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 shrink-0 text-mint" />
-                <span className="text-sm">32 London boroughs covered</span>
+                <span className="text-sm">32 Watford boroughs covered</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-4 w-4 shrink-0 text-mint" />
@@ -70,7 +70,7 @@ export function AreasHero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-4 text-base font-semibold backdrop-blur-md transition hover:bg-white/20"
               >
                 Contact us
@@ -106,7 +106,7 @@ export function AreasHero() {
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Service Center</p>
-                    <p className="font-display text-sm font-semibold text-navy">Watford, London</p>
+                    <p className="font-display text-sm font-semibold text-navy">Watford, Watford</p>
                   </div>
                 </div>
               </div>

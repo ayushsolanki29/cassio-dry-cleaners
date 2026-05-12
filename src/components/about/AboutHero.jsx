@@ -39,7 +39,7 @@ export function AboutHero() {
             </h1>
 
             <p className="max-w-xl text-lg text-white/85">
-              From a single shop in East London to serving 50,000+ customers across the city, Cassio has been redefining garment care since 2018.
+              From a single shop in East Watford to serving 50,000+ customers across the city, Cassio has been redefining garment care since 2018.
             </p>
 
             {/* Timeline Highlights */}
@@ -54,7 +54,7 @@ export function AboutHero() {
                 <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sun text-brand">
                   <TrendingUp className="h-4 w-4" />
                 </div>
-                <span className="text-sm font-medium">Expanded across London</span>
+                <span className="text-sm font-medium">Expanded across Watford</span>
               </div>
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
                 <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-lilac text-brand">

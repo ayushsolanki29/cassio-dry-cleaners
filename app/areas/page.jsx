@@ -15,8 +15,8 @@ import { AreasFaq } from "@/components/areas/AreasFaq";
 import { AreasCta } from "@/components/areas/AreasCta";
 
 export const metadata = {
-  title: "Service Areas — Cassio Dry Cleaners | London Coverage",
-  description: "Cassio Dry Cleaners serves all of Greater London with free pickup & delivery. Check if we cover your area for professional garment care in 24-48 hours.",
+  title: "Service Areas — Cassio Dry Cleaners | Watford Coverage",
+  description: "Cassio Dry Cleaners serves all of Greater Watford with free pickup & delivery. Check if we cover your area for professional garment care in 24-48 hours.",
 };
 
 export default function AreasPage() {

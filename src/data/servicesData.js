@@ -59,9 +59,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "Cassio's dry cleaning is exceptional. My suits always come back looking brand new. The eco-friendly approach is a huge plus!" },
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my silk dresses. They handle delicate fabrics with such care. Never had an issue!" },
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "Best dry cleaning in London! Fast, professional, and my clothes smell amazing. Cassio is my go-to." }
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio's dry cleaning is exceptional. My suits always come back looking brand new. The eco-friendly approach is a huge plus!" },
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my silk dresses. They handle delicate fabrics with such care. Never had an issue!" },
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Best dry cleaning in Watford! Fast, professional, and my clothes smell amazing. Cassio is my go-to." }
     ]
   },
 
@@ -123,9 +123,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "Cassio's wash & fold service is a lifesaver! My clothes come back fresh, clean, and perfectly folded. Worth every penny." },
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "I use Cassio for all my everyday laundry. The quality is consistent, and the turnaround time is impressive." },
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "Finally have my weekends back! Cassio takes care of all my laundry, and everything always smells amazing." }
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio's wash & fold service is a lifesaver! My clothes come back fresh, clean, and perfectly folded. Worth every penny." },
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "I use Cassio for all my everyday laundry. The quality is consistent, and the turnaround time is impressive." },
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Finally have my weekends back! Cassio takes care of all my laundry, and everything always smells amazing." }
     ]
   },
 
@@ -187,9 +187,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "My shirts have never looked better. Cassio's ironing service is impeccable - crisp collars and perfect creases every time." },
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "I hate ironing, so Cassio is a godsend. Professional results and I get my time back. Highly recommend!" },
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "The quality of Cassio's ironing is outstanding. My work clothes always look sharp and professional." }
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "My shirts have never looked better. Cassio's ironing service is impeccable - crisp collars and perfect creases every time." },
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "I hate ironing, so Cassio is a godsend. Professional results and I get my time back. Highly recommend!" },
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "The quality of Cassio's ironing is outstanding. My work clothes always look sharp and professional." }
     ]
   },
 
@@ -251,9 +251,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my designer pieces. Their premium care service is worth every penny - my Chanel jacket looks brand new!" },
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "Cassio handled my vintage Savile Row suit with incredible care. The attention to detail is unmatched in London." },
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "Finally found a cleaner I trust with my luxury wardrobe. Cassio's premium service is exceptional - true white-glove treatment." }
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my designer pieces. Their premium care service is worth every penny - my Chanel jacket looks brand new!" },
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio handled my vintage Savile Row suit with incredible care. The attention to detail is unmatched in Watford." },
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Finally found a cleaner I trust with my luxury wardrobe. Cassio's premium service is exceptional - true white-glove treatment." }
     ]
   },
 
@@ -315,9 +315,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "Cassio preserved my wedding dress beautifully. Every stain removed, and the preservation box is gorgeous. So grateful!" },
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "My dress had wine, makeup, and grass stains - Cassio made it look brand new! The preservation service is worth every penny." },
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "Had my wife's vintage wedding dress cleaned by Cassio. They handled it with such care - looks perfect for our daughter someday." }
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio preserved my wedding dress beautifully. Every stain removed, and the preservation box is gorgeous. So grateful!" },
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "My dress had wine, makeup, and grass stains - Cassio made it look brand new! The preservation service is worth every penny." },
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Had my wife's vintage wedding dress cleaned by Cassio. They handled it with such care - looks perfect for our daughter someday." }
     ]
   },
 
@@ -379,9 +379,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "My vintage leather jacket looks incredible after Cassio's treatment. They restored the color and it feels like new!" },
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "Cassio saved my suede coat after a water stain disaster. Their expertise in leather care is unmatched in London." },
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "Trust Cassio with all my leather pieces. Professional service and my jackets always come back looking perfect." }
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "My vintage leather jacket looks incredible after Cassio's treatment. They restored the color and it feels like new!" },
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio saved my suede coat after a water stain disaster. Their expertise in leather care is unmatched in Watford." },
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Trust Cassio with all my leather pieces. Professional service and my jackets always come back looking perfect." }
     ]
   },
 
@@ -443,9 +443,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "Cassio cleaned all my curtains and they look brand new! The pickup service made it so easy. Highly recommend!" },
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "My velvet curtains came back perfect. Cassio knows how to handle delicate home textiles. Very impressed!" },
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "Used Cassio for our entire home's curtains and bedding. Professional service and everything looks and smells fresh." }
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Cassio cleaned all my curtains and they look brand new! The pickup service made it so easy. Highly recommend!" },
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "My velvet curtains came back perfect. Cassio knows how to handle delicate home textiles. Very impressed!" },
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Used Cassio for our entire home's curtains and bedding. Professional service and everything looks and smells fresh." }
     ]
   },
 
@@ -507,9 +507,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "James Bennett", location: "Chelsea, London", image: "/assets/testimonial-2.jpg", quote: "Cassio restored my expensive dress shoes perfectly. They look brand new! Best shoe care service in London." },
-      { name: "Sophie Clarke", location: "Notting Hill, London", image: "/assets/testimonial-3.jpg", quote: "My suede boots were ruined by salt stains - Cassio worked magic! They look perfect now. So impressed!" },
-      { name: "Emma Walker", location: "Shoreditch, London", image: "/assets/testimonial-1.jpg", quote: "Use Cassio for all my shoe cleaning. They handle everything from sneakers to designer heels with expert care." }
+      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio restored my expensive dress shoes perfectly. They look brand new! Best shoe care service in Watford." },
+      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "My suede boots were ruined by salt stains - Cassio worked magic! They look perfect now. So impressed!" },
+      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Use Cassio for all my shoe cleaning. They handle everything from sneakers to designer heels with expert care." }
     ]
   }
 };

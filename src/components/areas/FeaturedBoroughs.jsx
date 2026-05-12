@@ -18,7 +18,7 @@ export function FeaturedBoroughs() {
         <div className="mb-8 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Featured areas</span>
           <h2 className="mt-3 font-display text-3xl font-semibold text-navy md:text-4xl lg:text-5xl">
-            Popular London boroughs
+            Popular Watford boroughs
           </h2>
           
         </div>

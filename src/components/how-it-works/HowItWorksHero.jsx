@@ -50,7 +50,7 @@ export function HowItWorksHero() {
                 <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mint text-navy">
                   <Calendar className="h-4 w-4" />
                 </div>
-                <span className="text-sm font-medium">Schedule pickup online</span>
+                <span className="text-sm font-medium">Contact us to arrange pickup</span>
               </div>
               <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
                 <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sun text-navy">
@@ -76,7 +76,7 @@ export function HowItWorksHero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-4 text-base font-semibold backdrop-blur-md transition hover:bg-white/20"
               >
                 Contact us
@@ -112,7 +112,7 @@ export function HowItWorksHero() {
                     </div>
                     <div>
                       <h3 className="font-display text-base font-semibold">Free Pickup & Delivery</h3>
-                      <p className="mt-1 text-xs text-white/80">Across all London boroughs</p>
+                      <p className="mt-1 text-xs text-white/80">Across all Watford boroughs</p>
                     </div>
                   </div>
 

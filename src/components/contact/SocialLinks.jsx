@@ -2,10 +2,10 @@ import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const socials = [
   { Icon: Facebook, name: "Facebook", handle: "@cassiocleaners" },
-  { Icon: Twitter, name: "Twitter", handle: "@cassio_london" },
+  { Icon: Twitter, name: "Twitter", handle: "@cassio_Watford" },
   { Icon: Instagram, name: "Instagram", handle: "@cassiodrycleaning" },
   { Icon: Linkedin, name: "LinkedIn", handle: "Cassio Dry Cleaners" },
-  { Icon: Youtube, name: "YouTube", handle: "Cassio London" }
+  { Icon: Youtube, name: "YouTube", handle: "Cassio Watford" }
 ];
 
 export function SocialLinks() {

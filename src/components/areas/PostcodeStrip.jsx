@@ -19,7 +19,7 @@ export function PostcodeStrip() {
             We serve these postcodes
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
-            Cassio Dry Cleaners covers all major London postcode areas
+            Cassio Dry Cleaners covers all major Watford postcode areas
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export function PostcodeStrip() {
 
         <div className="mt-10 text-center">
           <p className="text-base text-white/70">
-            Plus many more areas across Greater London
+            Plus many more areas across Greater Watford
           </p>
         </div>
       </div>

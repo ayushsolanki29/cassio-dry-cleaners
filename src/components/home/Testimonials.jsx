@@ -6,10 +6,10 @@ import { useState, useEffect, useRef } from "react";
 const testimonials = [
   { name: "Emma Walker", location: "Shoreditch", image: "https://randomuser.me/api/portraits/women/1.jpg", quote: "Cassio has completely changed my weekends. My silk dresses come back perfect!", rating: 5 },
   { name: "James Bennett", location: "Chelsea", image: "https://randomuser.me/api/portraits/men/1.jpg", quote: "Used Cassio for my wedding suits - the attention to detail was incredible.", rating: 5 },
-  { name: "Sophie Clarke", location: "Notting Hill", image: "https://randomuser.me/api/portraits/women/2.jpg", quote: "The 24-hour turnaround is unreal. Scheduled at 8pm, clothes back next evening!", rating: 5 },
-  { name: "Michael Chen", location: "Canary Wharf", image: "https://randomuser.me/api/portraits/men/2.jpg", quote: "Perfect for busy professionals. The app makes scheduling so easy!", rating: 5 },
+  { name: "Sophie Clarke", location: "Notting Hill", image: "https://randomuser.me/api/portraits/women/2.jpg", quote: "The 24-hour turnaround is unreal. Contacted at 8pm, clothes back next evening!", rating: 5 },
+  { name: "Michael Chen", location: "Canary Wharf", image: "https://randomuser.me/api/portraits/men/2.jpg", quote: "Perfect for busy professionals. Getting in touch is so easy!", rating: 5 },
   { name: "Sarah Johnson", location: "Kensington", image: "https://randomuser.me/api/portraits/women/3.jpg", quote: "Cassio handles my designer pieces with such care. Outstanding service!", rating: 5 },
-  { name: "David Wilson", location: "Greenwich", image: "https://randomuser.me/api/portraits/men/3.jpg", quote: "Tried many dry cleaners in London, but Cassio is in a league of its own.", rating: 5 },
+  { name: "David Wilson", location: "Greenwich", image: "https://randomuser.me/api/portraits/men/3.jpg", quote: "Tried many dry cleaners in Watford, but Cassio is in a league of its own.", rating: 5 },
   { name: "Rachel Green", location: "Mayfair", image: "https://randomuser.me/api/portraits/women/4.jpg", quote: "The eco-friendly approach is amazing. Quality and sustainability together!", rating: 5 },
   { name: "Tom Harris", location: "Westminster", image: "https://randomuser.me/api/portraits/men/4.jpg", quote: "Reliable and trustworthy. Been using them for 3 years now.", rating: 5 },
   { name: "Lisa Anderson", location: "Camden", image: "https://randomuser.me/api/portraits/women/5.jpg", quote: "Free pickup and delivery is so convenient. Life-changing service!", rating: 5 },

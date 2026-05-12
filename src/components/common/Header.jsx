@@ -64,7 +64,7 @@ export function Header() {
           {/* Desktop CTA + mobile hamburger */}
           <div className="flex items-center gap-3">
             <Link
-              href="/contact"
+              href="/contact#contact-form"
               className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary shadow-soft transition-all duration-200 hover:scale-105 hover:shadow-pop md:block"
             >
               Contact us
@@ -107,7 +107,7 @@ export function Header() {
             {/* CTA inside mobile menu */}
             <div className="mt-2 border-t border-white/10 pt-3">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 onClick={() => setMenuOpen(false)}
                 className="block rounded-2xl bg-brand px-4 py-3 text-center text-base font-semibold text-white shadow-soft transition hover:opacity-90"
               >

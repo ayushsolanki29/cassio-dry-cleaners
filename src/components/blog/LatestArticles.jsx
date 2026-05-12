@@ -23,10 +23,10 @@ const articles = [
     readTime: "7 min"
   },
   {
-    title: "Best Dry Cleaners in East London: Local's Guide",
-    slug: "east-london-guide",
-    excerpt: "Discover the top-rated garment care services in East London.",
-    category: "London Life",
+    title: "Best Dry Cleaners in East Watford: Local's Guide",
+    slug: "east-Watford-guide",
+    excerpt: "Discover the top-rated garment care services in East Watford.",
+    category: "Watford Life",
     categoryColor: "bg-lilac",
     image: "/assets/hero-woman.jpg",
     date: "April 15, 2026",

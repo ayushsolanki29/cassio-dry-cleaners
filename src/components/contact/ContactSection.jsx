@@ -46,7 +46,7 @@ export function ContactSection() {
   return (
     <>
       {/* Contact Methods & Form Section */}
-      <section className="bg-white py-12 md:py-14 lg:py-16">
+      <section id="contact-form" className="bg-white py-12 md:py-14 lg:py-16">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
             {/* Left: Contact Methods */}

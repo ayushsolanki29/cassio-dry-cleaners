@@ -126,7 +126,7 @@ export function ServiceHero() {
             </h1>
 
             <p className="max-w-xl text-lg leading-relaxed text-white/85">
-              From everyday laundry to luxury couture, Cassio delivers expert cleaning with eco-friendly care. Free pickup & delivery across London.
+              From everyday laundry to luxury couture, Cassio delivers expert cleaning with eco-friendly care. Free pickup & delivery across Watford.
             </p>
 
             {/* Quick Features */}
@@ -142,7 +142,7 @@ export function ServiceHero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-4 text-base font-semibold backdrop-blur-md transition hover:bg-white/20"
               >
                 Contact us

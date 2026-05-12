@@ -16,7 +16,7 @@ export function BusinessStats() {
             <TrendingUp className="h-7 w-7" />
           </div>
           <h2 className="font-display text-4xl font-semibold text-cream md:text-5xl">
-            Trusted by London businesses
+            Trusted by Watford businesses
           </h2>
         </div>
 

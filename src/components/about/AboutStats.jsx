@@ -2,7 +2,7 @@ import { Users, MapPin, Package, TrendingUp } from "lucide-react";
 
 const stats = [
   { Icon: Users, value: "50K+", label: "Happy customers" },
-  { Icon: MapPin, value: "32", label: "London boroughs" },
+  { Icon: MapPin, value: "32", label: "Watford boroughs" },
   { Icon: Package, value: "1M+", label: "Garments cleaned" },
   { Icon: TrendingUp, value: "8", label: "Years of excellence" }
 ];

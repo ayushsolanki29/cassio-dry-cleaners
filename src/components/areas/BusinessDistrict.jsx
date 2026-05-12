@@ -14,10 +14,10 @@ export function BusinessDistrict() {
           <div>
             <span className="text-sm font-semibold uppercase tracking-wider text-brand">Business districts</span>
             <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
-              Serving London's professionals
+              Serving Watford's professionals
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Cassio Dry Cleaners provides specialized service to Canary Wharf, City of London, and other business districts. Perfect for busy professionals who demand quality and convenience.
+              Cassio Dry Cleaners provides specialized service to Canary Wharf, City of Watford, and other business districts. Perfect for busy professionals who demand quality and convenience.
             </p>
 
             <div className="mt-8 space-y-4">

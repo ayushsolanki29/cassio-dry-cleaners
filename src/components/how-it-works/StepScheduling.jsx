@@ -1,9 +1,9 @@
 import { Calendar, Clock, Smartphone } from "lucide-react";
 
 const features = [
-  { Icon: Calendar, text: "Choose your preferred date and time slot" },
+  { Icon: Calendar, text: "Choose your preferred date and time" },
   { Icon: Clock, text: "Same-day and next-day options available" },
-  { Icon: Smartphone, text: "Easy online or phone scheduling" }
+  { Icon: Smartphone, text: "Easy contact via phone or online" }
 ];
 
 export function StepScheduling() {

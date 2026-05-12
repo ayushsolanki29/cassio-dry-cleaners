@@ -13,7 +13,7 @@ export function ServiceStats() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-8 text-center">
           <h2 className="font-display text-3xl font-semibold text-cream md:text-4xl">
-            Trusted by London's best-dressed
+            Trusted by Watford's best-dressed
           </h2>
         </div>
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">

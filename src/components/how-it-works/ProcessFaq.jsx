@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const faqs = [
-  { q: "How do I schedule a pickup with Cassio?", a: "You can schedule online through our website, call us directly, or use our mobile app. Choose your preferred date and time slot, and we'll be there." },
+  { q: "How do I schedule a pickup with Cassio?", a: "You can schedule online through our website, call us directly, or use our mobile app. Choose your preferred date and time, and we'll be there." },
   { q: "What happens if I'm not home during pickup?", a: "No problem! You can leave your items in a designated safe location, or reschedule for a more convenient time. Just let us know your preference." },
   { q: "How long does the entire process take?", a: "Standard turnaround is 24-48 hours from pickup to delivery. Same-day service is available in select areas for urgent requests." },
   { q: "Can I track my order?", a: "Yes! You'll receive real-time notifications and can track your garments through every stage - from pickup to cleaning to delivery." },

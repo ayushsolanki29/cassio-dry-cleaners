@@ -23,10 +23,10 @@ export function ServiceFinalCta() {
 
             <div className="mt-8 flex flex-wrap justify-end gap-4">
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-primary transition-all hover:scale-105"
               >
-                Schedule Pickup
+                Contact Us
                 <div className="grid h-8 w-8 place-items-center rounded-full bg-primary/20">
                   <ArrowRight className="h-4 w-4" />
                 </div>

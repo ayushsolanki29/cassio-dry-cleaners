@@ -25,7 +25,7 @@ const faqs = [
   },
   { 
     q: "Is pickup and delivery really free?", 
-    a: "Yes! Cassio Dry Cleaners offers completely free pickup and delivery across London with no minimums or hidden fees." 
+    a: "Yes! Cassio Dry Cleaners offers completely free pickup and delivery across Watford with no minimums or hidden fees." 
   },
 ];
 

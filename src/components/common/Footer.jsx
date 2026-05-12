@@ -27,9 +27,9 @@ const cols = [
   { 
     title: "Support", 
     links: [
-      { name: "Contact Us", href: "/contact" },
+      { name: "Contact Us", href: "/contact#contact-form" },
       { name: "Services", href: "/services" },
-      { name: "FAQs", href: "/contact" },
+      { name: "FAQs", href: "/contact#contact-form" },
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms & Conditions", href: "/terms" }
     ] 
@@ -54,7 +54,7 @@ export function Footer() {
               <span className="font-display text-2xl font-semibold">Cassio Dry Cleaners<span className="text-brand">.</span></span>
             </div>
             <p className="mt-4 max-w-sm text-sm text-white/70">
-              Premium garment care, picked up at your door. Loved by thousands across London.
+              Premium garment care, picked up at your door. Loved by thousands across Watford.
             </p>
             <div className="mt-6 flex gap-3">
               {socials.map((social) => (

@@ -1,12 +1,12 @@
 import { Zap, Clock } from "lucide-react";
 
 const sameDayAreas = [
-  "Central London", "Westminster", "City of London", "Canary Wharf",
+  "Central Watford", "Westminster", "City of Watford", "Canary Wharf",
   "Shoreditch", "Mayfair", "Soho", "Covent Garden"
 ];
 
 const nextDayAreas = [
-  "All other London boroughs", "Outer London areas",
+  "All other Watford boroughs", "Outer Watford areas",
   "Residential neighborhoods", "Suburban locations"
 ];
 
@@ -28,7 +28,7 @@ export function ServiceAvailability() {
             </div>
             <h3 className="font-display text-2xl font-semibold text-navy">Same-day service</h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Available in select central London areas for urgent requests
+              Available in select central Watford areas for urgent requests
             </p>
 
             <div className="mt-4 space-y-1">

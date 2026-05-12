@@ -19,12 +19,12 @@ export function ArticleCta() {
               Need professional garment care?
             </h2>
             <p className="mt-4 text-lg text-white/90 md:text-xl">
-              Let Cassio handle your delicate fabrics with expert care. Free pickup & delivery across London.
+              Let Cassio handle your delicate fabrics with expert care. Free pickup & delivery across Watford.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="group inline-flex items-center gap-3 rounded-full bg-navy px-8 py-4 font-semibold text-white transition-all hover:scale-105"
               >
                 Get Started with Cassio

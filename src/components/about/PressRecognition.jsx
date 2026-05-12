@@ -1,8 +1,8 @@
 import { Quote } from "lucide-react";
 
 const press = [
-  { outlet: "Evening Standard", quote: "London's most innovative dry cleaning service", year: "2024" },
-  { outlet: "Time Out London", quote: "Cassio is changing the game for garment care", year: "2023" },
+  { outlet: "Evening Standard", quote: "Watford's most innovative dry cleaning service", year: "2024" },
+  { outlet: "Time Out Watford", quote: "Cassio is changing the game for garment care", year: "2023" },
   { outlet: "The Guardian", quote: "Eco-friendly and convenient - the future of dry cleaning", year: "2023" }
 ];
 

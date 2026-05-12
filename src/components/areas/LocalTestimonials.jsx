@@ -48,7 +48,7 @@ const testimonials = [
 export function LocalTestimonials() {
   return (
     <TestimonialSlider
-      title="Loved across London"
+      title="Loved across Watford"
       subtitle="Discover why customers in every borough choose Cassio for their dry cleaning needs."
       testimonials={testimonials}
       backgroundColor="bg-white"

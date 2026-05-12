@@ -41,7 +41,7 @@ export function BusinessHero() {
             </h1>
 
             <p className="max-w-xl text-lg text-white/85">
-              Cassio provides professional, reliable laundry services for businesses across London. From hotels to gyms, we handle your commercial garment care needs.
+              Cassio provides professional, reliable laundry services for businesses across Watford. From hotels to gyms, we handle your commercial garment care needs.
             </p>
 
             {/* Business Stats */}
@@ -70,7 +70,7 @@ export function BusinessHero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-4 text-base font-semibold backdrop-blur-md transition hover:bg-white/20"
               >
                 Talk to sales

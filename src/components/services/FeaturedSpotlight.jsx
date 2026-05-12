@@ -59,7 +59,7 @@ export function FeaturedSpotlight() {
 
             <div className="pt-2">
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-soft transition hover:scale-105"
               >
                 Get in touch

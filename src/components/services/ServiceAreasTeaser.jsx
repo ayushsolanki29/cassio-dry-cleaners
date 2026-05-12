@@ -1,11 +1,11 @@
 import { ArrowRight, MapPin } from "lucide-react";
 
 const areas = [
-  "Central London",
-  "North London",
-  "South London",
-  "East London",
-  "West London",
+  "Central Watford",
+  "North Watford",
+  "South Watford",
+  "East Watford",
+  "West Watford",
   "Shoreditch",
   "Chelsea",
   "Notting Hill",
@@ -22,10 +22,10 @@ export function ServiceAreasTeaser() {
         <div className="mb-10 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Service coverage</span>
           <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
-            Serving all of London
+            Serving all of Watford
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Cassio Dry Cleaners offers free pickup & delivery across Greater London. Check if we serve your area.
+            Cassio Dry Cleaners offers free pickup & delivery across Greater Watford. Check if we serve your area.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export function ServiceAreasTeaser() {
 
         <div className="text-center">
           <a
-            href="/contact"
+            href="/contact#contact-form"
             className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-brand-foreground shadow-soft transition hover:scale-105"
           >
             Check your area

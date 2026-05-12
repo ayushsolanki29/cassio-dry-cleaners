@@ -3,8 +3,8 @@ import { Package, CheckCircle, Truck, Award } from "lucide-react";
 const steps = [
   { 
     num: "01", 
-    title: "Book pickup", 
-    desc: "Schedule a free pickup at your convenience via app or website.",
+    title: "Contact us", 
+    desc: "Reach out via phone, email, or our contact form.",
     Icon: Package,
     bg: "bg-mint"
   },

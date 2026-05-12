@@ -7,8 +7,8 @@ const faqs = [
   { q: "Are pickups really free?", a: "Yes. Pickup and delivery are completely free of charge - no minimums, no hidden fees." },
   { q: "What if my garment is damaged?", a: "We are insured for every garment we handle. In the rare case of damage, we will fully reimburse you." },
   { q: "Do you handle leather and wedding wear?", a: "Absolutely. Our Premium care plan covers leather, suede, sequined, and couture pieces with white-glove handling." },
-  { q: "Which areas do you serve?", a: "We currently cover all of Greater London - including Central, North, South, East, and West London. New UK cities launching soon." },
-  { q: "Can I reschedule a pickup?", a: "Yes, simply open the app or website and reschedule up to 1 hour before your slot - no fees." },
+  { q: "Which areas do you serve?", a: "We currently cover all of Greater Watford - including Central, North, South, East, and West Watford. New UK cities launching soon." },
+  { q: "Can I reschedule a pickup?", a: "Yes, simply open the app or website and reschedule up to 1 hour before your scheduled time - no fees." },
 ];
 
 export function Faq() {

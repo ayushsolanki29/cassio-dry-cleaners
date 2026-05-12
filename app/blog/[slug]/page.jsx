@@ -40,11 +40,11 @@ const articleData = {
     readTime: "7 min",
     image: "/assets/service-ironing.jpg"
   },
-  "east-london-guide": {
-    title: "Best Dry Cleaners in East London: Local's Guide",
-    slug: "east-london-guide",
-    excerpt: "Discover the top-rated garment care services in East London. From Shoreditch to Canary Wharf, find out why Cassio is the local favorite.",
-    category: "London Life",
+  "east-Watford-guide": {
+    title: "Best Dry Cleaners in East Watford: Local's Guide",
+    slug: "east-Watford-guide",
+    excerpt: "Discover the top-rated garment care services in East Watford. From Shoreditch to Canary Wharf, find out why Cassio is the local favorite.",
+    category: "Watford Life",
     author: "Oliver Davies",
     date: "April 15, 2026",
     readTime: "6 min",

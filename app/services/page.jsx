@@ -18,7 +18,7 @@ import { servicesData } from "@/data/servicesData";
 
 export const metadata = {
   title: "Services — Cassio Dry Cleaners | Professional Garment Care",
-  description: "Expert dry cleaning, wash & fold, ironing, and premium care services. Eco-friendly cleaning with free pickup & delivery across London in 24-48 hours.",
+  description: "Expert dry cleaning, wash & fold, ironing, and premium care services. Eco-friendly cleaning with free pickup & delivery across Watford in 24-48 hours.",
 };
 
 export default function ServicesPage() {

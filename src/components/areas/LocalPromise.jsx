@@ -1,10 +1,10 @@
 import { MapPin, Truck, Clock, ShieldCheck } from "lucide-react";
 
 const promises = [
-  { Icon: MapPin, title: "Local knowledge", desc: "We know London inside out" },
+  { Icon: MapPin, title: "Local knowledge", desc: "We know Watford inside out" },
   { Icon: Truck, title: "Free delivery", desc: "No hidden charges, ever" },
   { Icon: Clock, title: "Reliable timing", desc: "On-time pickup & delivery" },
-  { Icon: ShieldCheck, title: "Trusted service", desc: "50,000+ happy Londoners" }
+  { Icon: ShieldCheck, title: "Trusted service", desc: "50,000+ happy Watforders" }
 ];
 
 export function LocalPromise() {

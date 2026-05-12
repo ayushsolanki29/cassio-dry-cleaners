@@ -79,18 +79,18 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-medium backdrop-blur">
             <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover" />
-            Best Laundry Service in London | Trusted by 50k+
+            Best Dry Cleaners in Watford and Surrounded area
           </span>
 
-          <h1 className="font-display text-5xl font-semibold leading-[1.05] sm:text-6xl lg:text-7xl">
-            <span className="block">Professional Laundry &amp;</span>
+          <h1 className="font-display text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
+            <span className="block text-white">Professional Laundry &amp;</span>
 
             {/* Animated service name — smooth blur + slide up */}
-            <span className="relative block h-[1.1em] overflow-hidden">
+            <span className="relative block h-[1.2em] overflow-hidden">
               {services.map((s, i) => (
                 <span
                   key={s.name}
-                  className="absolute inset-0 text-brand transition-all"
+                  className="absolute inset-0 text-sun transition-all"
                   style={{
                     opacity:    i === current ? 1 : 0,
                     transform:  i === current ? "translateY(0)   blur(0px)"
@@ -111,15 +111,15 @@ export function Hero() {
 
           <p className="max-w-xl text-lg text-white/85">
             Fast, eco-friendly garment care with free pickup &amp; delivery in 24 hours
-            across London. Loved by 50,000+ happy customers.
+            across Watford. Loved by 50,000+ happy customers.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="/contact"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-pop transition hover:scale-105"
             >
-              Schedule pickup
+              Contact Us
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
@@ -192,7 +192,7 @@ export function Hero() {
                 <Clock className="h-5 w-5" />
               </div>
               <div className="text-foreground">
-                <p className="text-xs text-muted-foreground">Best in London</p>
+                <p className="text-xs text-muted-foreground">Best in Watford</p>
                 <p className="font-display font-semibold">24h Express Service</p>
               </div>
             </div>

@@ -2,8 +2,8 @@ import { Calendar, Truck, CheckCircle, Package } from "lucide-react";
 
 const steps = [
   { 
-    title: "Schedule pickup", 
-    desc: "Pick a slot that works for you in just 10 seconds.", 
+    title: "Request service", 
+    desc: "Call us or fill out our contact form to get started.", 
     color: "bg-mint",
     icon: Calendar
   },

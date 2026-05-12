@@ -90,7 +90,7 @@ export function ServiceComparison() {
 
                 <div className="mt-6">
                   <a
-                    href="/contact"
+                    href="/contact#contact-form"
                     className={`block w-full rounded-full py-3 text-center font-semibold transition ${
                       tier.featured
                         ? "bg-brand text-white shadow-soft hover:scale-105"

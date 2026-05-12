@@ -24,7 +24,7 @@ const customerStories = [
     name: "Sarah Mitchell",
     location: "Kensington",
     image: "/assets/testimonial-3.jpg",
-    story: "Best dry cleaning service in London! They handle my designer clothes with such care.",
+    story: "Best dry cleaning service in Watford! They handle my designer clothes with such care.",
     rating: 5,
     service: "Dry Cleaning"
   },
@@ -107,7 +107,7 @@ export function Booking() {
                 Stories that matter from customers who care
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Every garment tells a story. Discover how Cassio helps Londoners look and feel their best.
+                Every garment tells a story. Discover how Cassio helps Watforders look and feel their best.
               </p>
             </div>
 
@@ -276,7 +276,7 @@ export function Booking() {
                 Had a great experience? We'd love to hear about it!
               </p>
               <a 
-                href="/contact"
+                href="/contact#contact-form"
                 className="mt-3 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2 font-display text-sm font-semibold text-brand transition hover:scale-105"
               >
                 Write a review

@@ -22,7 +22,7 @@ export function BrandStory() {
 
             <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                Cassio Dry Cleaners was founded in 2018 by Maria Cassio, a third-generation dry cleaner who saw an opportunity to bring traditional craftsmanship into the modern age. Starting with a single location in Shoreditch, Maria's vision was simple: combine expert garment care with the convenience London's busy professionals needed.
+                Cassio Dry Cleaners was founded in 2018 by Maria Cassio, a third-generation dry cleaner who saw an opportunity to bring traditional craftsmanship into the modern age. Starting with a single location in Shoreditch, Maria's vision was simple: combine expert garment care with the convenience Watford's busy professionals needed.
               </p>
 
               <p>
@@ -30,11 +30,11 @@ export function BrandStory() {
               </p>
 
               <p>
-                Today, Cassio serves over 50,000 customers across London, from individual households to major hotels and businesses. We've grown from that single shop to a network of facilities, but our core values remain unchanged: quality, convenience, and sustainability in everything we do.
+                Today, Cassio serves over 50,000 customers across Watford, from individual households to major hotels and businesses. We've grown from that single shop to a network of facilities, but our core values remain unchanged: quality, convenience, and sustainability in everything we do.
               </p>
 
               <p>
-                Every garment that comes through our doors receives the same meticulous attention Maria gave to her first customers. That's the Cassio promise—and it's why Londoners trust us with their most valued pieces.
+                Every garment that comes through our doors receives the same meticulous attention Maria gave to her first customers. That's the Cassio promise—and it's why Watforders trust us with their most valued pieces.
               </p>
             </div>
           </div>

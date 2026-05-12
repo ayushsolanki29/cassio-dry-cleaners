@@ -5,7 +5,7 @@ import { useState } from "react";
 const faqs = [
   { q: "What's the minimum order for business clients?", a: "There's no strict minimum, but our business services are designed for regular, ongoing needs. We can discuss volume requirements during consultation." },
   { q: "How does pricing work for business accounts?", a: "We offer custom pricing based on your volume, frequency, and specific needs. Contact our sales team for a tailored quote." },
-  { q: "Can you handle same-day turnaround?", a: "Yes! Same-day service is available for business clients in central London areas. We'll work with you to establish the best schedule." },
+  { q: "Can you handle same-day turnaround?", a: "Yes! Same-day service is available for business clients in central Watford areas. We'll work with you to establish the best schedule." },
   { q: "Do you provide contracts?", a: "We offer flexible contract terms from month-to-month to multi-year agreements. Choose what works best for your business." },
   { q: "What if we need to scale up or down?", a: "Our services are flexible. Your dedicated account manager will adjust your service level as your needs change." },
   { q: "How do you ensure quality control?", a: "Every order goes through multi-point quality checks, and your account manager monitors performance metrics monthly." }

@@ -52,7 +52,7 @@ export function ServiceDetailHero({ service }) {
 
             <div className="mt-6">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 font-semibold text-white shadow-pop transition hover:scale-105"
               >
                 Get in touch

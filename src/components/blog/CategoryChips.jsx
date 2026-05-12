@@ -4,7 +4,7 @@ const categories = [
   { name: "All Posts", Icon: CheckCircle, active: true },
   { name: "Garment Care", Icon: CheckCircle },
   { name: "Fabric Guide", Icon: CheckCircle },
-  { name: "London Life", Icon: MapPin },
+  { name: "Watford Life", Icon: MapPin },
   { name: "Sustainability", Icon: Leaf },
   { name: "Behind the Scenes", Icon: Camera }
 ];

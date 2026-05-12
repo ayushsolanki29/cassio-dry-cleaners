@@ -19,15 +19,15 @@ export function FinalCta() {
               Ready to simplify your laundry?
             </h2>
             <p className="mt-4 text-lg text-white/90 md:text-xl">
-              Join thousands of happy customers. Free pickup & delivery in 24 hours across London.
+              Join thousands of happy customers. Free pickup & delivery in 24 hours across Watford.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="group inline-flex items-center gap-3 rounded-full bg-navy px-8 py-4 font-semibold text-white transition-all hover:scale-105"
               >
-                Schedule Pickup
+                Contact Us
                 <div className="grid h-8 w-8 place-items-center rounded-full bg-white/20">
                   <ArrowRight className="h-4 w-4" />
                 </div>

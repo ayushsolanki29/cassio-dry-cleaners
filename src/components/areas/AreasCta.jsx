@@ -18,12 +18,12 @@ export function AreasCta() {
               Service in your area?
             </h2>
             <p className="mt-4 text-lg text-white/90">
-              Experience professional dry cleaning with free pickup & delivery across London.
+              Experience professional dry cleaning with free pickup & delivery across Watford.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-brand transition-all hover:scale-105"
               >
                 Check Availability

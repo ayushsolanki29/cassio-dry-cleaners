@@ -11,7 +11,7 @@ import { BlogCta } from "@/components/blog/BlogCta";
 
 export const metadata = {
   title: "Blog — Cassio Dry Cleaners | Garment Care Tips & Guides",
-  description: "Expert advice on garment care, fabric guides, stain removal, and more from the Cassio Dry Cleaners team in London.",
+  description: "Expert advice on garment care, fabric guides, stain removal, and more from the Cassio Dry Cleaners team in Watford.",
 };
 
 export default function BlogPage() {

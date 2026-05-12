@@ -3,7 +3,7 @@ import { PageLoader } from "@/components/common/PageLoader";
 
 export const metadata = {
   title: "Cassio Dry Cleaners | Premium laundry and dry cleaning",
-  description: "Premium dry cleaning, wash & fold, and ironing in 24 hours. Free pickup and delivery across London.",
+  description: "Premium dry cleaning, wash & fold, and ironing in 24 hours. Free pickup and delivery across Watford.",
   authors: [{ name: "Cassio Dry Cleaners" }],
 };
 

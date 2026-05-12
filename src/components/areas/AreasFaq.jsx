@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 const faqs = [
-  { q: "Do you serve my postcode?", a: "Cassio covers all 32 London boroughs and most postcodes across Greater London. Enter your postcode on our contact page to confirm availability." },
+  { q: "Do you serve my postcode?", a: "Cassio covers all 32 Watford boroughs and most postcodes across Greater Watford. Enter your postcode on our contact page to confirm availability." },
   { q: "Is delivery really free?", a: "Yes! Pickup and delivery are completely free across all our service areas with no minimum order required." },
-  { q: "What's the difference between same-day and next-day service?", a: "Same-day service is available in select central London areas for pickups before 10am. All other areas receive our standard 24-48 hour service." },
+  { q: "What's the difference between same-day and next-day service?", a: "Same-day service is available in select central Watford areas for pickups before 10am. All other areas receive our standard 24-48 hour service." },
   { q: "Can you deliver to my office?", a: "Absolutely! We deliver to homes, offices, and any address within our coverage area. Just specify your preferred delivery location." },
-  { q: "Do you serve areas outside London?", a: "Currently, Cassio operates exclusively in Greater London. We're expanding to other UK cities soon - check our roadmap for upcoming locations." },
-  { q: "How do I know if same-day service is available in my area?", a: "Same-day service is available in Central London, Westminster, City of London, Canary Wharf, and select neighborhoods. Contact us to confirm for your specific location." }
+  { q: "Do you serve areas outside Watford?", a: "Currently, Cassio operates exclusively in Greater Watford. We're expanding to other UK cities soon - check our roadmap for upcoming locations." },
+  { q: "How do I know if same-day service is available in my area?", a: "Same-day service is available in Central Watford, Westminster, City of Watford, Canary Wharf, and select neighborhoods. Contact us to confirm for your specific location." }
 ];
 
 export function AreasFaq() {

@@ -19,12 +19,12 @@ const testimonials = [
     name: "Emma Roberts",
     role: "Facilities Director, TechHub Coworking",
     image: "/assets/testimonial-3.jpg",
-    quote: "Switching to Cassio was the best decision. Professional service, flexible scheduling, and great account management. Highly recommend for businesses.",
+    quote: "Switching to Cassio was the best decision. Professional service, flexible arrangements, and great account management. Highly recommend for businesses.",
     rating: 5
   },
   {
     name: "Michael Thompson",
-    role: "Hotel Manager, Boutique London",
+    role: "Hotel Manager, Boutique Watford",
     image: "/assets/testimonial-2.jpg",
     quote: "Cassio's commercial service is exceptional. They handle our linens with care and always meet our tight deadlines. Perfect for hospitality.",
     rating: 5
@@ -49,7 +49,7 @@ export function BusinessTestimonials() {
   return (
     <TestimonialSlider
       title="What businesses say about Cassio"
-      subtitle="Trusted by London's leading businesses for reliable, professional commercial cleaning services."
+      subtitle="Trusted by Watford's leading businesses for reliable, professional commercial cleaning services."
       testimonials={testimonials}
       backgroundColor="bg-white"
       autoSlide={true}

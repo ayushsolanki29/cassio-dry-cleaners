@@ -12,7 +12,7 @@ import { AboutCta } from "@/components/about/AboutCta";
 
 export const metadata = {
   title: "About Us — Cassio Dry Cleaners | Our Story & Values",
-  description: "Learn about Cassio Dry Cleaners' journey from a single shop to London's trusted garment care service. Discover our commitment to quality, sustainability, and customer care.",
+  description: "Learn about Cassio Dry Cleaners' journey from a single shop to Watford's trusted garment care service. Discover our commitment to quality, sustainability, and customer care.",
 };
 
 export default function AboutPage() {

@@ -2,7 +2,7 @@ import { MapPin, Clock, Package } from "lucide-react";
 
 const features = [
   { Icon: MapPin, text: "Free pickup from your home or office" },
-  { Icon: Clock, text: "Flexible time slots to fit your schedule" },
+  { Icon: Clock, text: "Flexible timing to fit your schedule" },
   { Icon: Package, text: "Professional drivers handle your items with care" }
 ];
 

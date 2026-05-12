@@ -19,7 +19,7 @@ export function BusinessTrustStrip() {
         <div className="mb-8 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Business Excellence</span>
           <h2 className="mt-2 font-display text-3xl font-semibold text-navy md:text-4xl">
-            Trusted by London's top companies
+            Trusted by Watford's top companies
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-base text-muted-foreground">
             Join hundreds of businesses who trust Cassio for their professional garment care needs

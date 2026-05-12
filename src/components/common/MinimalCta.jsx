@@ -2,9 +2,9 @@ import { ArrowRight, Phone } from "lucide-react";
 
 export function MinimalCta({ 
   title = "Ready to experience hassle-free laundry?",
-  description = "Join thousands of satisfied customers. Schedule your first pickup today.",
-  primaryText = "Schedule Pickup",
-  primaryLink = "/contact",
+  description = "Join thousands of satisfied customers. Contact us to get started today.",
+  primaryText = "Contact Us",
+  primaryLink = "/contact#contact-form",
   secondaryText = "Call Us",
   secondaryLink = "tel:01494445291",
   showPhone = true,

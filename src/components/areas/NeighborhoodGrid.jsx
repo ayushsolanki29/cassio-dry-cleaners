@@ -21,7 +21,7 @@ export function NeighborhoodGrid() {
             Neighborhoods we serve
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Cassio Dry Cleaners provides service to these areas and more across London
+            Cassio Dry Cleaners provides service to these areas and more across Watford
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export function NeighborhoodGrid() {
 
         <div className="mt-10 text-center">
           <p className="text-base text-muted-foreground">
-            Don't see your area? <a href="/contact" className="font-semibold text-brand hover:underline">Contact us</a> to check availability
+            Don't see your area? <a href="/contact#contact-form" className="font-semibold text-brand hover:underline">Contact us</a> to check availability
           </p>
         </div>
       </div>
