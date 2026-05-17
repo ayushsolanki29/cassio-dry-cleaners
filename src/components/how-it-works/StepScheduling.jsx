@@ -35,20 +35,12 @@ export function StepScheduling() {
           </div>
 
           <div className="order-1 lg:order-2 flex items-stretch">
-            <div className="relative w-full overflow-hidden rounded-3xl shadow-card bg-navy">
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                poster="/assets/step-scheduling.jpg"
-                controls
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="/assets/step-scheduling.mp4" type="video/mp4" />
-                <source src="/assets/step-scheduling.webm" type="video/webm" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="relative w-full overflow-hidden rounded-3xl shadow-card">
+              <img
+                src="/assets/step-scheduling.jpg"
+                alt="Schedule your pickup"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>

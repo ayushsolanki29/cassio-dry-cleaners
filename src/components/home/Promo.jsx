@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function Promo() {
   return (
@@ -13,10 +14,10 @@ export function Promo() {
                 Leave the laundry to us.
               </h2>
               <p className="mt-4 max-w-md text-navy/80">Spend your weekend doing what you love. We&apos;ll handle the spinning and folding.</p>
-              <a href="#how-it-works" className="mt-6 inline-flex items-center gap-2 font-display text-lg font-semibold text-primary">
+              <Link href="/how-it-works" className="mt-6 inline-flex items-center gap-2 font-display text-lg font-semibold text-primary">
                 How it works
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
             <div className="relative h-64 md:h-80">
               <img

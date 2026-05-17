@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Calendar, Truck, CheckCircle, Package } from "lucide-react";
 
 const steps = [
@@ -56,6 +57,15 @@ export function HowItWorks() {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/how-it-works"
+            className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:scale-105 hover:shadow-pop"
+          >
+            See how it works
+          </Link>
         </div>
       </div>
     </section>

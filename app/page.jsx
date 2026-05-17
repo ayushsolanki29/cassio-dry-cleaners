@@ -10,7 +10,6 @@ import { Stats } from "@/components/home/Stats";
 import { Booking } from "@/components/home/Booking";
 import { Guarantee } from "@/components/home/Guarantee";
 import { Fabrics } from "@/components/home/Fabrics";
-import { PostcodeStrip } from "@/components/areas/PostcodeStrip";
 import { Testimonials } from "@/components/home/Testimonials";
 import { Gallery } from "@/components/home/Gallery";
 import { Business } from "@/components/home/Business";
@@ -43,7 +42,6 @@ export default function Home() {
         bgColor="bg-navy"
       />
       <Fabrics />
-      <PostcodeStrip />
       <Testimonials />
       <Gallery />
       <Business />

@@ -12,20 +12,12 @@ export function StepDelivery() {
       <div className="mx-auto w-full max-w-7xl px-6 py-8">
         <div className="grid items-stretch gap-8 lg:grid-cols-2">
           <div className="flex items-stretch">
-            <div className="relative w-full overflow-hidden rounded-3xl shadow-card bg-navy">
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                poster="/assets/step-delivery.jpg"
-                controls
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="/assets/step-delivery.mp4" type="video/mp4" />
-                <source src="/assets/step-delivery.webm" type="video/webm" />
-                Your browser does not support the video tag.
-              </video>
+            <div className="relative w-full overflow-hidden rounded-3xl shadow-card">
+              <img
+                src="/assets/step-delivery.jpg"
+                alt="Fresh delivery to your door"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
 
