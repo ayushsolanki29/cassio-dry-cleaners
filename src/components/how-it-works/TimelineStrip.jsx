@@ -1,10 +1,10 @@
 import { Clock } from "lucide-react";
 
 const timeline = [
-  { time: "Day 1 - Morning", event: "Schedule & pickup", color: "bg-mint" },
-  { time: "Day 1 - Afternoon", event: "Inspection & cleaning", color: "bg-sun" },
-  { time: "Day 1 - Evening", event: "Pressing & packaging", color: "bg-lilac" },
-  { time: "Day 2 - Morning", event: "Delivery to you", color: "bg-cream" }
+  { time: "Initial Request", event: "Book your collection online or by phone", color: "bg-mint" },
+  { time: "Garment Handover", event: "Contactless pickup from your home or office", color: "bg-sun" },
+  { time: "Expert Processing", event: "Eco-friendly cleaning & hand-finished pressing", color: "bg-lilac" },
+  { time: "Prompt Return", event: "Garments delivered back to your door", color: "bg-cream" }
 ];
 
 export function TimelineStrip() {

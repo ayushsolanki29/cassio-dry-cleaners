@@ -29,7 +29,7 @@ export function FeaturedSpotlight() {
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Trusted by</p>
-                  <p className="font-display text-lg font-semibold text-navy">50,000+ customers</p>
+                  <p className="font-display text-lg font-semibold text-navy">5k+ customers</p>
                 </div>
               </div>
             </div>

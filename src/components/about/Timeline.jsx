@@ -3,7 +3,7 @@ const milestones = [
   { year: "2019", title: "Expansion", desc: "Launched pickup & delivery service across East Watford" },
   { year: "2021", title: "Growth", desc: "Reached 10,000 customers and expanded to Central Watford" },
   { year: "2023", title: "Innovation", desc: "Introduced eco-friendly cleaning technology" },
-  { year: "2026", title: "Today", desc: "Serving 50,000+ customers across all of Watford" }
+  { year: "2026", title: "Today", desc: "Serving 5k+ customers across all of Watford" }
 ];
 
 export function Timeline() {
@@ -19,12 +19,12 @@ export function Timeline() {
 
         <div className="relative">
           <div className="absolute left-0 right-0 top-12 hidden h-1 bg-secondary md:block" />
-          
+
           <div className="grid gap-8 md:grid-cols-5">
             {milestones.map((milestone, i) => {
               const colors = ["bg-mint", "bg-sun", "bg-lilac", "bg-cream", "bg-brand"];
               const bgColor = colors[i % colors.length];
-              
+
               return (
                 <div key={milestone.year} className="relative text-center">
                   <div className={`relative z-10 mx-auto mb-4 inline-flex h-24 w-24 items-center justify-center rounded-full ${bgColor} font-display text-2xl font-bold text-navy shadow-pop`}>

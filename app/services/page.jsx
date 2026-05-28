@@ -6,7 +6,6 @@ import { ServicesGrid } from "@/components/services/ServicesGrid";
 import { FeaturedSpotlight } from "@/components/services/FeaturedSpotlight";
 import { FabricCareMatrix } from "@/components/services/FabricCareMatrix";
 import { ProcessStrip } from "@/components/services/ProcessStrip";
-import { ServiceComparison } from "@/components/services/ServiceComparison";
 import { EcoTechnology } from "@/components/services/EcoTechnology";
 import { ServiceStats } from "@/components/services/ServiceStats";
 import { GarmentGallery } from "@/components/services/GarmentGallery";
@@ -42,7 +41,6 @@ export default function ServicesPage() {
       <FeaturedSpotlight services={services} />
       <FabricCareMatrix services={services} />
       <ProcessStrip />
-      <ServiceComparison services={services} />
       <EcoTechnology />
       <ServiceStats />
       <GarmentGallery services={services} />

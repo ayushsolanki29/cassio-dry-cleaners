@@ -7,7 +7,6 @@ import { HowItWorks } from "@/components/home/HowItWorks";
 import { MinimalCta } from "@/components/common/MinimalCta";
 import { Features } from "@/components/home/Features";
 import { Stats } from "@/components/home/Stats";
-import { Booking } from "@/components/home/Booking";
 import { Guarantee } from "@/components/home/Guarantee";
 import { Fabrics } from "@/components/home/Fabrics";
 import { PostcodeStrip } from "@/components/areas/PostcodeStrip";
@@ -32,7 +31,6 @@ export default function Home() {
       <MinimalCta />
       <Features />
       <Stats />
-      <Booking />
       <Guarantee />
       <MinimalCta 
         title="Experience premium garment care today"

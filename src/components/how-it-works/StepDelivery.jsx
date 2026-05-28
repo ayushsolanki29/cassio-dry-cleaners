@@ -8,30 +8,14 @@ const features = [
 
 export function StepDelivery() {
   return (
-    <section className="flex h-screen items-center bg-white">
+    <section className="flex h-screen items-center bg-cream">
       <div className="mx-auto w-full max-w-7xl px-6 py-8">
         <div className="grid items-stretch gap-8 lg:grid-cols-2">
-          <div className="flex items-stretch">
-            <div className="relative w-full overflow-hidden rounded-3xl shadow-card bg-navy">
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                poster="/assets/step-delivery.jpg"
-                controls
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="/assets/step-delivery.mp4" type="video/mp4" />
-                <source src="/assets/step-delivery.webm" type="video/webm" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center">
+          
+          {/* Text column (left on desktop) */}
+          <div className="order-2 lg:order-1 flex flex-col justify-center">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand font-display text-lg font-bold text-white">
-              4
+              3
             </span>
             <h2 className="mt-4 font-display text-4xl font-semibold text-navy md:text-5xl">
               Fresh delivery to your door
@@ -42,8 +26,8 @@ export function StepDelivery() {
 
             <div className="mt-6 space-y-3">
               {features.map((feature) => (
-                <div key={feature.text} className="flex items-start gap-3 rounded-xl bg-cream p-3">
-                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white text-brand shadow-soft">
+                <div key={feature.text} className="flex items-start gap-3 rounded-xl bg-white p-3 shadow-soft">
+                  <div className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-mint text-brand">
                     <feature.Icon className="h-4 w-4" />
                   </div>
                   <p className="pt-1 text-sm text-navy">{feature.text}</p>
@@ -51,6 +35,18 @@ export function StepDelivery() {
               ))}
             </div>
           </div>
+
+          {/* Visual column (right on desktop) */}
+          <div className="order-1 lg:order-2 flex items-stretch">
+            <div className="relative w-full overflow-hidden rounded-3xl shadow-card">
+              <img
+                src="/assets/step-delivery.jpg"
+                alt="Fresh dry cleaning delivered to your door by Cassio"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

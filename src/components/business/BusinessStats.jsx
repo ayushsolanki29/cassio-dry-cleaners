@@ -1,8 +1,6 @@
 import { TrendingUp } from "lucide-react";
 
 const stats = [
-  { value: "200+", label: "Business partners" },
-  { value: "50K+", label: "Items monthly" },
   { value: "99%", label: "On-time rate" },
   { value: "4.9/5", label: "Client satisfaction" }
 ];
@@ -20,7 +18,7 @@ export function BusinessStats() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="mx-auto grid max-w-2xl grid-cols-2 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-display text-5xl font-semibold text-cream md:text-6xl">

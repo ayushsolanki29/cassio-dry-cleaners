@@ -2,7 +2,6 @@ import { Check } from "lucide-react";
 
 const guarantees = [
   "100% satisfaction guaranteed or your money back",
-  "Full insurance coverage on every garment",
   "Expert stain removal - we treat every spot",
   "Fabric-safe cleaning methods for all materials",
   "Hand-finished pressing for perfect results",
@@ -25,9 +24,12 @@ export function QualityGuarantee() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {guarantees.map((guarantee) => (
-            <div key={guarantee} className="flex items-start gap-3 rounded-xl bg-white p-5 shadow-soft">
+            <div
+              key={guarantee}
+              className="flex w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] items-start gap-3 rounded-xl bg-white p-5 shadow-soft"
+            >
               <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-white">
                 <Check className="h-4 w-4" />
               </span>
