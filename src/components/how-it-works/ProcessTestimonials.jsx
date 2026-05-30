@@ -3,43 +3,37 @@ import { TestimonialSlider } from "@/components/common/TestimonialSlider";
 const testimonials = [
   { 
     name: "Sophie Clarke", 
-    role: "Notting Hill, Watford", 
-    image: "/assets/testimonial-3.jpg", 
+    role: "Croxley Green, Watford", 
     quote: "The entire Cassio process is seamless! From initial contact to delivery, everything was smooth and professional. Love the tracking updates!",
     rating: 5
   },
   { 
     name: "James Bennett", 
-    role: "Chelsea, Watford", 
-    image: "/assets/testimonial-2.jpg", 
+    role: "Cassiobury, Watford", 
     quote: "So convenient! Cassio picked up my suits Monday morning and delivered them Tuesday evening - perfectly cleaned. Best service in Watford.",
     rating: 5
   },
   { 
     name: "Emma Walker", 
-    role: "Shoreditch, Watford", 
-    image: "/assets/testimonial-1.jpg", 
+    role: "Nascot Wood, Watford", 
     quote: "I was skeptical about the 24-hour promise, but Cassio delivered exactly on time. The whole experience was effortless!",
     rating: 5
   },
   { 
     name: "Michael Chen", 
-    role: "Canary Wharf, Watford", 
-    image: "/assets/testimonial-2.jpg", 
+    role: "Central Watford, Watford", 
     quote: "The pickup and delivery process is incredibly efficient. My shirts are always ready when promised, and the quality is outstanding.",
     rating: 5
   },
   { 
     name: "Sarah Johnson", 
-    role: "Kensington, Watford", 
-    image: "/assets/testimonial-1.jpg", 
+    role: "Oxhey, Watford", 
     quote: "From booking to delivery, everything is handled professionally. The app makes tracking so easy, and the results are always perfect.",
     rating: 5
   },
   { 
     name: "David Wilson", 
-    role: "Greenwich, Watford", 
-    image: "/assets/testimonial-3.jpg", 
+    role: "Garston, Watford", 
     quote: "Cassio's process is what sets them apart. Reliable, efficient, and the quality is consistently excellent. Highly recommend!",
     rating: 5
   }

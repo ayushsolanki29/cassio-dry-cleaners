@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 
 const stats = [
   { value: "5K+", label: "Happy customers" },
-  { value: "10k+", label: "Garments cleaned" },
+  { value: "10K+", label: "Garments cleaned" },
   { value: "4.9", label: "Average rating", Icon: Star },
   { value: "24 to 48h", label: "Turnaround" },
 ];

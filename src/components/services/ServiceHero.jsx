@@ -32,10 +32,6 @@ const services = [
   {
     name: "Home Textiles",
     image: "/assets/section-towels.jpg"
-  },
-  {
-    name: "Shoe Care",
-    image: "/assets/service-washfold.jpg"
   }
 ];
 
@@ -130,7 +126,7 @@ export function ServiceHero() {
             </p>
 
             {/* Quick Features */}
-          
+
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -160,21 +156,21 @@ export function ServiceHero() {
             <div className="relative">
               {/* Glassmorphism Card */}
               <div className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-2xl">
-              <div className="relative h-80 w-full">
-                <AnimatePresence initial={false}>
-                  <motion.img
-                    key={currentIndex}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1.2, ease: "easeInOut" }}
-                    src={currentService.image}
-                    alt={`${currentService.name} service`}
-                    className="absolute inset-0 h-full w-full rounded-2xl object-cover shadow-lg"
-                  />
-                </AnimatePresence>
-              </div>
-                
+                <div className="relative h-80 w-full">
+                  <AnimatePresence initial={false}>
+                    <motion.img
+                      key={currentIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1.2, ease: "easeInOut" }}
+                      src={currentService.image}
+                      alt={`${currentService.name} service`}
+                      className="absolute inset-0 h-full w-full rounded-2xl object-cover shadow-lg"
+                    />
+                  </AnimatePresence>
+                </div>
+
                 {/* Floating Stats */}
                 <div className="mt-4 grid grid-cols-3 gap-3">
                   <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-md">
@@ -182,7 +178,7 @@ export function ServiceHero() {
                     <p className="text-xs text-white/80">Services</p>
                   </div>
                   <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-md">
-                    <p className="font-display text-xl font-semibold text-mint">50K+</p>
+                    <p className="font-display text-xl font-semibold text-mint">5K+</p>
                     <p className="text-xs text-white/80">Customers</p>
                   </div>
                   <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-md">

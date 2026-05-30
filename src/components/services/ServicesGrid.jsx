@@ -57,20 +57,12 @@ const services = [
     img: "/assets/section-towels.jpg", 
     bg: "bg-lilac",
     Icon: Home
-  },
-  { 
-    title: "Shoe Care", 
-    slug: "shoe-care",
-    desc: "Deep cleaning, polishing, and restoration for all footwear types.", 
-    img: "/assets/service-washfold.jpg", 
-    bg: "bg-cream",
-    Icon: ShoppingBag
-  },
+  }
 ];
 
 export function ServicesGrid() {
   return (
-    <section id="services-grid" className="flex h-screen items-center bg-white">
+    <section id="services-grid" className="flex min-h-screen items-center bg-white py-16">
       <div className="mx-auto w-full max-w-7xl px-6 py-6">
         <div className="mb-6 max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Complete care solutions</span>
@@ -82,12 +74,12 @@ export function ServicesGrid() {
           </p>
         </div>
 
-        <div className="grid gap-3 md:grid-cols-4 lg:grid-cols-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {services.map((s) => (
             <Link
               key={s.title}
               href={`/services/${s.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group flex w-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card sm:w-[calc(50%-8px)] md:w-[calc(33.333%-11px)] lg:w-[calc(25%-12px)]"
             >
               <div className={`relative h-24 overflow-hidden ${s.bg}`}>
                 <img

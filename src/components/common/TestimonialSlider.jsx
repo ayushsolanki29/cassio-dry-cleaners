@@ -105,11 +105,13 @@ export function TestimonialSlider({
 
                   {/* Author Info */}
                   <div className="mt-6 flex items-center gap-4 border-t border-border pt-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="h-12 w-12 rounded-full object-cover shadow-soft"
-                    />
+                    {testimonial.image && (
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="h-12 w-12 rounded-full object-cover shadow-soft"
+                      />
+                    )}
                     <div>
                       <p className="font-semibold text-navy">{testimonial.name}</p>
                       {testimonial.role && (
@@ -188,11 +190,13 @@ export function TestimonialSlider({
 
             {/* Author Info */}
             <div className="mt-6 flex items-center gap-4 border-t border-border pt-4">
-              <img
-                src={testimonials[currentIndex]?.image}
-                alt={testimonials[currentIndex]?.name}
-                className="h-12 w-12 rounded-full object-cover shadow-soft"
-              />
+              {testimonials[currentIndex]?.image && (
+                <img
+                  src={testimonials[currentIndex]?.image}
+                  alt={testimonials[currentIndex]?.name}
+                  className="h-12 w-12 rounded-full object-cover shadow-soft"
+                />
+              )}
               <div>
                 <p className="font-semibold text-navy">{testimonials[currentIndex]?.name}</p>
                 {testimonials[currentIndex]?.role && (

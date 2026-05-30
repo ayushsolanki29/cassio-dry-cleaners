@@ -4,36 +4,36 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const testimonials = [
-  { name: "Emma Walker", location: "Shoreditch", image: "https://randomuser.me/api/portraits/women/1.jpg", quote: "Cassio has completely changed my weekends. My silk dresses come back perfect!", rating: 5 },
-  { name: "James Bennett", location: "Chelsea", image: "https://randomuser.me/api/portraits/men/1.jpg", quote: "Used Cassio for my wedding suits - the attention to detail was incredible.", rating: 5 },
-  { name: "Sophie Clarke", location: "Notting Hill", image: "https://randomuser.me/api/portraits/women/2.jpg", quote: "The 24-hour turnaround is unreal. Contacted at 8pm, clothes back next evening!", rating: 5 },
-  { name: "Michael Chen", location: "Canary Wharf", image: "https://randomuser.me/api/portraits/men/2.jpg", quote: "Perfect for busy professionals. Getting in touch is so easy!", rating: 5 },
-  { name: "Sarah Johnson", location: "Kensington", image: "https://randomuser.me/api/portraits/women/3.jpg", quote: "Cassio handles my designer pieces with such care. Outstanding service!", rating: 5 },
-  { name: "David Wilson", location: "Greenwich", image: "https://randomuser.me/api/portraits/men/3.jpg", quote: "Tried many dry cleaners in Watford, but Cassio is in a league of its own.", rating: 5 },
-  { name: "Rachel Green", location: "Mayfair", image: "https://randomuser.me/api/portraits/women/4.jpg", quote: "The eco-friendly approach is amazing. Quality and sustainability together!", rating: 5 },
-  { name: "Tom Harris", location: "Westminster", image: "https://randomuser.me/api/portraits/men/4.jpg", quote: "Reliable and trustworthy. Been using them for 3 years now.", rating: 5 },
-  { name: "Lisa Anderson", location: "Camden", image: "https://randomuser.me/api/portraits/women/5.jpg", quote: "Free pickup and delivery is so convenient. Life-changing service!", rating: 5 },
-  { name: "Oliver Smith", location: "Soho", image: "https://randomuser.me/api/portraits/men/5.jpg", quote: "Premium quality at reasonable prices. Worth every penny!", rating: 5 },
-  { name: "Emily Brown", location: "Hackney", image: "https://randomuser.me/api/portraits/women/6.jpg", quote: "They saved my vintage coat! The stain removal is incredible.", rating: 5 },
-  { name: "Daniel Lee", location: "Islington", image: "https://randomuser.me/api/portraits/men/6.jpg", quote: "Fast, efficient, and professional. Exactly what I needed!", rating: 5 },
-  { name: "Grace Taylor", location: "Brixton", image: "https://randomuser.me/api/portraits/women/7.jpg", quote: "The customer service is exceptional. Always helpful and friendly!", rating: 5 },
-  { name: "Henry White", location: "Fulham", image: "https://randomuser.me/api/portraits/men/7.jpg", quote: "Best investment for my wardrobe. Clothes last longer with proper care!", rating: 5 },
-  { name: "Olivia Martin", location: "Clapham", image: "https://randomuser.me/api/portraits/women/8.jpg", quote: "Convenient, reliable, and high quality. What more could you ask for?", rating: 5 },
-  { name: "William Davis", location: "Hammersmith", image: "https://randomuser.me/api/portraits/men/8.jpg", quote: "The attention to detail is impressive. They treat every item with care!", rating: 5 },
-  { name: "Sophia Moore", location: "Battersea", image: "https://randomuser.me/api/portraits/women/9.jpg", quote: "Cassio makes laundry day stress-free. Highly recommend to everyone!", rating: 5 },
-  { name: "Jack Thompson", location: "Richmond", image: "https://randomuser.me/api/portraits/men/9.jpg", quote: "Professional service from start to finish. Never disappointed!", rating: 5 },
-  { name: "Amelia Wilson", location: "Wimbledon", image: "https://randomuser.me/api/portraits/women/10.jpg", quote: "The quality is consistently excellent. My go-to dry cleaner!", rating: 5 },
-  { name: "George Clark", location: "Putney", image: "https://randomuser.me/api/portraits/men/10.jpg", quote: "Efficient, affordable, and eco-friendly. Perfect combination!", rating: 5 },
-  { name: "Charlotte Evans", location: "Marylebone", image: "https://randomuser.me/api/portraits/women/11.jpg", quote: "My cashmere sweaters have never looked better. True professionals!", rating: 5 },
-  { name: "Benjamin Scott", location: "Bloomsbury", image: "https://randomuser.me/api/portraits/men/11.jpg", quote: "The mobile app is brilliant. Track everything in real-time!", rating: 5 },
-  { name: "Isabella Turner", location: "Fitzrovia", image: "https://randomuser.me/api/portraits/women/12.jpg", quote: "They handle delicate fabrics with expertise. Absolutely trustworthy!", rating: 5 },
-  { name: "Lucas Wright", location: "King's Cross", image: "https://randomuser.me/api/portraits/men/12.jpg", quote: "Same-day service saved me before an important meeting. Lifesaver!", rating: 5 },
-  { name: "Mia Robinson", location: "Angel", image: "https://randomuser.me/api/portraits/women/13.jpg", quote: "The packaging is so elegant. They care about every detail!", rating: 5 },
-  { name: "Alexander Hall", location: "Belgravia", image: "https://randomuser.me/api/portraits/men/13.jpg", quote: "Premium service without the premium attitude. Refreshing!", rating: 5 },
-  { name: "Ella Phillips", location: "Pimlico", image: "https://randomuser.me/api/portraits/women/14.jpg", quote: "My wedding dress was cleaned perfectly. Forever grateful!", rating: 5 },
-  { name: "Noah Campbell", location: "Victoria", image: "https://randomuser.me/api/portraits/men/14.jpg", quote: "The subscription plan is great value. Use it every week!", rating: 5 },
-  { name: "Ava Mitchell", location: "Covent Garden", image: "https://randomuser.me/api/portraits/women/15.jpg", quote: "They removed a wine stain I thought was permanent. Magic!", rating: 5 },
-  { name: "Ethan Roberts", location: "Holborn", image: "https://randomuser.me/api/portraits/men/15.jpg", quote: "Consistent quality every single time. That's rare these days!", rating: 5 }
+  { name: "Emma Walker", location: "Nascot Wood", image: "https://randomuser.me/api/portraits/women/1.jpg", quote: "Cassio has completely changed my weekends. My silk dresses come back perfect!", rating: 5 },
+  { name: "James Bennett", location: "Cassiobury", image: "https://randomuser.me/api/portraits/men/1.jpg", quote: "Used Cassio for my wedding suits - the attention to detail was incredible.", rating: 5 },
+  { name: "Sophie Clarke", location: "Croxley Green", image: "https://randomuser.me/api/portraits/women/2.jpg", quote: "The 24-hour turnaround is unreal. Contacted at 8pm, clothes back next evening!", rating: 5 },
+  { name: "Michael Chen", location: "Central Watford", image: "https://randomuser.me/api/portraits/men/2.jpg", quote: "Perfect for busy professionals. Getting in touch is so easy!", rating: 5 },
+  { name: "Sarah Johnson", location: "Oxhey", image: "https://randomuser.me/api/portraits/women/3.jpg", quote: "Cassio handles my designer pieces with such care. Outstanding service!", rating: 5 },
+  { name: "David Wilson", location: "Garston", image: "https://randomuser.me/api/portraits/men/3.jpg", quote: "Tried many dry cleaners in Watford, but Cassio is in a league of its own.", rating: 5 },
+  { name: "Rachel Green", location: "Leavesden", image: "https://randomuser.me/api/portraits/women/4.jpg", quote: "The eco-friendly approach is amazing. Quality and sustainability together!", rating: 5 },
+  { name: "Tom Harris", location: "Bushey", image: "https://randomuser.me/api/portraits/men/4.jpg", quote: "Reliable and trustworthy. Been using them for 3 years now.", rating: 5 },
+  { name: "Lisa Anderson", location: "North Watford", image: "https://randomuser.me/api/portraits/women/5.jpg", quote: "Free pickup and delivery is so convenient. Life-changing service!", rating: 5 },
+  { name: "Oliver Smith", location: "West Watford", image: "https://randomuser.me/api/portraits/men/5.jpg", quote: "Premium quality at reasonable prices. Worth every penny!", rating: 5 },
+  { name: "Emily Brown", location: "South Watford", image: "https://randomuser.me/api/portraits/women/6.jpg", quote: "They saved my vintage coat! The stain removal is incredible.", rating: 5 },
+  { name: "Daniel Lee", location: "East Watford", image: "https://randomuser.me/api/portraits/men/6.jpg", quote: "Fast, efficient, and professional. Exactly what I needed!", rating: 5 },
+  { name: "Grace Taylor", location: "Bushey Heath", image: "https://randomuser.me/api/portraits/women/7.jpg", quote: "The customer service is exceptional. Always helpful and friendly!", rating: 5 },
+  { name: "Henry White", location: "Rickmansworth", image: "https://randomuser.me/api/portraits/men/7.jpg", quote: "Best investment for my wardrobe. Clothes last longer with proper care!", rating: 5 },
+  { name: "Olivia Martin", location: "Abbots Langley", image: "https://randomuser.me/api/portraits/women/8.jpg", quote: "Convenient, reliable, and high quality. What more could you ask for?", rating: 5 },
+  { name: "William Davis", location: "Kings Langley", image: "https://randomuser.me/api/portraits/men/8.jpg", quote: "The attention to detail is impressive. They treat every item with care!", rating: 5 },
+  { name: "Sophia Moore", location: "Aldenham", image: "https://randomuser.me/api/portraits/women/9.jpg", quote: "Cassio makes laundry day stress-free. Highly recommend to everyone!", rating: 5 },
+  { name: "Jack Thompson", location: "Radlett", image: "https://randomuser.me/api/portraits/men/9.jpg", quote: "Professional service from start to finish. Never disappointed!", rating: 5 },
+  { name: "Amelia Wilson", location: "Elstree", image: "https://randomuser.me/api/portraits/women/10.jpg", quote: "The quality is consistently excellent. My go-to dry cleaner!", rating: 5 },
+  { name: "George Clark", location: "Borehamwood", image: "https://randomuser.me/api/portraits/men/10.jpg", quote: "Efficient, affordable, and eco-friendly. Perfect combination!", rating: 5 },
+  { name: "Charlotte Evans", location: "Chandlers Cross", image: "https://randomuser.me/api/portraits/women/11.jpg", quote: "My cashmere sweaters have never looked better. True professionals!", rating: 5 },
+  { name: "Benjamin Scott", location: "Hunton Bridge", image: "https://randomuser.me/api/portraits/men/11.jpg", quote: "The mobile app is brilliant. Track everything in real-time!", rating: 5 },
+  { name: "Isabella Turner", location: "Croxley Green", image: "https://randomuser.me/api/portraits/women/12.jpg", quote: "They handle delicate fabrics with expertise. Absolutely trustworthy!", rating: 5 },
+  { name: "Lucas Wright", location: "Sarratt", image: "https://randomuser.me/api/portraits/men/12.jpg", quote: "Same-day service saved me before an important meeting. Lifesaver!", rating: 5 },
+  { name: "Mia Robinson", location: "Chenies", image: "https://randomuser.me/api/portraits/women/13.jpg", quote: "The packaging is so elegant. They care about every detail!", rating: 5 },
+  { name: "Alexander Hall", location: "Chorleywood", image: "https://randomuser.me/api/portraits/men/13.jpg", quote: "Premium service without the premium attitude. Refreshing!", rating: 5 },
+  { name: "Ella Phillips", location: "Moor Park", image: "https://randomuser.me/api/portraits/women/14.jpg", quote: "My wedding dress was cleaned perfectly. Forever grateful!", rating: 5 },
+  { name: "Noah Campbell", location: "Carpenders Park", image: "https://randomuser.me/api/portraits/men/14.jpg", quote: "The subscription plan is great value. Use it every week!", rating: 5 },
+  { name: "Ava Mitchell", location: "South Oxhey", image: "https://randomuser.me/api/portraits/women/15.jpg", quote: "They removed a wine stain I thought was permanent. Magic!", rating: 5 },
+  { name: "Ethan Roberts", location: "Nash Mills", image: "https://randomuser.me/api/portraits/men/15.jpg", quote: "Consistent quality every single time. That's rare these days!", rating: 5 }
 ];
 
 export function Testimonials() {
@@ -117,11 +117,6 @@ export function Testimonials() {
                 >
                   {/* Header */}
                   <div className="flex items-center gap-2">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="h-10 w-10 rounded-full object-cover"
-                    />
                     <div className="flex-1 min-w-0">
                       <p className="font-display text-sm font-semibold text-navy truncate">{testimonial.name}</p>
                       <p className="text-xs text-muted-foreground truncate">{testimonial.location}</p>

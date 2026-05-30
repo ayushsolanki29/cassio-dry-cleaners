@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { motion } from "framer-motion";
 import { ArrowRight, Clock, ShieldCheck } from "lucide-react";
@@ -111,7 +111,7 @@ export function Hero() {
 
           <p className="max-w-xl text-lg text-white/85">
             Fast, eco-friendly garment care with free pickup &amp; delivery in 24 hours
-            across Watford. Loved by 5k+ happy customers.
+            across Watford. Loved by 5K+ happy customers.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">

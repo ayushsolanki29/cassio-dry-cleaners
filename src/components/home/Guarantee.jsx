@@ -1,9 +1,10 @@
-import { Clock3, Leaf, ShieldCheck } from "lucide-react";
+import { Clock3, Leaf, ShieldCheck, Shirt } from "lucide-react";
 
 const guarantees = [
   { Icon: ShieldCheck, title: "100% Satisfaction", desc: "Not happy? We'll re-clean it free.", bg: "bg-mint" },
   { Icon: Clock3, title: "On-time Promise", desc: "Late delivery? Get 20% off your next order.", bg: "bg-sun" },
   { Icon: Leaf, title: "Eco Guarantee", desc: "Non-toxic detergents, safe for skin.", bg: "bg-cream" },
+  { Icon: Shirt, title: "Premium Care", desc: "Expert stain treatment and hand-finished pressing.", bg: "bg-lilac" },
 ];
 
 export function Guarantee() {
@@ -16,7 +17,7 @@ export function Guarantee() {
           <p className="mx-auto mt-3 max-w-xl text-muted-foreground">Every order is covered by our quality promise, so you can relax.</p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {guarantees.map((g) => (
             <div key={g.title} className="group rounded-3xl bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-card">
               <div className={`mb-5 grid h-14 w-14 place-items-center rounded-2xl ${g.bg} text-brand transition group-hover:scale-110`}>

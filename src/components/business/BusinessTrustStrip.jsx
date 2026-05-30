@@ -1,13 +1,17 @@
-import { Award, TrendingUp, Star, Shield } from "lucide-react";
+import { Award, TrendingUp, Star, Shield, Building, Clock, UserCheck, FileText } from "lucide-react";
 
 const achievements = [
   { Icon: Award, value: "4.9/5", label: "Client Rating", color: "bg-sun" },
-  { Icon: TrendingUp, value: "99%", label: "On-time Delivery", color: "bg-lilac" }
+  { Icon: TrendingUp, value: "99%", label: "On-time Delivery", color: "bg-lilac" },
+  { Icon: Building, value: "50+", label: "Corporate Partners", color: "bg-mint" },
+  { Icon: Clock, value: "24H", label: "Express Turnaround", color: "bg-brand" }
 ];
 
 const trustBadges = [
   { Icon: Shield, text: "Fully Insured Service" },
-  { Icon: Star, text: "Premium Quality Guarantee" }
+  { Icon: Star, text: "Premium Quality Guarantee" },
+  { Icon: UserCheck, text: "Dedicated Account Manager" },
+  { Icon: FileText, text: "Flexible Invoicing" }
 ];
 
 export function BusinessTrustStrip() {
@@ -25,7 +29,7 @@ export function BusinessTrustStrip() {
         </div>
 
         {/* Stats Grid */}
-        <div className="mx-auto mb-8 grid max-w-2xl grid-cols-2 gap-4">
+        <div className="mx-auto mb-8 grid max-w-4xl grid-cols-2 gap-4 lg:grid-cols-4">
           {achievements.map((achievement) => (
             <div key={achievement.label} className="group relative overflow-hidden rounded-2xl bg-white p-6 text-center shadow-soft transition hover:-translate-y-1 hover:shadow-card">
               <div className={`mb-3 inline-grid h-12 w-12 place-items-center rounded-xl ${achievement.color} text-white`}>

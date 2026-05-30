@@ -6,7 +6,7 @@ const features = [
   { Icon: ShieldCheck, title: "Quality Guaranteed", description: "Re-clean for free if not satisfied", color: "bg-sun" },
   { Icon: Star, title: "Expert Care", description: "Trained fabric specialists", color: "bg-lilac" },
   { Icon: Award, title: "Premium Quality", description: "Industry-leading standards", color: "bg-primary" },
-  { Icon: Users, title: "Trusted by 5k+", description: "Watford's favorite service", color: "bg-brand" },
+  { Icon: Users, title: "Trusted by 5K+", description: "Watford's favorite service", color: "bg-brand" },
 ];
 
 export function ServiceTrustStrip() {

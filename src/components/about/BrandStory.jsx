@@ -30,7 +30,7 @@ export function BrandStory() {
               </p>
 
               <p>
-                Today, Cassio serves over 5k customers across Watford, from individual households to major hotels and businesses. We've grown from that single shop to a network of facilities, but our core values remain unchanged: quality, convenience, and sustainability in everything we do.
+                Today, Cassio serves over 5K customers across Watford, from individual households to major hotels and businesses. We've grown from that single shop to a network of facilities, but our core values remain unchanged: quality, convenience, and sustainability in everything we do.
               </p>
 
               <p>
