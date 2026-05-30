@@ -2,21 +2,16 @@ import { Check } from "lucide-react";
 
 const inclusions = [
   "Free pickup & delivery",
-  "Dedicated account manager",
   "Flexible scheduling",
   "Volume discounts",
   "Quality guarantees",
-  "24/7 customer support",
   "Custom invoicing",
-  "Real-time tracking",
   "Eco-friendly cleaning",
   "Express service options",
   "Stain removal expertise",
   "Professional pressing",
-  "Inventory management",
   "Damage protection",
-  "Contract flexibility",
-  "Performance reporting"
+
 ];
 
 export function ServiceInclusions() {

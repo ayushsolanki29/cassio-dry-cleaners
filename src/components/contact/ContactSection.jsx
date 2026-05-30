@@ -207,7 +207,7 @@ export function ContactSection() {
 
           <div className="overflow-hidden rounded-2xl border border-white/20 shadow-card md:rounded-3xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19814.4!2d-0.3947!3d51.6556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48766a6c0c0c0c0d%3A0x0!2s166%20Cassiobury%20Dr%2C%20Watford%20WD17%203AJ%2C%20UK!5e1!3m2!1sen!2suk!4v1234567890!5m2!1sen!2suk&maptype=satellite&zoom=17"
+              src="https://www.google.com/maps/embed?pb=!10K18!10K12!10K3!1d19814.4!2d-0.3947!3d51.6556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!10K2!1s0x48766a6c0c0c0c0d%3A0x0!2s166%20Cassiobury%20Dr%2C%20Watford%20WD17%203AJ%2C%20UK!5e1!3m2!1sen!2suk!4v1234567890!5m2!1sen!2suk&maptype=satellite&zoom=17"
               width="100%"
               height="400"
               style={{ border: 0 }}

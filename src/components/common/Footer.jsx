@@ -1,8 +1,8 @@
-﻿import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const cols = [
-  { 
-    title: "Services", 
+  {
+    title: "Services",
     links: [
       { name: "Dry Cleaning", href: "/services/dry-cleaning" },
       { name: "Wash & Fold", href: "/services/wash-fold" },
@@ -10,28 +10,27 @@ const cols = [
       { name: "Premium Care", href: "/services/premium-care" },
       { name: "Wedding Dresses", href: "/services/wedding-dress" },
       { name: "Leather & Suede", href: "/services/leather-suede" },
-      { name: "Curtains & Home", href: "/services/curtains-home" },
-      { name: "Shoe Care", href: "/services/shoe-care" }
-    ] 
+      { name: "Curtains & Home", href: "/services/curtains-home" }
+    ]
   },
-  { 
-    title: "Company", 
+  {
+    title: "Company",
     links: [
       { name: "About Us", href: "/about" },
       { name: "How It Works", href: "/how-it-works" },
       { name: "Business Services", href: "/business" },
       { name: "Blog", href: "/blog" }
-    ] 
+    ]
   },
-  { 
-    title: "Support", 
+  {
+    title: "Support",
     links: [
       { name: "Contact Us", href: "/contact#contact-form" },
       { name: "Services", href: "/services" },
       { name: "FAQs", href: "/contact#contact-form" },
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms & Conditions", href: "/terms" }
-    ] 
+    ]
   },
 ];
 

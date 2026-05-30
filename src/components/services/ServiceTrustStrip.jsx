@@ -6,7 +6,7 @@ const features = [
   { Icon: ShieldCheck, title: "Quality Guaranteed", description: "Re-clean for free if not satisfied", color: "bg-sun" },
   { Icon: Star, title: "Expert Care", description: "Trained fabric specialists", color: "bg-lilac" },
   { Icon: Award, title: "Premium Quality", description: "Industry-leading standards", color: "bg-primary" },
-  { Icon: Users, title: "Trusted by 50K+", description: "Watford's favorite service", color: "bg-brand" },
+  { Icon: Users, title: "Trusted by 5K+", description: "Watford's favorite service", color: "bg-brand" },
 ];
 
 export function ServiceTrustStrip() {
@@ -22,24 +22,24 @@ export function ServiceTrustStrip() {
             The Cassio difference
           </h2>
         </div>
-        
+
         {/* Features Grid */}
         <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-6">
           {features.map((item) => (
-            <div 
-              key={item.title} 
+            <div
+              key={item.title}
               className="group rounded-2xl border border-gray-100 bg-white p-5 text-center transition-all duration-300 hover:border-transparent hover:shadow-lg"
             >
               {/* Icon */}
               <div className={`mx-auto inline-flex h-12 w-12 items-center justify-center rounded-xl ${item.color} transition-all duration-300 group-hover:scale-110`}>
                 <item.Icon className="h-6 w-6 text-white" />
               </div>
-              
+
               {/* Title */}
               <h3 className="mt-4 font-display text-base font-semibold text-navy transition-colors group-hover:text-brand">
                 {item.title}
               </h3>
-              
+
               {/* Description */}
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                 {item.description}

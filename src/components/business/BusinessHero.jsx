@@ -47,15 +47,13 @@ export function BusinessHero() {
             {/* Business Stats */}
             <div className="grid grid-cols-3 gap-3">
               <div className="rounded-xl bg-white/10 p-3 backdrop-blur-md">
-                <p className="font-display text-xl font-semibold text-mint">200+</p>
                 <p className="mt-1 text-xs text-white/70">Businesses</p>
               </div>
               <div className="rounded-xl bg-white/10 p-3 backdrop-blur-md">
-                <p className="font-display text-xl font-semibold text-sun">24/7</p>
+               
                 <p className="mt-1 text-xs text-white/70">Support</p>
               </div>
               <div className="rounded-xl bg-white/10 p-3 backdrop-blur-md">
-                <p className="font-display text-xl font-semibold text-lilac">99%</p>
                 <p className="mt-1 text-xs text-white/70">On-time</p>
               </div>
             </div>

@@ -1,7 +1,6 @@
-import { Calendar, Clock, Smartphone } from "lucide-react";
+import { Clock, Smartphone } from "lucide-react";
 
 const features = [
-  { Icon: Calendar, text: "Choose your preferred date and time" },
   { Icon: Clock, text: "Same-day and next-day options available" },
   { Icon: Smartphone, text: "Easy contact via phone or online" }
 ];
@@ -19,7 +18,7 @@ export function StepScheduling() {
               Schedule your pickup
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Getting started with Cassio Dry Cleaners is easy. Simply choose a convenient time for us to collect your garments - we work around your schedule, not the other way around.
+              Getting started with Cassio Dry Cleaners is easy. Simply contact us to arrange collection for your garments - we work around your schedule, not the other way around.
             </p>
 
             <div className="mt-6 space-y-3">

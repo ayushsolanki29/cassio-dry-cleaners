@@ -5,7 +5,7 @@ const features = [
   "Guest dry cleaning services",
   "Express turnaround options",
   "Quality control inspections",
-  "Dedicated account manager",
+  "Eco-friendly fabric care",
   "Flexible scheduling"
 ];
 

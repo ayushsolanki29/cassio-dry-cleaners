@@ -38,7 +38,7 @@ const benefits = [
   },
   {
     icon: Users,
-    title: "Trusted by 50k+",
+    title: "Trusted by 5K+",
     description: "Join thousands of satisfied Watford customers",
     color: "bg-primary",
     iconColor: "text-white"
@@ -102,7 +102,7 @@ export function Newsletter() {
               <img src="/assets/testimonial-3.jpg" alt="Customer" className="h-8 w-8 rounded-full border-2 border-white object-cover" />
             </div>
             <p className="text-sm font-semibold text-navy">
-              Join 50,000+ happy customers
+              Join 5K+ happy customers
             </p>
           </div>
         </div>

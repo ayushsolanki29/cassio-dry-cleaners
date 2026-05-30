@@ -59,9 +59,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio's dry cleaning is exceptional. My suits always come back looking brand new. The eco-friendly approach is a huge plus!" },
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my silk dresses. They handle delicate fabrics with such care. Never had an issue!" },
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Best dry cleaning in Watford! Fast, professional, and my clothes smell amazing. Cassio is my go-to." }
+      { name: "James Bennett", location: "Cassiobury, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio's dry cleaning is exceptional. My suits always come back looking brand new. The eco-friendly approach is a huge plus!" },
+      { name: "Emma Walker", location: "Nascot Wood, Watford", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my silk dresses. They handle delicate fabrics with such care. Never had an issue!" },
+      { name: "Sophie Clarke", location: "Croxley Green, Watford", image: "/assets/testimonial-3.jpg", quote: "Best dry cleaning in Watford! Fast, professional, and my clothes smell amazing. Cassio is my go-to." }
     ]
   },
 
@@ -123,9 +123,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio's wash & fold service is a lifesaver! My clothes come back fresh, clean, and perfectly folded. Worth every penny." },
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "I use Cassio for all my everyday laundry. The quality is consistent, and the turnaround time is impressive." },
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Finally have my weekends back! Cassio takes care of all my laundry, and everything always smells amazing." }
+      { name: "Sophie Clarke", location: "Croxley Green, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio's wash & fold service is a lifesaver! My clothes come back fresh, clean, and perfectly folded. Worth every penny." },
+      { name: "James Bennett", location: "Cassiobury, Watford", image: "/assets/testimonial-2.jpg", quote: "I use Cassio for all my everyday laundry. The quality is consistent, and the turnaround time is impressive." },
+      { name: "Emma Walker", location: "Nascot Wood, Watford", image: "/assets/testimonial-1.jpg", quote: "Finally have my weekends back! Cassio takes care of all my laundry, and everything always smells amazing." }
     ]
   },
 
@@ -187,9 +187,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "My shirts have never looked better. Cassio's ironing service is impeccable - crisp collars and perfect creases every time." },
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "I hate ironing, so Cassio is a godsend. Professional results and I get my time back. Highly recommend!" },
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "The quality of Cassio's ironing is outstanding. My work clothes always look sharp and professional." }
+      { name: "James Bennett", location: "Cassiobury, Watford", image: "/assets/testimonial-2.jpg", quote: "My shirts have never looked better. Cassio's ironing service is impeccable - crisp collars and perfect creases every time." },
+      { name: "Emma Walker", location: "Nascot Wood, Watford", image: "/assets/testimonial-1.jpg", quote: "I hate ironing, so Cassio is a godsend. Professional results and I get my time back. Highly recommend!" },
+      { name: "Sophie Clarke", location: "Croxley Green, Watford", image: "/assets/testimonial-3.jpg", quote: "The quality of Cassio's ironing is outstanding. My work clothes always look sharp and professional." }
     ]
   },
 
@@ -251,9 +251,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my designer pieces. Their premium care service is worth every penny - my Chanel jacket looks brand new!" },
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio handled my vintage Savile Row suit with incredible care. The attention to detail is unmatched in Watford." },
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Finally found a cleaner I trust with my luxury wardrobe. Cassio's premium service is exceptional - true white-glove treatment." }
+      { name: "Emma Walker", location: "Nascot Wood, Watford", image: "/assets/testimonial-1.jpg", quote: "I trust Cassio with all my designer pieces. Their premium care service is worth every penny - my Chanel jacket looks brand new!" },
+      { name: "James Bennett", location: "Cassiobury, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio handled my vintage Savile Row suit with incredible care. The attention to detail is unmatched in Watford." },
+      { name: "Sophie Clarke", location: "Croxley Green, Watford", image: "/assets/testimonial-3.jpg", quote: "Finally found a cleaner I trust with my luxury wardrobe. Cassio's premium service is exceptional - true white-glove treatment." }
     ]
   },
 
@@ -315,9 +315,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio preserved my wedding dress beautifully. Every stain removed, and the preservation box is gorgeous. So grateful!" },
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "My dress had wine, makeup, and grass stains - Cassio made it look brand new! The preservation service is worth every penny." },
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Had my wife's vintage wedding dress cleaned by Cassio. They handled it with such care - looks perfect for our daughter someday." }
+      { name: "Sophie Clarke", location: "Croxley Green, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio preserved my wedding dress beautifully. Every stain removed, and the preservation box is gorgeous. So grateful!" },
+      { name: "Emma Walker", location: "Nascot Wood, Watford", image: "/assets/testimonial-1.jpg", quote: "My dress had wine, makeup, and grass stains - Cassio made it look brand new! The preservation service is worth every penny." },
+      { name: "James Bennett", location: "Cassiobury, Watford", image: "/assets/testimonial-2.jpg", quote: "Had my wife's vintage wedding dress cleaned by Cassio. They handled it with such care - looks perfect for our daughter someday." }
     ]
   },
 
@@ -379,9 +379,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "My vintage leather jacket looks incredible after Cassio's treatment. They restored the color and it feels like new!" },
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio saved my suede coat after a water stain disaster. Their expertise in leather care is unmatched in Watford." },
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Trust Cassio with all my leather pieces. Professional service and my jackets always come back looking perfect." }
+      { name: "James Bennett", location: "Cassiobury, Watford", image: "/assets/testimonial-2.jpg", quote: "My vintage leather jacket looks incredible after Cassio's treatment. They restored the color and it feels like new!" },
+      { name: "Sophie Clarke", location: "Croxley Green, Watford", image: "/assets/testimonial-3.jpg", quote: "Cassio saved my suede coat after a water stain disaster. Their expertise in leather care is unmatched in Watford." },
+      { name: "Emma Walker", location: "Nascot Wood, Watford", image: "/assets/testimonial-1.jpg", quote: "Trust Cassio with all my leather pieces. Professional service and my jackets always come back looking perfect." }
     ]
   },
 
@@ -443,73 +443,9 @@ export const servicesData = {
     ],
 
     testimonials: [
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Cassio cleaned all my curtains and they look brand new! The pickup service made it so easy. Highly recommend!" },
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "My velvet curtains came back perfect. Cassio knows how to handle delicate home textiles. Very impressed!" },
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Used Cassio for our entire home's curtains and bedding. Professional service and everything looks and smells fresh." }
-    ]
-  },
-
-  "shoe-care": {
-    title: "Shoe Care & Restoration",
-    slug: "shoe-care",
-    Icon: ShoppingBag,
-    description: "Professional shoe cleaning, polishing, and restoration for all types of footwear.",
-    image: "/assets/service-washfold.jpg",
-    overview: "Cassio's shoe care service brings your footwear back to life. From leather dress shoes to suede boots, we provide professional cleaning, polishing, and restoration services.",
-    
-    includes: [
-      "Deep cleaning",
-      "Professional polishing",
-      "Suede & nubuck care",
-      "Stain removal",
-      "Odor treatment",
-      "Color restoration",
-      "Conditioning",
-      "Protective finishing"
-    ],
-
-    benefits: [
-      { Icon: ShoppingBag, title: "Shoe Experts", description: "Specialized care for all footwear types" },
-      { Icon: TrendingUp, title: "Restoration", description: "Bring worn shoes back to life" },
-      { Icon: Shield, title: "Protection", description: "Extend the life of your footwear" }
-    ],
-
-    process: [
-      { title: "Assessment", description: "Evaluate shoe type, material, and condition" },
-      { title: "Cleaning", description: "Deep clean with appropriate methods" },
-      { title: "Treatment", description: "Polish, condition, or restore as needed" },
-      { title: "Protection", description: "Apply protective finish" }
-    ],
-
-    fabrics: ["Leather", "Suede", "Nubuck", "Patent Leather", "Canvas", "Synthetic"],
-
-    careTips: [
-      "Clean shoes regularly to prevent dirt buildup",
-      "Use shoe trees to maintain shape",
-      "Rotate shoes to allow them to air out",
-      "Professional cleaning every 3-6 months",
-      "Waterproof suede and nubuck shoes"
-    ],
-
-    warnings: [
-      "Some stains may be permanent",
-      "Heavily worn soles may need cobbler repair",
-      "Exotic leathers require special care",
-      "Color restoration results may vary"
-    ],
-
-    faqs: [
-      { q: "What types of shoes do you clean?", a: "We clean all footwear including dress shoes, boots, sneakers, suede shoes, leather shoes, and more. Each type receives appropriate specialized care." },
-      { q: "Can you restore color to faded shoes?", a: "Yes! We offer color restoration services for leather shoes that have faded or lost their luster. Results depend on the shoe's condition." },
-      { q: "Do you clean sneakers?", a: "Absolutely! We clean all types of sneakers including leather, canvas, and synthetic materials. We can restore white sneakers and remove scuffs." },
-      { q: "How do you clean suede shoes?", a: "Suede requires specialized dry cleaning and brushing techniques. We never use water on suede, which can cause permanent staining." },
-      { q: "Can you remove salt stains from winter boots?", a: "Yes, we can remove salt stains and water marks from leather and suede boots. The sooner you bring them in, the better the results." }
-    ],
-
-    testimonials: [
-      { name: "James Bennett", location: "Chelsea, Watford", image: "/assets/testimonial-2.jpg", quote: "Cassio restored my expensive dress shoes perfectly. They look brand new! Best shoe care service in Watford." },
-      { name: "Sophie Clarke", location: "Notting Hill, Watford", image: "/assets/testimonial-3.jpg", quote: "My suede boots were ruined by salt stains - Cassio worked magic! They look perfect now. So impressed!" },
-      { name: "Emma Walker", location: "Shoreditch, Watford", image: "/assets/testimonial-1.jpg", quote: "Use Cassio for all my shoe cleaning. They handle everything from sneakers to designer heels with expert care." }
+      { name: "Emma Walker", location: "Nascot Wood, Watford", image: "/assets/testimonial-1.jpg", quote: "Cassio cleaned all my curtains and they look brand new! The pickup service made it so easy. Highly recommend!" },
+      { name: "Sophie Clarke", location: "Croxley Green, Watford", image: "/assets/testimonial-3.jpg", quote: "My velvet curtains came back perfect. Cassio knows how to handle delicate home textiles. Very impressed!" },
+      { name: "James Bennett", location: "Cassiobury, Watford", image: "/assets/testimonial-2.jpg", quote: "Used Cassio for our entire home's curtains and bedding. Professional service and everything looks and smells fresh." }
     ]
   }
 };
