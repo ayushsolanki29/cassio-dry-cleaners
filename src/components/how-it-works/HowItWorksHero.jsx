@@ -1,139 +1,110 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Clock, MapPin, Shield, Calendar, Truck, Package } from "lucide-react";
+import { ArrowRight, Calendar, Sparkles, Package } from "lucide-react";
 
 export function HowItWorksHero() {
   return (
-    <section className="relative flex h-screen items-center overflow-hidden bg-navy text-white">
-      {/* Background Image with Overlay */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/assets/delivery.jpg')" }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-navy/90 to-primary/95" />
+    <section className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden bg-cream text-navy pt-24 pb-[22rem] md:pb-40">
+      
+      {/* Ultra-minimal ambient blurs */}
+      <div className="pointer-events-none absolute left-0 top-0 h-[50vh] w-[50vh] -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint/20 blur-[100px]" />
+      <div className="pointer-events-none absolute right-0 bottom-0 h-[50vh] w-[50vh] translate-x-1/2 translate-y-1/2 rounded-full bg-sun/20 blur-[100px]" />
 
-      {/* Decorative Elements */}
-      <div className="pointer-events-none absolute -left-20 top-20 h-96 w-96 rounded-full bg-sun/20 blur-3xl" />
-      <div className="pointer-events-none absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-mint/20 blur-3xl" />
+      <div className="relative z-10 mx-auto w-full max-w-4xl px-6 text-center">
+        
+        {/* Overline */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex items-center justify-center gap-4"
+        >
+          <span className="h-[1px] w-8 bg-brand/50 md:w-12"></span>
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand">The Cassio Process</span>
+          <span className="h-[1px] w-8 bg-brand/50 md:w-12"></span>
+        </motion.div>
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-8">
-        <div className="grid h-full items-center gap-8 lg:grid-cols-2">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="space-y-6"
+        {/* Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-8 font-display text-5xl font-medium tracking-tight md:text-7xl lg:text-[6.5rem] leading-[1.05]"
+        >
+          Laundry day, <br />
+          <span className="italic text-brand font-light">simplified.</span>
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:text-xl leading-relaxed"
+        >
+          From pickup to delivery, we make professional garment care completely effortless. Transform your routine in just 24 hours.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+        >
+          <a
+            href="/contact#contact-form"
+            className="group flex w-full items-center justify-center gap-2 rounded-full bg-navy px-8 py-4 text-sm font-semibold text-white shadow-soft transition-all hover:scale-105 hover:bg-brand sm:w-auto md:text-base"
           >
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
-                <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
-                Cassio Process
-              </span>
-            </div>
+            Schedule a pickup
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </a>
+        </motion.div>
 
-            <h1 className="font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
-              Laundry day,
-              <br />
-              <span className="text-mint">simplified</span>
-            </h1>
-
-            <p className="max-w-xl text-lg text-white/85">
-              From pickup to delivery, Cassio makes professional garment care effortless. Transform your laundry experience in just 24-48 hours.
-            </p>
-
-            {/* Quick Process Steps */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-mint text-navy">
-                  <Calendar className="h-4 w-4" />
-                </div>
-                <span className="text-sm font-medium">Contact us to arrange pickup</span>
-              </div>
-              <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-sun text-navy">
-                  <CheckCircle className="h-4 w-4" />
-                </div>
-                <span className="text-sm font-medium">We collect & clean</span>
-              </div>
-              <div className="flex items-center gap-3 rounded-xl bg-white/10 p-2 backdrop-blur-md">
-                <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-lilac text-navy">
-                  <Package className="h-4 w-4" />
-                </div>
-                <span className="text-sm font-medium">Delivered fresh to your door</span>
-              </div>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="#overview"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-pop transition hover:scale-105"
-              >
-                See how it works
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="/contact#contact-form"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-4 text-base font-semibold backdrop-blur-md transition hover:bg-white/20"
-              >
-                Contact us
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Right Visual Element */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative">
-              {/* Glassmorphism Card */}
-              <div className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-2xl">
-                <div className="space-y-4">
-                  {/* Feature Cards */}
-                  <div className="flex items-start gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur-md">
-                    <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint text-navy">
-                      <Clock className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-base font-semibold">24-48 Hour Service</h3>
-                      <p className="mt-1 text-xs text-white/80">Fast turnaround guaranteed</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur-md">
-                    <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-sun text-navy">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-base font-semibold">Free Pickup & Delivery</h3>
-                      <p className="mt-1 text-xs text-white/80">Across all Watford boroughs</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur-md">
-                    <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-lilac text-navy">
-                      <Shield className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-display text-base font-semibold">Quality Guarantee</h3>
-                      <p className="mt-1 text-xs text-white/80">100% satisfaction promise</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative Circle */}
-              <div className="absolute -left-8 -bottom-8 -z-10 h-48 w-48 rounded-full bg-mint/30 blur-2xl" />
-            </div>
-          </motion.div>
-        </div>
       </div>
+
+      {/* Sleek Bottom Process Bar (Mobile First) */}
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute bottom-0 left-0 w-full border-t border-border/60 bg-white/40 backdrop-blur-xl"
+      >
+        <div className="mx-auto max-w-7xl px-6 py-6 md:py-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:divide-x sm:divide-border/60">
+            
+            {/* Step 01 */}
+            <div className="flex items-center sm:items-start gap-4 sm:px-6">
+              <Calendar className="h-7 w-7 text-brand/70 stroke-[1.5]" />
+              <div>
+                <h3 className="font-display text-base font-bold text-navy">Book</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Arrange your free collection</p>
+              </div>
+            </div>
+
+            {/* Step 02 */}
+            <div className="flex items-center sm:items-start gap-4 border-t border-border/60 pt-6 sm:border-t-0 sm:pt-0 sm:px-6">
+              <Sparkles className="h-7 w-7 text-brand/70 stroke-[1.5]" />
+              <div>
+                <h3 className="font-display text-base font-bold text-navy">Clean</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Expert eco-friendly care</p>
+              </div>
+            </div>
+
+            {/* Step 03 */}
+            <div className="flex items-center sm:items-start gap-4 border-t border-border/60 pt-6 sm:border-t-0 sm:pt-0 sm:px-6">
+              <Package className="h-7 w-7 text-brand/70 stroke-[1.5]" />
+              <div>
+                <h3 className="font-display text-base font-bold text-navy">Deliver</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Fresh to your door in 24h</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </motion.div>
+
     </section>
   );
 }
