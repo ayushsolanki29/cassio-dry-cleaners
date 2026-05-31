@@ -1,199 +1,196 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Package, CheckCircle } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowRight } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const services = [
-  {
-    name: "Dry Cleaning",
-    image: "/assets/service-drycleaning.jpg"
-  },
-  {
-    name: "Wash & Fold",
-    image: "/assets/service-washfold.jpg"
-  },
-  {
-    name: "Ironing",
-    image: "/assets/service-ironing.jpg"
-  },
-  {
-    name: "Premium Care",
-    image: "/assets/service-premium.jpg"
-  },
-  {
-    name: "Wedding Dresses",
-    image: "/assets/service-premium.jpg"
-  },
-  {
-    name: "Leather & Suede",
-    image: "/assets/service-drycleaning.jpg"
-  },
-  {
-    name: "Home Textiles",
-    image: "/assets/section-towels.jpg"
-  }
+  { name: "Dry Cleaning",    image: "/assets/service-drycleaning.jpg" },
+  { name: "Wash & Fold",     image: "/assets/service-washfold.jpg" },
+  { name: "Ironing",         image: "/assets/service-ironing.jpg" },
+  { name: "Premium Care",    image: "/assets/service-premium.jpg" },
+  { name: "Wedding Dresses", image: "/assets/service-premium.jpg" },
+  { name: "Home Textiles",   image: "/assets/section-towels.jpg" },
 ];
 
+const INTERVAL = 3500;
+const FADE_DUR  = 0.85;
+
 export function ServiceHero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [current,  setCurrent]  = useState(0);
+  const [previous, setPrevious] = useState(null);
+  const timerRef = useRef(null);
 
-  // Preload all images on component mount
-  useEffect(() => {
-    const imagePromises = services.map((service) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = service.image;
-        img.onload = resolve;
-        img.onerror = reject;
-      });
+  const advance = () => {
+    setCurrent((prev) => {
+      const next = (prev + 1) % services.length;
+      setPrevious(prev);
+      return next;
     });
+  };
 
-    Promise.all(imagePromises)
-      .then(() => setImagesLoaded(true))
-      .catch((err) => console.error("Error preloading images:", err));
+  useEffect(() => {
+    timerRef.current = setInterval(advance, INTERVAL);
+    return () => clearInterval(timerRef.current);
   }, []);
 
-  useEffect(() => {
-    // Only start carousel after images are loaded
-    if (!imagesLoaded) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % services.length);
-    }, 4000); // Change every 4 seconds for smoother transitions
-
-    return () => clearInterval(interval);
-  }, [imagesLoaded]);
-
-  const currentService = services[currentIndex];
+  const goTo = (i) => {
+    clearInterval(timerRef.current);
+    setPrevious(current);
+    setCurrent(i);
+    timerRef.current = setInterval(advance, INTERVAL);
+  };
 
   return (
-    <section className="relative flex h-screen items-center overflow-hidden bg-navy text-white">
-      {/* Background Image with Overlay - Auto-changing */}
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${currentService.image}')` }}
-        />
-      </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-br from-navy/95 via-primary/90 to-navy/95" />
+    <section className="relative overflow-hidden bg-white text-foreground">
 
-      {/* Decorative Elements */}
-      <div className="pointer-events-none absolute -left-20 top-20 h-96 w-96 rounded-full bg-brand/20 blur-3xl" />
-      <div className="pointer-events-none absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-sun/20 blur-3xl" />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-[oklch(0.97_0.02_250)] to-[oklch(0.95_0.03_85)]" />
+      <div className="pointer-events-none absolute -left-32 -top-16 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0  h-96 w-96 rounded-full bg-brand/8  blur-3xl" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full bg-sun/15 blur-3xl" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-8">
-        <div className="grid h-full items-center gap-8 lg:grid-cols-2">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="space-y-6"
-          >
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-md">
-                <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
-                Cassio Dry Cleaners
-              </span>
-            </div>
+      {/* ── Centered text block ── */}
+      <div className="relative mx-auto max-w-4xl px-5 pb-8 pt-28 text-center md:pb-10 md:pt-36">
 
-            <h1 className="font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
-              <span className="block whitespace-nowrap">Expert care for</span>
-              <AnimatePresence initial={false} mode="wait">
+        {/* Badge */}
+        <motion.span
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary md:text-sm"
+        >
+          <svg className="h-3 w-3 shrink-0 fill-primary" viewBox="0 0 24 24">
+            <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+          </svg>
+          <span className="whitespace-nowrap">Our Services</span>
+        </motion.span>
+
+        {/* Headline */}
+        <h1 className="mt-5 font-display font-semibold leading-tight text-[2.2rem] md:text-6xl lg:text-7xl">
+          {/* Line 1 */}
+          <span className="block overflow-hidden">
+            <motion.span className="block text-navy"
+              initial={{ y: "100%" }} animate={{ y: 0 }}
+              transition={{ duration: 0.65, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
+            >
+              Expert care for
+            </motion.span>
+          </span>
+
+          {/* Line 2 — animated service name */}
+          <span className="block overflow-hidden">
+            <motion.span className="relative block h-[1.25em]"
+              initial={{ y: "100%" }} animate={{ y: 0 }}
+              transition={{ duration: 0.65, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <AnimatePresence mode="wait">
                 <motion.span
-                  key={currentIndex}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
-                  className="text-sun inline-block"
+                  key={services[current].name}
+                  className="absolute inset-0 text-primary"
+                  initial={{ y: "40%", opacity: 0, filter: "blur(6px)" }}
+                  animate={{ y: 0,     opacity: 1, filter: "blur(0px)" }}
+                  exit={{   y: "-40%", opacity: 0, filter: "blur(6px)" }}
+                  transition={{ duration: FADE_DUR, ease: "easeInOut" }}
                 >
-                  {currentService.name}
+                  {services[current].name}
                 </motion.span>
               </AnimatePresence>
-            </h1>
+            </motion.span>
+          </span>
+        </h1>
 
-            <p className="max-w-xl text-lg leading-relaxed text-white/85">
-              From everyday laundry to luxury couture, Cassio delivers expert cleaning with eco-friendly care. Free pickup & delivery across Watford.
-            </p>
+        {/* Subheading */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.72, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto mt-5 max-w-xl text-sm text-foreground/65 md:text-lg md:text-foreground/70"
+        >
+          From everyday laundry to luxury couture — eco-friendly care with free pickup &amp; delivery across Watford.
+        </motion.p>
 
-            {/* Quick Features */}
-
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="#services-grid"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-base font-semibold text-white shadow-pop transition hover:scale-105"
-              >
-                View all services
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="/contact#contact-form"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-4 text-base font-semibold backdrop-blur-md transition hover:bg-white/20"
-              >
-                Contact us
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Right Visual Element */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:block"
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.84, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-7 flex flex-wrap items-center justify-center gap-3"
+        >
+          <a href="#services-grid"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-pop transition hover:scale-105 md:px-8 md:py-4 md:text-base"
           >
-            <div className="relative">
-              {/* Glassmorphism Card */}
-              <div className="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-2xl">
-                <div className="relative h-80 w-full">
-                  <AnimatePresence initial={false}>
-                    <motion.img
-                      key={currentIndex}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1.2, ease: "easeInOut" }}
-                      src={currentService.image}
-                      alt={`${currentService.name} service`}
-                      className="absolute inset-0 h-full w-full rounded-2xl object-cover shadow-lg"
-                    />
-                  </AnimatePresence>
-                </div>
+            View all services
+            <ArrowRight className="h-4 w-4" />
+          </a>
+          <a href="/contact#contact-form"
+            className="rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-navy shadow-soft transition hover:bg-secondary md:px-8 md:py-4 md:text-base"
+          >
+            Contact us
+          </a>
+        </motion.div>
 
-                {/* Floating Stats */}
-                <div className="mt-4 grid grid-cols-3 gap-3">
-                  <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-md">
-                    <p className="font-display text-xl font-semibold text-sun">8+</p>
-                    <p className="text-xs text-white/80">Services</p>
-                  </div>
-                  <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-md">
-                    <p className="font-display text-xl font-semibold text-mint">5K+</p>
-                    <p className="text-xs text-white/80">Customers</p>
-                  </div>
-                  <div className="rounded-xl bg-white/10 p-3 text-center backdrop-blur-md">
-                    <p className="font-display text-xl font-semibold text-lilac">4.9★</p>
-                    <p className="text-xs text-white/80">Rating</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Decorative Circle */}
-              <div className="absolute -right-8 -top-8 -z-10 h-48 w-48 rounded-full bg-brand/30 blur-2xl" />
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.96, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-8 flex flex-wrap items-center justify-center gap-3"
+        >
+          {[
+            { value: "8+",   label: "Services" },
+            { value: "5K+",  label: "Happy customers" },
+            { value: "4.9★", label: "Google rating" },
+            { value: "24h",  label: "Turnaround" },
+          ].map((s, i) => (
+            <div key={s.label} className="flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 shadow-soft">
+              <span className="font-display text-base font-bold text-primary">{s.value}</span>
+              <span className="text-xs text-muted-foreground">{s.label}</span>
             </div>
-          </motion.div>
-        </div>
+          ))}
+        </motion.div>
       </div>
+
+      {/* ── Image strip — auto-scroll marquee ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
+        className="relative py-4 pb-14"
+      >
+        {/* Fade left/right only */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent md:w-24" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent md:w-24" />
+
+        {/* Marquee track */}
+        <div className="overflow-visible">
+          <div
+            className="flex gap-3 md:gap-4"
+            style={{
+              width: "max-content",
+              animation: "services-scroll 22s linear infinite",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.animationPlayState = "paused")}
+            onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}
+          >
+            {[...services, ...services].map((s, i) => (
+              <button
+                key={i}
+                onClick={() => goTo(i % services.length)}
+                className={`group relative h-40 w-48 shrink-0 overflow-hidden rounded-2xl shadow-soft transition-all duration-300 md:h-52 md:w-64 ${
+                  (i % services.length) === current
+                    ? "scale-[1.04] shadow-card"
+                    : "opacity-65 hover:opacity-100 hover:scale-[1.02] hover:shadow-card"
+                }`}
+              >
+                <img
+                  src={s.image} alt={s.name}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/75 to-transparent px-3 pb-3 pt-8">
+                  <p className="font-display text-xs font-semibold text-white md:text-sm">{s.name}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
     </section>
   );
 }
