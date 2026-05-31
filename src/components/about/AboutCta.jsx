@@ -19,7 +19,7 @@ export function AboutCta() {
               Experience the Cassio difference
             </h2>
             <p className="mt-4 text-lg text-white/90 md:text-xl">
-              Join 50,000+ Watforders who trust Cassio for professional, eco-friendly garment care.
+              Join 5000+ Watforders who trust Cassio for professional, eco-friendly garment care.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">

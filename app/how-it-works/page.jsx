@@ -2,14 +2,12 @@ import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
 import { HowItWorksHero } from "@/components/how-it-works/HowItWorksHero";
 import { StepOverview } from "@/components/how-it-works/StepOverview";
-import { StepScheduling } from "@/components/how-it-works/StepScheduling";
-import { StepPickup } from "@/components/how-it-works/StepPickup";
-import { StepDelivery } from "@/components/how-it-works/StepDelivery";
+import { StepsSection } from "@/components/how-it-works/StepsSection";
 import { TimelineStrip } from "@/components/how-it-works/TimelineStrip";
 import { QualityGuarantee } from "@/components/how-it-works/QualityGuarantee";
 import { EcoProcess } from "@/components/how-it-works/EcoProcess";
-import { ProcessFaq } from "@/components/how-it-works/ProcessFaq";
-import { ProcessTestimonials } from "@/components/how-it-works/ProcessTestimonials";
+import { Faq } from "@/components/home/Faq";
+import { Testimonials } from "@/components/home/Testimonials";
 import { ProcessCta } from "@/components/how-it-works/ProcessCta";
 
 export const metadata = {
@@ -23,14 +21,12 @@ export default function HowItWorksPage() {
       <Header />
       <HowItWorksHero />
       <StepOverview />
-      <StepScheduling />
-      <StepPickup />
-      <StepDelivery />
+      <StepsSection />
       <TimelineStrip />
       <QualityGuarantee />
       <EcoProcess />
-      <ProcessFaq />
-      <ProcessTestimonials />
+      <Faq />
+      <Testimonials />
       <ProcessCta />
       <Footer />
     </main>

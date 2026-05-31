@@ -44,7 +44,7 @@ export function Testimonials() {
             What our customers say
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm text-muted-foreground md:text-lg">
-            Join 50,000+ satisfied customers who trust Cassio with their precious garments.
+            Join 5000+ satisfied customers who trust Cassio with their precious garments.
           </p>
         </div>
 

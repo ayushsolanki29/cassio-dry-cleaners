@@ -1,43 +1,123 @@
-import { Clock } from "lucide-react";
+"use client";
 
-const timeline = [
-  { time: "Initial Request", event: "Book your collection online or by phone", color: "bg-mint" },
-  { time: "Garment Handover", event: "Contactless pickup from your home or office", color: "bg-sun" },
-  { time: "Expert Processing", event: "Eco-friendly cleaning & hand-finished pressing", color: "bg-lilac" },
-  { time: "Prompt Return", event: "Garments delivered back to your door", color: "bg-cream" }
+import { PhoneCall, HandshakeIcon, Sparkles, PackageCheck } from "lucide-react";
+import { FadeUp, StaggerList, StaggerItem } from "@/components/common/Animate";
+
+const steps = [
+  {
+    Icon: PhoneCall,
+    label: "Initial Request",
+    desc: "Book your collection online or by phone",
+    badge: "bg-mint",
+    iconColor: "text-brand",
+  },
+  {
+    Icon: HandshakeIcon,
+    label: "Garment Handover",
+    desc: "Contactless pickup from your home or office",
+    badge: "bg-sun",
+    iconColor: "text-brand",
+  },
+  {
+    Icon: Sparkles,
+    label: "Expert Processing",
+    desc: "Eco-friendly cleaning & hand-finished pressing",
+    badge: "bg-lilac",
+    iconColor: "text-brand",
+  },
+  {
+    Icon: PackageCheck,
+    label: "Prompt Return",
+    desc: "Garments delivered back to your door",
+    badge: "bg-cream",
+    iconColor: "text-brand",
+  },
 ];
 
 export function TimelineStrip() {
   return (
-    <section className="bg-navy py-16 text-white">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-12 text-center">
-          <div className="mb-4 inline-grid h-14 w-14 place-items-center rounded-2xl bg-cream text-brand">
-            <Clock className="h-7 w-7" />
-          </div>
-          <h2 className="font-display text-4xl font-semibold text-cream md:text-5xl">
+    <section className="bg-navy py-16 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+
+        {/* Header */}
+        <FadeUp className="mb-12 text-center md:mb-16">
+          <span className="text-sm font-semibold uppercase tracking-wider text-mint">
+            The journey
+          </span>
+          <h2 className="mt-3 font-display text-3xl font-semibold text-cream md:text-5xl">
             From doorstep to doorstep in 24 hours
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/80">
+          <p className="mx-auto mt-3 max-w-xl text-sm text-white/60 md:text-base">
             Track your garments through every step of the Cassio Dry Cleaners process
           </p>
-        </div>
+        </FadeUp>
 
-        <div className="relative">
-          <div className="absolute left-0 right-0 top-8 hidden h-1 bg-white/20 md:block" />
-          
-          <div className="grid gap-6 md:grid-cols-4">
-            {timeline.map((item, i) => (
-              <div key={item.time} className="relative text-center">
-                <div className={`relative z-10 mx-auto mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full ${item.color} font-display text-2xl font-bold text-brand shadow-pop`}>
-                  {i + 1}
+        {/* ── MOBILE: vertical timeline ── */}
+        <div className="relative md:hidden">
+          {/* Vertical connector line */}
+          <div className="absolute left-7 top-0 bottom-0 w-px bg-white/15" />
+
+          <div className="space-y-6">
+            {steps.map((step, i) => (
+              <div key={step.label} className="relative flex items-start gap-5">
+                {/* Icon bubble */}
+                <div className={`relative z-10 shrink-0 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${step.badge} shadow-pop`}>
+                  <step.Icon className={`h-6 w-6 ${step.iconColor}`} />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-cream">{item.time}</h3>
-                <p className="mt-1 text-sm text-white/70">{item.event}</p>
+
+                {/* Text */}
+                <div className="pt-1">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-white/40">
+                    Step {i + 1}
+                  </p>
+                  <h3 className="mt-0.5 font-display text-lg font-semibold text-cream">
+                    {step.label}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-white/60">
+                    {step.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* ── DESKTOP: horizontal timeline ── */}
+        <div className="relative hidden md:block">
+          {/* Horizontal connector line — sits behind the bubbles */}
+          <div
+            aria-hidden
+            className="absolute left-[calc(12.5%)] right-[calc(12.5%)] top-7 h-px bg-white/15"
+          />
+
+          <StaggerList className="grid grid-cols-4 gap-6">
+            {steps.map((step, i) => (
+              <StaggerItem key={step.label}>
+                <div className="group flex flex-col items-center text-center">
+                  {/* Icon bubble */}
+                  <div
+                    className={`relative z-10 mb-5 inline-flex h-14 w-14 items-center justify-center rounded-2xl ${step.badge} shadow-pop transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-card`}
+                  >
+                    <step.Icon className={`h-6 w-6 ${step.iconColor}`} />
+                  </div>
+
+                  {/* Step number pill */}
+                  <span className="mb-2 inline-block rounded-full bg-white/10 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-white/50">
+                    Step {i + 1}
+                  </span>
+
+                  <h3 className="font-display text-lg font-semibold text-cream lg:text-xl">
+                    {step.label}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-white/60">
+                    {step.desc}
+                  </p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerList>
+        </div>
+
       </div>
     </section>
   );
