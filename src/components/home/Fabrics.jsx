@@ -45,16 +45,16 @@ export function Fabrics() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section className="relative overflow-hidden bg-navy py-24">
+    <section className="relative overflow-hidden bg-navy py-16 md:py-24">
       {/* Decorative blobs */}
       <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
 
       <div className="relative mx-auto w-full max-w-7xl px-6">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-          {/* ── Left: text content ── */}
-          <div className="space-y-8">
+          {/* ── Text content ── */}
+          <div className="space-y-6 md:space-y-8">
             {/* Badge */}
             <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
               <Sparkles className="h-4 w-4 text-brand" />
@@ -63,54 +63,52 @@ export function Fabrics() {
 
             {/* Heading */}
             <div>
-              <h2 className="font-display text-5xl font-bold leading-tight text-white md:text-6xl">
-                Every fabric
-                <br />
-                <span className="text-mint">deserves</span>
-                <br />
+              <h2 className="font-display text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+                Every fabric{" "}
+                <span className="text-mint">deserves</span>{" "}
                 expert care
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-white/70">
+              <p className="mt-4 text-base leading-relaxed text-white/70 md:text-lg">
                 From everyday cotton to luxury cashmere, our specialists
                 understand the unique needs of every material in your wardrobe.
               </p>
             </div>
 
             {/* Feature list */}
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {fabricFeatures.map((feature, i) => (
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {fabricFeatures.map((feature) => (
                 <div
                   key={feature}
                   className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm"
                 >
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-brand" />
+                  <CheckCircle2 className="h-4 w-4 shrink-0 text-brand" />
                   <span className="text-sm font-medium text-white/90">{feature}</span>
                 </div>
               ))}
             </div>
 
             {/* Trust badge */}
-            <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand shadow-pop">
-                <Shield className="h-7 w-7 text-white" />
+            <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm md:p-5">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand shadow-pop md:h-14 md:w-14">
+                <Shield className="h-6 w-6 text-white md:h-7 md:w-7" />
               </div>
-              <div>
-                <p className="font-display text-lg font-bold text-white">100% Fabric Safety</p>
-                <p className="text-sm text-white/60">Guaranteed protection for all fabric types</p>
+              <div className="min-w-0">
+                <p className="font-display text-base font-bold text-white md:text-lg">100% Fabric Safety</p>
+                <p className="text-xs text-white/60 md:text-sm">Guaranteed protection for all fabric types</p>
               </div>
-              <div className="ml-auto text-right">
-                <p className="font-display text-3xl font-bold text-brand">99%</p>
+              <div className="ml-auto shrink-0 text-right">
+                <p className="font-display text-2xl font-bold text-brand md:text-3xl">99%</p>
                 <p className="text-xs text-white/50">satisfaction rate</p>
               </div>
             </div>
           </div>
 
-          {/* ── Right: perfect 2×2 grid, all equal height ── */}
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 h-[480px]">
+          {/* ── 2×2 image grid ── */}
+          <div className="grid grid-cols-2 gap-3 md:gap-4" style={{ height: "clamp(280px, 55vw, 480px)" }}>
             {fabricTypes.map((fabric) => (
               <div
                 key={fabric.name}
-                className="group relative overflow-hidden rounded-3xl cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.03]"
+                className="group relative overflow-hidden rounded-2xl md:rounded-3xl cursor-pointer transition-transform duration-300 ease-out hover:scale-[1.03]"
                 onMouseEnter={() => setHovered(fabric.name)}
                 onMouseLeave={() => setHovered(null)}
               >
@@ -125,15 +123,15 @@ export function Fabrics() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/30 to-transparent" />
 
                 {/* Top icon pill */}
-                <div className="absolute left-3 top-3">
-                  <div className={`flex items-center gap-1.5 rounded-full ${fabric.accent} px-3 py-1.5 shadow-soft`}>
-                    <fabric.icon className="h-3.5 w-3.5 text-navy" />
+                <div className="absolute left-2.5 top-2.5 md:left-3 md:top-3">
+                  <div className={`flex items-center gap-1.5 rounded-full ${fabric.accent} px-2.5 py-1 shadow-soft md:px-3 md:py-1.5`}>
+                    <fabric.icon className="h-3 w-3 text-navy md:h-3.5 md:w-3.5" />
                   </div>
                 </div>
 
                 {/* Bottom text */}
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 className="font-display text-base font-bold text-white">
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4">
+                  <h3 className="font-display text-xs font-bold text-white md:text-base">
                     {fabric.name}
                   </h3>
                   <p

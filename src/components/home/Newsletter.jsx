@@ -47,20 +47,19 @@ const benefits = [
 
 export function Newsletter() {
   return (
-    <section className="flex min-h-screen items-center bg-secondary py-16">
+    <section className="bg-secondary py-12 md:py-16">
       <div className="mx-auto w-full max-w-7xl px-6">
-        {/* Header */}
-        <div className="mb-10 text-center">
+        <div className="mb-8 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">
             Why Choose Cassio
           </span>
-          <h2 className="mt-3 font-display text-3xl font-semibold text-navy md:text-4xl">
+          <h2 className="mt-3 font-display text-2xl font-semibold text-navy md:text-4xl">
             The Cassio difference
           </h2>
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
@@ -71,18 +70,13 @@ export function Newsletter() {
               
               {/* Content */}
               <div className="relative">
-                {/* Icon */}
-                <div className={`mx-auto inline-flex h-12 w-12 items-center justify-center rounded-xl ${benefit.color} transition-all duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                  <benefit.icon className={`h-6 w-6 ${benefit.iconColor}`} />
+                <div className={`mx-auto inline-flex h-10 w-10 items-center justify-center rounded-xl ${benefit.color} transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 md:h-12 md:w-12`}>
+                  <benefit.icon className={`h-5 w-5 ${benefit.iconColor} md:h-6 md:w-6`} />
                 </div>
-                
-                {/* Title */}
-                <h3 className="mt-4 font-display text-lg font-semibold text-navy transition-colors group-hover:text-brand">
+                <h3 className="mt-3 font-display text-sm font-semibold text-navy transition-colors group-hover:text-brand md:mt-4 md:text-lg">
                   {benefit.title}
                 </h3>
-                
-                {/* Description */}
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground md:mt-2 md:text-sm">
                   {benefit.description}
                 </p>
               </div>

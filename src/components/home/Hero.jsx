@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 
 const services = [
   { name: "Dry Cleaning", image: "/assets/service-drycleaning.jpg" },
-  { name: "Laundry", image: "/assets/service-washfold.jpg" },
+  { name: "Wash & Fold", image: "/assets/service-washfold.jpg" },
   { name: "Ironing", image: "/assets/service-ironing.jpg" },
   { name: "Premium Care", image: "/assets/service-premium.jpg" },
 ];
@@ -82,10 +82,14 @@ export function Hero() {
             Best Dry Cleaners in Watford and Surrounded area
           </span>
 
-          <h1 className="font-display text-5xl font-semibold leading-tight sm:text-6xl lg:text-7xl">
-            <span className="block text-white">Professional Laundry &amp;</span>
+          <h1 className="font-display font-semibold leading-tight text-4xl md:text-6xl lg:text-7xl">
+            {/* First line — different text per breakpoint, same element */}
+            <span className="block text-white">
+              <span className="md:hidden">Expert Laundry &amp;</span>
+              <span className="hidden md:inline">Professional Laundry &amp;</span>
+            </span>
 
-            {/* Animated service name — smooth blur + slide up */}
+            {/* Animated service name — rendered once, shared across breakpoints */}
             <span className="relative block h-[1.2em] overflow-hidden">
               {services.map((s, i) => (
                 <span
@@ -93,12 +97,8 @@ export function Hero() {
                   className="absolute inset-0 text-sun transition-all"
                   style={{
                     opacity: i === current ? 1 : 0,
-                    transform: i === current ? "translateY(0)   blur(0px)"
-                      : i === previous ? "translateY(-40%) blur(0px)"
-                        : "translateY(40%)  blur(0px)",
-                    filter: i === current ? "blur(0px)"
-                      : i === previous ? "blur(6px)"
-                        : "blur(6px)",
+                    transform: i === current ? "translateY(0)" : i === previous ? "translateY(-40%)" : "translateY(40%)",
+                    filter: i === current ? "blur(0px)" : "blur(6px)",
                     transitionDuration: `${FADE_DURATION}s`,
                     transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                   }}
@@ -109,7 +109,13 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="max-w-xl text-lg text-white/85">
+          {/* Mobile subheading */}
+          <p className="max-w-xl text-base text-white/85 md:hidden">
+            Free pickup &amp; delivery in 24h across Watford.
+            Trusted by 5K+ happy customers.
+          </p>
+          {/* Desktop subheading */}
+          <p className="hidden max-w-xl text-lg text-white/85 md:block">
             Fast, eco-friendly garment care with free pickup &amp; delivery in 24 hours
             across Watford. Loved by 5K+ happy customers.
           </p>

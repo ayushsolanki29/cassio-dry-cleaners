@@ -31,36 +31,27 @@ export function Features() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-8 max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">Premium features</span>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
+          <h2 className="mt-3 font-display text-2xl font-semibold text-navy md:text-5xl">
             Built around your wardrobe.
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
           {features.map((f) => (
             <div
               key={f.title}
               className="group relative overflow-hidden rounded-3xl border border-border shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-card"
             >
-              {/* Image Background - Default state (visible) */}
               <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0">
-                <img 
-                  src={f.image} 
-                  alt={f.title}
-                  className="h-full w-full object-cover"
-                />
+                <img src={f.image} alt={f.title} className="h-full w-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent" />
               </div>
-              
-              {/* Light color - Shows on hover */}
               <div className={`absolute inset-0 ${f.color} opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
-              
-              {/* Content - Centered */}
-              <div className="relative z-10 flex min-h-[280px] flex-col items-center justify-center p-7 text-center">
-                <h3 className="font-display text-xl font-semibold text-white transition-all duration-300 group-hover:scale-110 group-hover:text-navy">
+              <div className="relative z-10 flex min-h-[160px] flex-col items-center justify-center p-4 text-center md:min-h-[280px] md:p-7">
+                <h3 className="font-display text-sm font-semibold text-white transition-all duration-300 group-hover:scale-110 group-hover:text-navy md:text-xl">
                   {f.title}
                 </h3>
-                <p className="mt-3 text-sm text-white/90 transition-all duration-300 group-hover:text-muted-foreground">
+                <p className="mt-2 text-xs text-white/90 transition-all duration-300 group-hover:text-muted-foreground md:text-sm">
                   {f.desc}
                 </p>
               </div>

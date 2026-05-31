@@ -11,23 +11,23 @@ export function Services() {
   return (
     <section id="services" className="bg-white py-14">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-8 flex items-end justify-between gap-4">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <span className="text-sm font-semibold uppercase tracking-wider text-brand">Our services</span>
-            <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
+            <h2 className="mt-3 font-display text-3xl font-semibold text-navy md:text-5xl">
               Professional garment care for every need
             </h2>
           </div>
           <a
             href="/services"
-            className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-soft transition hover:scale-105"
+            className="self-start inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground shadow-soft transition hover:scale-105 md:self-auto"
           >
             View All
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
           {services.map((s) => (
             <article
               key={s.title}
@@ -41,9 +41,9 @@ export function Services() {
                   className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="flex flex-1 flex-col gap-3 p-6">
-                <h3 className="font-display text-xl font-semibold text-navy">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
+              <div className="flex flex-1 flex-col gap-2 p-4 md:gap-3 md:p-6">
+                <h3 className="font-display text-base font-semibold text-navy md:text-xl">{s.title}</h3>
+                <p className="text-xs text-muted-foreground md:text-sm">{s.desc}</p>
                 <div className="mt-auto flex items-center justify-end pt-2">
                   <a href="/services" className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
                     Order

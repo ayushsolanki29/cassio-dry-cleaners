@@ -33,11 +33,11 @@ export function Gallery() {
     <section className="bg-white py-16">
       <div className="mx-auto w-full max-w-7xl px-6">
         {/* Header */}
-        <div className="mb-10 text-center">
+        <div className="mb-8 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">
             Our Gallery
           </span>
-          <h2 className="mt-2 text-3xl font-bold text-navy">
+          <h2 className="mt-2 font-display text-2xl font-bold text-navy md:text-3xl">
             See the Cassio difference
           </h2>
         </div>
