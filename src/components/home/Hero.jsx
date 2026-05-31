@@ -1,18 +1,25 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Clock, ShieldCheck } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const services = [
   { name: "Dry Cleaning", image: "/assets/service-drycleaning.jpg" },
-  { name: "Wash & Fold", image: "/assets/service-washfold.jpg" },
-  { name: "Ironing", image: "/assets/service-ironing.jpg" },
+  { name: "Wash & Fold",  image: "/assets/service-washfold.jpg" },
+  { name: "Ironing",      image: "/assets/service-ironing.jpg" },
   { name: "Premium Care", image: "/assets/service-premium.jpg" },
 ];
 
 const INTERVAL = 4000;
-const FADE_DURATION = 1.0;
+const FADE_DURATION = 0.9;
+
+// Shared fade-up variant — each element just sets its own delay
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 22 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay: 0.35 + delay, ease: [0.22, 1, 0.36, 1] },
+});
 
 export function Hero() {
   const [current, setCurrent] = useState(0);
@@ -60,53 +67,68 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-5 pb-10 pt-24 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:pb-14 md:pt-28 lg:gap-12 lg:pb-16 lg:pt-32">
 
         {/* ── Left: text ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="space-y-4 md:space-y-6"
-        >
+        <div className="space-y-4 md:space-y-6">
+
           {/* Badge */}
-          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary md:text-sm">
+          <motion.span
+            {...fadeUp(0.05)}
+            className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary md:text-sm"
+          >
             <svg className="h-3 w-3 shrink-0 fill-primary md:h-3.5 md:w-3.5" viewBox="0 0 24 24">
               <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
             </svg>
             <span className="whitespace-nowrap">Best Dry Cleaners in Watford</span>
-          </span>
+          </motion.span>
 
           {/* Heading */}
           <h1 className="font-display font-semibold leading-tight text-[2.4rem] md:text-6xl lg:text-7xl">
-            <span className="block text-navy">
-              <span className="md:hidden">Expert Laundry &amp;</span>
-              <span className="hidden md:inline">Professional Laundry &amp;</span>
+            {/* Line 1 — clips up from below */}
+            <span className="block overflow-hidden">
+              <motion.span
+                className="block text-navy"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.65, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <span className="md:hidden">Expert Laundry &amp;</span>
+                <span className="hidden md:inline">Professional Laundry &amp;</span>
+              </motion.span>
             </span>
-            <span className="relative block h-[1.2em] overflow-hidden">
-              {services.map((s, i) => (
-                <span key={s.name} className="absolute inset-0 text-primary transition-all"
-                  style={{
-                    opacity: i === current ? 1 : 0,
-                    transform: i === current ? "translateY(0)" : i === previous ? "translateY(-40%)" : "translateY(40%)",
-                    filter: i === current ? "blur(0px)" : "blur(6px)",
-                    transitionDuration: `${FADE_DURATION}s`,
-                    transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-                  }}
-                >
-                  {s.name}
-                </span>
-              ))}
+
+            {/* Line 2 — animated service name */}
+            <span className="block overflow-hidden">
+              <motion.span
+                className="relative block h-[1.2em]"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.65, delay: 0.62, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={services[current].name}
+                    className="absolute inset-0 text-primary"
+                    initial={{ y: "40%", opacity: 0, filter: "blur(6px)" }}
+                    animate={{ y: 0,     opacity: 1, filter: "blur(0px)" }}
+                    exit={{   y: "-40%", opacity: 0, filter: "blur(6px)" }}
+                    transition={{ duration: FADE_DURATION, ease: "easeInOut" }}
+                  >
+                    {services[current].name}
+                  </motion.span>
+                </AnimatePresence>
+              </motion.span>
             </span>
           </h1>
 
           {/* Subheading */}
-          <p className="max-w-xl text-sm text-foreground/65 md:hidden">
+          <motion.p {...fadeUp(0.42)} className="max-w-xl text-sm text-foreground/65 md:hidden">
             Free pickup &amp; delivery in 24h across Watford. Trusted by 5K+ happy customers.
-          </p>
-          <p className="hidden max-w-xl text-lg text-foreground/70 md:block">
+          </motion.p>
+          <motion.p {...fadeUp(0.42)} className="hidden max-w-xl text-lg text-foreground/70 md:block">
             Fast, eco-friendly garment care with free pickup &amp; delivery in 24 hours across Watford. Loved by 5K+ happy customers.
-          </p>
+          </motion.p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap items-center gap-3">
+          <motion.div {...fadeUp(0.54)} className="flex flex-wrap items-center gap-3">
             <a href="/contact#contact-form"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-pop transition hover:scale-105 md:px-7 md:py-4 md:text-base"
             >
@@ -118,13 +140,11 @@ export function Hero() {
             >
               Explore services
             </a>
-          </div>
+          </motion.div>
 
           {/* Google rating */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            {...fadeUp(0.66)}
             className="inline-flex items-center gap-2.5 rounded-full border border-border bg-white px-4 py-2 shadow-soft md:px-5 md:py-2.5"
           >
             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-soft md:h-7 md:w-7">
@@ -144,12 +164,15 @@ export function Hero() {
             </div>
             <span className="text-sm font-bold text-navy md:text-base">4.9/5</span>
           </motion.div>
-        </motion.div>
+        </div>
 
-        {/* ── Right: image crossfade ── */}
-        <div className="relative mx-auto w-full max-w-sm md:max-w-none">
-
-          {/* Image container — shorter on mobile */}
+        {/* ── Right: image ── */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-sm md:max-w-none"
+        >
           <div className="relative z-10 h-[260px] w-full overflow-hidden rounded-2xl md:h-[500px] md:rounded-3xl">
             {services.map((s, i) => (
               <img key={s.image} src={s.image} alt={s.name}
@@ -165,10 +188,10 @@ export function Hero() {
             <div className="pointer-events-none absolute inset-0 z-10 rounded-2xl shadow-[inset_0_0_40px_rgba(0,0,0,0.18)] md:rounded-3xl" />
           </div>
 
-          {/* Floating chip — top left — hidden on mobile to avoid overflow */}
+          {/* Chip — top left */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="absolute -left-3 top-6 z-20 hidden rounded-2xl bg-white p-3 shadow-pop sm:flex md:-left-4 md:p-4"
           >
             <div className="flex items-center gap-3">
@@ -182,10 +205,10 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating chip — bottom right — hidden on mobile */}
+          {/* Chip — bottom right */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            initial={{ opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="absolute -right-3 bottom-8 z-20 hidden rounded-2xl bg-white p-3 shadow-pop sm:flex md:-right-4 md:p-4"
           >
             <div className="flex items-center gap-3">
@@ -214,7 +237,7 @@ export function Hero() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

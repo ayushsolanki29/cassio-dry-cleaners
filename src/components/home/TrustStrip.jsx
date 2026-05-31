@@ -1,4 +1,5 @@
 import { Clock3, Leaf, ShieldCheck, Truck } from "lucide-react";
+import { FadeIn, StaggerList, StaggerItem } from "@/components/common/Animate";
 
 const items = [
   { Icon: Truck, title: "Free pickup & delivery" },
@@ -31,16 +32,16 @@ export function TrustStrip() {
       </div>
 
       {/* ── Desktop: 4-column grid ── */}
-      <div className="hidden md:grid mx-auto max-w-7xl grid-cols-4 gap-6 px-6 py-8">
+      <StaggerList className="hidden md:grid mx-auto max-w-7xl grid-cols-4 gap-6 px-6 py-8">
         {items.map((item) => (
-          <div key={item.title} className="flex items-center gap-3">
+          <StaggerItem key={item.title} className="flex items-center gap-3">
             <span className="grid h-12 w-12 place-items-center rounded-full bg-secondary text-brand">
               <item.Icon className="h-6 w-6" />
             </span>
             <p className="font-display text-base font-semibold text-navy md:text-lg">{item.title}</p>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerList>
 
     </section>
   );

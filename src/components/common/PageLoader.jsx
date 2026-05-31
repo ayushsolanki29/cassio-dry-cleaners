@@ -1,98 +1,77 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function PageLoader() {
   const [visible, setVisible] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setFadeOut(true), 900);
-    const removeTimer = setTimeout(() => setVisible(false), 1300);
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(removeTimer);
-    };
+    const t = setTimeout(() => setVisible(false), 800);
+    return () => clearTimeout(t);
   }, []);
 
-  if (!visible) return null;
-
   return (
-    <div
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden"
-      style={{
-        opacity: fadeOut ? 0 : 1,
-        transition: "opacity 0.4s ease-in-out",
-        pointerEvents: fadeOut ? "none" : "all",
-      }}
-    >
-      {/* White base with soft colour blobs bleeding through */}
-      <div className="absolute inset-0 bg-white" />
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          key="loader"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+        >
+          {/* Background */}
+          <div className="absolute inset-0 bg-white" />
+          <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-brand/15 blur-3xl" />
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sun/20 blur-3xl" />
 
-      {/* Soft colour blobs */}
-      <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-brand/15 blur-3xl" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sun/20 blur-3xl" />
-
-      {/* Subtle noise / grain overlay for texture */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          backgroundSize: "200px 200px",
-        }}
-      />
-
-      {/* Glass card */}
-      <div className="relative z-10 flex flex-col items-center gap-6 rounded-3xl border border-white/80 bg-white/60 px-12 py-10 shadow-[0_8px_40px_-8px_rgba(0,0,0,0.12)] backdrop-blur-2xl">
-
-        {/* Spinning ring + logo */}
-        <div className="relative flex items-center justify-center">
-          <svg
-            className="absolute h-24 w-24 animate-spin"
-            style={{ animationDuration: "1.4s" }}
-            viewBox="0 0 96 96"
-            fill="none"
+          {/* Glass card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 16 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -8 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="relative z-10 flex flex-col items-center gap-6 rounded-3xl border border-white/80 bg-white/70 px-12 py-10 shadow-[0_8px_40px_-8px_rgba(0,0,0,0.10)] backdrop-blur-2xl"
           >
-            <circle cx="48" cy="48" r="44" stroke="oklch(0.62 0.21 252)" strokeOpacity="0.15" strokeWidth="3.5" />
-            <path
-              d="M48 4 A44 44 0 0 1 92 48"
-              stroke="oklch(0.62 0.21 252)"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-            />
-          </svg>
-          <img
-            src="/assets/cassio-logo.jpg"
-            alt="Cassio Dry Cleaners"
-            className="h-16 w-16 rounded-full shadow-soft ring-4 ring-white"
-          />
-        </div>
+            {/* Logo — pulse scale */}
+            <motion.div
+              animate={{ scale: [1, 1.06, 1] }}
+              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <img
+                src="/assets/cassio-logo.jpg"
+                alt="Cassio Dry Cleaners"
+                className="h-16 w-16 rounded-full shadow-soft ring-4 ring-white"
+              />
+            </motion.div>
 
-        {/* Brand name */}
-        <div className="text-center">
-          <p className="font-display text-2xl font-bold tracking-tight text-navy">
-            Cassio Dry Cleaners
-          </p>
-          <p className="mt-1 text-sm text-muted-foreground">Premium garment care</p>
-        </div>
+            {/* Brand name — stagger letters in */}
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15, duration: 0.35 }}
+            >
+              <p className="font-display text-2xl font-bold tracking-tight text-navy">
+                Cassio Dry Cleaners
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">Best Dry Cleaners in Watford</p>
+            </motion.div>
 
-        {/* Progress bar */}
-        <div className="h-1 w-44 overflow-hidden rounded-full bg-black/8">
-          <div
-            className="h-full rounded-full bg-primary"
-            style={{ animation: "loader-progress 1s ease-out forwards" }}
-          />
-        </div>
-      </div>
-
-      <style>{`
-        @keyframes loader-progress {
-          from { width: 0%; }
-          to   { width: 100%; }
-        }
-      `}</style>
-    </div>
+            {/* Progress bar — animated width */}
+            <div className="h-1 w-44 overflow-hidden rounded-full bg-black/8">
+              <motion.div
+                className="h-full rounded-full bg-primary"
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
