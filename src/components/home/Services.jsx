@@ -1,10 +1,10 @@
 import { ArrowRight } from "lucide-react";
 
 const services = [
-  { title: "Dry cleaning", desc: "Specialised care for suits, dresses & delicate garments.", img: "/assets/service-drycleaning.jpg", bg: "bg-mint" },
-  { title: "Wash & fold", desc: "Everyday laundry washed, dried and neatly folded.", img: "/assets/service-washfold.jpg", bg: "bg-sun" },
-  { title: "Ironing", desc: "Crisp, professional pressing for shirts and trousers.", img: "/assets/service-ironing.jpg", bg: "bg-lilac" },
-  { title: "Premium care", desc: "White-glove handling for luxury & couture pieces.", img: "/assets/service-premium.jpg", bg: "bg-cream" },
+  { title: "Dry cleaning", desc: "Specialised care for suits, dresses & delicate garments.", img: "/assets/service-drycleaning.jpg", accent: "bg-mint", dot: "bg-primary" },
+  { title: "Wash & fold", desc: "Everyday laundry washed, dried and neatly folded.", img: "/assets/service-washfold.jpg", accent: "bg-sun", dot: "bg-brand" },
+  { title: "Ironing", desc: "Crisp, professional pressing for shirts and trousers.", img: "/assets/service-ironing.jpg", accent: "bg-lilac", dot: "bg-navy" },
+  { title: "Premium care", desc: "White-glove handling for luxury & couture pieces.", img: "/assets/service-premium.jpg", accent: "bg-cream", dot: "bg-primary" },
 ];
 
 export function Services() {
@@ -31,23 +31,34 @@ export function Services() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
-              <div className={`relative h-48 overflow-hidden ${s.bg}`}>
+              {/* Image with coloured accent strip at bottom */}
+              <div className="relative h-36 overflow-hidden md:h-48">
                 <img
                   src={s.img}
                   alt={s.title}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                  className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
+                {/* Gradient fade into card */}
+                <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
               </div>
-              <div className="flex flex-1 flex-col gap-2 p-4 md:gap-3 md:p-6">
-                <h3 className="font-display text-base font-semibold text-navy md:text-xl">{s.title}</h3>
-                <p className="text-xs text-muted-foreground md:text-sm">{s.desc}</p>
-                <div className="mt-auto flex items-center justify-end pt-2">
-                  <a href="/services" className="inline-flex items-center gap-1 text-sm font-semibold text-primary">
+
+              {/* Coloured accent line */}
+              <div className={`h-0.5 w-full ${s.accent} opacity-60`} />
+
+              <div className="flex flex-1 flex-col gap-1.5 p-3 md:gap-2 md:p-5">
+                {/* Dot + title */}
+                <div className="flex items-center gap-2">
+                  <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
+                  <h3 className="font-display text-sm font-semibold text-navy md:text-lg">{s.title}</h3>
+                </div>
+                <p className="text-xs leading-relaxed text-muted-foreground md:text-sm">{s.desc}</p>
+                <div className="mt-auto pt-2">
+                  <a href="/services" className="inline-flex items-center gap-1 text-xs font-semibold text-primary md:text-sm">
                     Order
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
                   </a>
                 </div>
               </div>

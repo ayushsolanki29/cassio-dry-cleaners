@@ -96,7 +96,7 @@ export function Header() {
           }
         `}
       >
-        <div className="w-full max-w-5xl overflow-hidden rounded-2xl border border-white/15 bg-primary/60 shadow-[0_20px_60px_-10px_oklch(0.2_0.05_250/0.5)] backdrop-blur-2xl">
+        <div className="w-full max-w-5xl mt-[15px] overflow-hidden rounded-2xl border border-white/15 bg-primary/60 shadow-[0_20px_60px_-10px_oklch(0.2_0.05_250/0.5)] backdrop-blur-2xl">
           <nav className="flex flex-col p-4">
             {navItems.map((item) => (
               <Link
