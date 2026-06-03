@@ -25,7 +25,7 @@ export function AboutCta() {
 
             <div className="mt-8 flex flex-col sm:flex-row flex-wrap justify-center sm:justify-start gap-3 sm:gap-4">
               <a
-                href="/contact#contact-form"
+                href="/contact"
                 className="group inline-flex w-full sm:w-auto justify-center items-center gap-3 rounded-full bg-navy px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-white transition-all hover:scale-105 shadow-sm"
               >
                 Get Started
@@ -35,7 +35,7 @@ export function AboutCta() {
               </a>
 
               <a
-                href="tel:+442012345678"
+                href="tel:+441923256212"
                 className="group inline-flex w-full sm:w-auto justify-center items-center gap-3 rounded-full bg-navy px-6 sm:px-8 py-3.5 sm:py-4 font-semibold text-white transition-all hover:scale-105 shadow-sm"
               >
                 Call Us Now

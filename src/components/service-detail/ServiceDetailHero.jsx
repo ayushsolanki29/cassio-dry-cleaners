@@ -3,72 +3,76 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Shield, Leaf, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { FadeUp } from "@/components/common/Animate";
 
 export function ServiceDetailHero({ service }) {
   return (
-    <section className="relative flex h-screen items-center overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 text-white">
-      <div className="pointer-events-none absolute -right-20 top-20 h-96 w-96 rounded-full bg-brand/30 blur-3xl" />
-      <div className="pointer-events-none absolute -left-20 bottom-20 h-96 w-96 rounded-full bg-sun/30 blur-3xl" />
-
-      <div className="relative mx-auto w-full max-w-7xl px-6 py-8">
+    <section className="bg-cream/40 pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden selection:bg-brand/20">
+      <div className="mx-auto max-w-7xl px-6">
+        
         <Link 
           href="/services" 
-          className="inline-flex items-center gap-2 text-sm font-medium text-white/80 transition hover:text-white"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-navy"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Services
         </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mt-6 grid items-center gap-8 lg:grid-cols-2"
-        >
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-medium backdrop-blur">
-              <img src="/assets/cassio-logo.jpg" alt="Cassio" className="h-5 w-5 rounded-full object-cover mix-blend-lighten" />
-              Cassio Dry Cleaners
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          <FadeUp className="space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-brand shadow-sm border border-border/50">
+              Premium Garment Care
             </div>
-            <h1 className="font-display text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">
+            
+            <h1 className="font-display text-4xl font-semibold leading-[1.1] text-navy sm:text-5xl lg:text-6xl">
               {service.title}
             </h1>
-            <p className="mt-4 text-lg text-white/85">{service.description}</p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2 backdrop-blur">
-                <Clock className="h-4 w-4 text-cream" />
-                <span className="text-sm font-medium">24-48h turnaround</span>
+            <p className="max-w-xl text-lg text-muted-foreground leading-relaxed">
+              {service.description}
+            </p>
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-sm border border-border/40">
+                <Clock className="h-4 w-4 text-brand" />
+                <span className="text-sm font-medium text-navy">24-48h turnaround</span>
               </div>
-              <div className="flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2 backdrop-blur">
-                <Shield className="h-4 w-4 text-cream" />
-                <span className="text-sm font-medium">Fully insured</span>
+              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-sm border border-border/40">
+                <Shield className="h-4 w-4 text-brand" />
+                <span className="text-sm font-medium text-navy">Fully insured</span>
               </div>
-              <div className="flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2 backdrop-blur">
-                <Leaf className="h-4 w-4 text-cream" />
-                <span className="text-sm font-medium">Eco-friendly</span>
+              <div className="flex items-center gap-2 rounded-xl bg-white px-3 py-2 shadow-sm border border-border/40">
+                <Leaf className="h-4 w-4 text-brand" />
+                <span className="text-sm font-medium text-navy">Eco-friendly</span>
               </div>
             </div>
 
-            <div className="mt-6">
+            <div className="pt-6">
               <Link
-                href="/contact#contact-form"
-                className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 font-semibold text-white shadow-pop transition hover:scale-105"
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full bg-navy px-8 py-4 font-semibold text-white transition-all hover:scale-105 shadow-sm"
               >
                 Get in touch
               </Link>
             </div>
-          </div>
+          </FadeUp>
 
-          <div className="relative">
-            <div className="blob absolute inset-0 bg-cream/20" />
-            <img
-              src={service.image}
-              alt={service.title}
-              className="relative z-10 h-96 w-full rounded-3xl object-cover shadow-card"
-            />
-          </div>
-        </motion.div>
+          <FadeUp delay={0.2} className="relative">
+            {/* Soft decorative background shapes */}
+            <div className="absolute -right-12 -top-12 h-64 w-64 rounded-full bg-mint/30 blur-3xl" />
+            <div className="absolute -left-12 -bottom-12 h-64 w-64 rounded-full bg-sun/30 blur-3xl" />
+            
+            <div className="relative rounded-3xl bg-white p-2 shadow-card border border-border/50 z-10 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="relative z-10 h-80 sm:h-96 w-full rounded-2xl object-cover"
+              />
+            </div>
+          </FadeUp>
+
+        </div>
       </div>
     </section>
   );

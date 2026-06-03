@@ -63,7 +63,7 @@ export function FeaturedSpotlight() {
 
             <FadeUp delay={0.2} className="pt-4">
               <a
-                href="/contact#contact-form"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-brand-foreground shadow-soft transition-all duration-200 hover:scale-105 hover:shadow-pop md:px-7 md:py-4 md:text-base"
               >
                 Get in touch

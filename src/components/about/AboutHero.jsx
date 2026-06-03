@@ -45,7 +45,7 @@ export function AboutHero() {
                   <div className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-white shadow-sm text-brand">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <span className="text-base font-medium text-navy">Founded in Shoreditch</span>
+                  <span className="text-base font-medium text-navy">Founded in Watford</span>
                 </div>
 
                 <div className="flex items-center gap-4">

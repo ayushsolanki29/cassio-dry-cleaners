@@ -25,7 +25,7 @@ export function BrandStory() {
 
             <div className="space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground">
               <p className="first-letter:float-left first-letter:mr-3 first-letter:-mt-1 first-letter:text-6xl md:first-letter:text-7xl first-letter:font-display first-letter:font-bold first-letter:text-brand first-letter:leading-none">
-                Cassio Dry Cleaners was founded in 2018 by Maria Cassio, a third-generation dry cleaner who saw an opportunity to bring traditional craftsmanship into the modern age. Starting with a single location in Shoreditch, Maria's vision was simple: combine expert garment care with the convenience Watford's busy professionals needed.
+                Cassio Dry Cleaners was founded in 2018 by Maria Cassio, a third-generation dry cleaner who saw an opportunity to bring traditional craftsmanship into the modern age. Starting with a single location on Cassiobury Dr, Maria's vision was simple: combine expert garment care with the convenience Watford's busy professionals needed.
               </p>
 
               <p>

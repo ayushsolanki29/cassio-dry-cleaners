@@ -24,7 +24,7 @@ export function FinalCta() {
 
             <div className="mt-6 flex flex-wrap gap-3 md:mt-8 md:gap-4">
               <a
-                href="/contact#contact-form"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-105 md:gap-3 md:px-8 md:py-4 md:text-base"
               >
                 Contact Us
@@ -34,7 +34,7 @@ export function FinalCta() {
               </a>
 
               <a
-                href="tel:01494445291"
+                href="tel:+441923256212"
                 className="inline-flex items-center gap-2 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-105 md:gap-3 md:px-8 md:py-4 md:text-base"
               >
                 Call Us Now

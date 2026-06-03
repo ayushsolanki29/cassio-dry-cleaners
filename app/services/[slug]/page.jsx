@@ -62,8 +62,8 @@ export default async function ServiceDetailPage({ params }) {
       <ServiceFabrics service={serviceData} />
       <ServiceCare service={serviceData} />
       <ServiceWarnings service={serviceData} />
-      <ServiceTestimonial service={serviceData} />
-      <ServiceFaq service={serviceData} />
+      {slug !== 'leather-suede' && <ServiceTestimonial service={serviceData} />}
+      {slug !== 'leather-suede' && <ServiceFaq service={serviceData} />}
       <ServiceCta service={serviceData} />
       <Footer />
     </main>

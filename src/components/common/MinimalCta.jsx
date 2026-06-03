@@ -4,9 +4,9 @@ export function MinimalCta({
   title = "Ready to experience hassle-free laundry?",
   description = "Join thousands of satisfied customers. Contact us to get started today.",
   primaryText = "Contact Us",
-  primaryLink = "/contact#contact-form",
+  primaryLink = "/contact",
   secondaryText = "Call Us",
-  secondaryLink = "tel:01494445291",
+  secondaryLink = "tel:+441923256212",
   showPhone = true,
   bgColor = "bg-primary"
 }) {

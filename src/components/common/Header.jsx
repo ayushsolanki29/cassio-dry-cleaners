@@ -61,7 +61,7 @@ export function Header() {
 
           {/* Right */}
           <div className="flex items-center gap-2">
-            <Link href="/contact#contact-form"
+            <Link href="/contact"
               className="hidden rounded-xl bg-white px-4 py-2 text-sm font-semibold text-primary shadow-soft transition-all duration-200 hover:scale-105 hover:shadow-pop md:block"
             >
               Contact us
@@ -142,7 +142,7 @@ export function Header() {
                 transition={{ delay: navItems.length * 0.05, duration: 0.2 }}
                 className="w-full pt-4 mt-2 border-t border-border/50"
               >
-                <Link href="/contact#contact-form" onClick={() => setMenuOpen(false)}
+                <Link href="/contact" onClick={() => setMenuOpen(false)}
                   className="block w-full rounded-full bg-navy px-4 py-4 text-center text-base font-semibold text-white transition hover:opacity-90 shadow-sm"
                 >
                   Contact us

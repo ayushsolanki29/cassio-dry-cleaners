@@ -3,21 +3,19 @@ import { MapPin, Clock } from "lucide-react";
 const locations = [
   {
     name: "Watford HQ & Customer Service",
-    address: "123 Shoreditch High Street",
-    city: "Watford E1 6JE",
+    address: "166 Cassiobury Dr",
+    city: "Watford WD17 3AJ, UK",
     hours: [
-      "Monday - Friday: 8:00 AM - 8:00 PM",
-      "Saturday: 9:00 AM - 6:00 PM",
-      "Sunday: 10:00 AM - 4:00 PM"
+      "Monday - Saturday: 9:00 AM - 5:30 PM",
+      "Sunday: Closed"
     ]
   },
   {
     name: "Processing Facility",
-    address: "456 Commercial Road",
-    city: "Watford E14 7HG",
+    address: "Watford Business Park",
+    city: "Watford WD18 8PT, UK",
     hours: [
-      "Monday - Friday: 6:00 AM - 10:00 PM",
-      "Saturday: 7:00 AM - 8:00 PM",
+      "Monday - Saturday: 7:00 AM - 8:00 PM",
       "Sunday: Closed"
     ]
   }

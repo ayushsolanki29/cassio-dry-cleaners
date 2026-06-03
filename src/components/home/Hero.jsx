@@ -129,7 +129,7 @@ export function Hero() {
 
           {/* Buttons */}
           <motion.div {...fadeUp(0.54)} className="flex flex-wrap items-center gap-3">
-            <a href="/contact#contact-form"
+            <a href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-pop transition hover:scale-105 md:px-7 md:py-4 md:text-base"
             >
               Contact Us

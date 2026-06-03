@@ -1,7 +1,7 @@
 import { FadeUp, StaggerList, StaggerItem } from "@/components/common/Animate";
 
 const milestones = [
-  { year: "2018", title: "Founded", desc: "First Cassio location opens in Shoreditch" },
+  { year: "2018", title: "Founded", desc: "First Cassio location opens in Watford" },
   { year: "2019", title: "Expansion", desc: "Launched pickup & delivery service across East Watford" },
   { year: "2021", title: "Growth", desc: "Reached 10,000 customers and expanded to Central Watford" },
   { year: "2023", title: "Innovation", desc: "Introduced eco-friendly cleaning technology" },

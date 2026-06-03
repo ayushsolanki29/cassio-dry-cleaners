@@ -86,7 +86,7 @@ export function ContactForm() {
               type="tel"
               id="phone"
               className="w-full rounded-xl border border-border bg-white px-4 py-3 text-navy placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-brand"
-              placeholder="+44 7700 900000"
+              placeholder="+44 1923 256212"
             />
           </div>
 

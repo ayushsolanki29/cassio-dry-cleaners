@@ -24,9 +24,9 @@ const cols = [
   {
     title: "Support",
     links: [
-      { name: "Contact Us", href: "/contact#contact-form" },
+      { name: "Contact Us", href: "/contact" },
       { name: "Services", href: "/services" },
-      { name: "FAQs", href: "/contact#contact-form" },
+      { name: "FAQs", href: "/contact" },
       { name: "Privacy Policy", href: "/privacy" },
       { name: "Terms & Conditions", href: "/terms" }
     ]
@@ -54,6 +54,14 @@ export function Footer() {
             <p className="mt-4 text-sm text-white/70">
               Premium garment care, picked up at your door. Loved by thousands across Watford.
             </p>
+            <a 
+              href="https://maps.google.com/?q=166+Cassiobury+Dr,+Watford+WD17+3AJ,+UK" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-2 block text-sm text-white/70 hover:text-white transition-colors underline-offset-4 hover:underline"
+            >
+              166 Cassiobury Dr, Watford WD17 3AJ, United Kingdom
+            </a>
             <div className="mt-6 flex gap-3">
               {socials.map((social) => (
                 <a key={social.label} href={social.href} aria-label={social.label} className="grid h-10 w-10 place-items-center rounded-full bg-white/10 transition hover:bg-brand">

@@ -21,7 +21,7 @@ export function ProcessCta() {
 
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="/contact#contact-form"
+              href="/contact"
               className="group inline-flex w-full items-center justify-center gap-3 rounded-full bg-navy px-8 py-4 font-semibold text-white shadow-soft transition-all hover:scale-105 hover:bg-brand sm:w-auto"
             >
               Schedule a pickup
@@ -29,7 +29,7 @@ export function ProcessCta() {
             </a>
 
             <a
-              href="tel:01494445291"
+              href="tel:+441923256212"
               className="inline-flex w-full items-center justify-center gap-3 rounded-full border-2 border-navy/20 px-8 py-4 font-semibold text-navy transition-all hover:border-brand hover:text-brand sm:w-auto"
             >
               <Phone className="h-4 w-4" />

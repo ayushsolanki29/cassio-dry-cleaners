@@ -4,7 +4,7 @@ const methods = [
   {
     Icon: Phone,
     title: "Phone",
-    detail: "+44 20 1234 5678",
+    detail: "+44 1923 256212",
     description: "Mon-Sat, 8am-8pm",
     color: "bg-mint"
   },
@@ -18,7 +18,7 @@ const methods = [
   {
     Icon: MessageCircle,
     title: "WhatsApp",
-    detail: "+44 7700 900000",
+    detail: "07412 093766",
     description: "Quick responses",
     color: "bg-lilac"
   },

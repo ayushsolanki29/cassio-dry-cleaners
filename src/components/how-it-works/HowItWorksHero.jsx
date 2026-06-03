@@ -54,7 +54,7 @@ export function HowItWorksHero() {
           className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <a
-            href="/contact#contact-form"
+            href="/contact"
             className="group flex w-full items-center justify-center gap-2 rounded-full bg-navy px-8 py-4 text-sm font-semibold text-white shadow-soft transition-all hover:scale-105 hover:bg-brand sm:w-auto md:text-base"
           >
             Schedule a pickup

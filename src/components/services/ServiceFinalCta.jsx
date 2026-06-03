@@ -26,7 +26,7 @@ export function ServiceFinalCta() {
 
             <FadeUp delay={0.2} className="mt-8 flex flex-col md:flex-row justify-center md:justify-end gap-3 md:gap-4">
               <a
-                href="/contact#contact-form"
+                href="/contact"
                 className="inline-flex w-full md:w-auto justify-center items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-primary transition-all hover:scale-105"
               >
                 Contact Us
@@ -36,7 +36,7 @@ export function ServiceFinalCta() {
               </a>
 
               <a
-                href="tel:01494445291"
+                href="tel:+441923256212"
                 className="inline-flex w-full md:w-auto justify-center items-center gap-3 rounded-full border-2 border-white/30 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20"
               >
                 <Phone className="h-5 w-5" />

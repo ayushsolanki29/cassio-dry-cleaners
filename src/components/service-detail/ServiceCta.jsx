@@ -23,7 +23,7 @@ export function ServiceCta({ service }) {
 
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
-                href="/contact#contact-form"
+                href="/contact"
                 className="inline-flex items-center gap-3 rounded-full bg-brand px-8 py-4 font-semibold text-brand-foreground transition-all hover:scale-105"
               >
                 Book This Service
@@ -33,7 +33,7 @@ export function ServiceCta({ service }) {
               </a>
 
               <a
-                href="tel:01494445291"
+                href="tel:+441923256212"
                 className="inline-flex items-center gap-3 rounded-full bg-white/20 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/30"
               >
                 <Phone className="h-5 w-5" />

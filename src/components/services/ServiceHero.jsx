@@ -3,14 +3,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 const services = [
-  { name: "Dry Cleaning",    image: "/assets/service-drycleaning.jpg" },
-  { name: "Wash & Fold",     image: "/assets/service-washfold.jpg" },
-  { name: "Ironing",         image: "/assets/service-ironing.jpg" },
-  { name: "Premium Care",    image: "/assets/service-premium.jpg" },
-  { name: "Wedding Dresses", image: "/assets/service-premium.jpg" },
-  { name: "Home Textiles",   image: "/assets/section-towels.jpg" },
+  { name: "Dry Cleaning",    slug: "dry-cleaning",  image: "/assets/service-drycleaning.jpg" },
+  { name: "Wash & Fold",     slug: "wash-fold",     image: "/assets/service-washfold.jpg" },
+  { name: "Ironing",         slug: "ironing",       image: "/assets/service-ironing.jpg" },
+  { name: "Premium Care",    slug: "premium-care",  image: "/assets/service-premium.jpg" },
+  { name: "Wedding Dresses", slug: "wedding-dress", image: "/assets/service-premium.jpg" },
+  { name: "Home Textiles",   slug: "curtains-home", image: "/assets/section-towels.jpg" },
 ];
 
 const INTERVAL = 3500;
@@ -120,7 +121,7 @@ export function ServiceHero() {
             View all services
             <ArrowRight className="h-4 w-4" />
           </a>
-          <a href="/contact#contact-form"
+          <a href="/contact"
             className="rounded-full border border-border bg-white px-6 py-3 text-sm font-semibold text-navy shadow-soft transition hover:bg-secondary md:px-8 md:py-4 md:text-base"
           >
             Contact us
@@ -169,9 +170,10 @@ export function ServiceHero() {
             onMouseLeave={(e) => (e.currentTarget.style.animationPlayState = "running")}
           >
             {[...services, ...services].map((s, i) => (
-              <button
+              <Link
+                href={`/services/${s.slug}`}
                 key={i}
-                onClick={() => goTo(i % services.length)}
+                onMouseEnter={() => goTo(i % services.length)}
                 className={`group relative h-40 w-48 shrink-0 overflow-hidden rounded-2xl shadow-soft transition-all duration-300 md:h-52 md:w-64 ${
                   (i % services.length) === current
                     ? "scale-[1.04] shadow-card"
@@ -185,7 +187,7 @@ export function ServiceHero() {
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/75 to-transparent px-3 pb-3 pt-8">
                   <p className="font-display text-xs font-semibold text-white md:text-sm">{s.name}</p>
                 </div>
-              </button>
+              </Link>
             ))}
           </div>
         </div>

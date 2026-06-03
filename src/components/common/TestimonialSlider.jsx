@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { googleReviews } from "@/data/reviewsData";
 
 export function TestimonialSlider({ 
   title = "What our customers say",
   subtitle = "Don't just take our word for it",
-  testimonials = [],
+  testimonials = googleReviews,
   backgroundColor = "bg-cream",
   autoSlide = true,
   slideInterval = 5000

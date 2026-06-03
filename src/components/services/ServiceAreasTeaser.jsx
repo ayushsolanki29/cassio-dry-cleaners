@@ -7,7 +7,7 @@ const areas = [
   "South Watford",
   "East Watford",
   "West Watford",
-  "Shoreditch",
+  "Cassiobury",
   "Chelsea",
   "Notting Hill",
   "Camden",
@@ -43,7 +43,7 @@ export function ServiceAreasTeaser() {
 
         <FadeUp delay={0.2} className="text-center">
           <a
-            href="/contact#contact-form"
+            href="/contact"
             className="inline-flex w-full md:w-auto justify-center items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm md:text-base font-semibold text-brand-foreground shadow-soft transition-all hover:scale-105"
           >
             Check your area

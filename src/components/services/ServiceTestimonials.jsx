@@ -3,54 +3,10 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { FadeUp } from "@/components/common/Animate";
-
-const testimonials = [
-  { 
-    name: "Emma Walker", 
-    location: "Nascot Wood, Watford", 
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
-    quote: "Cassio Dry Cleaners has been a lifesaver! My silk dresses always come back perfect. The pickup service is so convenient and the team is incredibly professional.",
-    rating: 5
-  },
-  { 
-    name: "James Bennett", 
-    location: "Cassiobury, Watford", 
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
-    quote: "I trust Cassio with all my suits and formal wear. The attention to detail is incredible, and the eco-friendly approach is a bonus. Highly recommend!",
-    rating: 5
-  },
-  { 
-    name: "Sophie Clarke", 
-    location: "Croxley Green, Watford", 
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
-    quote: "Best dry cleaning service in Watford! Fast turnaround, excellent quality, and the team is always professional. They've never let me down.",
-    rating: 5
-  },
-  { 
-    name: "Michael Chen", 
-    location: "Central Watford, Watford", 
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-    quote: "As a busy professional, Cassio's pickup and delivery service is perfect. My shirts are always crisp and ready for important meetings.",
-    rating: 5
-  },
-  { 
-    name: "Sarah Johnson", 
-    location: "Oxhey, Watford", 
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-    quote: "Exceptional service for my designer pieces. They handle delicate fabrics with such care. The quality is consistently outstanding.",
-    rating: 5
-  },
-  { 
-    name: "David Wilson", 
-    location: "Garston, Watford", 
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
-    quote: "Cassio saved my wedding suit! They removed a stubborn stain that other cleaners couldn't handle. True professionals with amazing results.",
-    rating: 5
-  }
-];
+import { googleReviews } from "@/data/reviewsData";
 
 // Duplicate for seamless loop
-const allTestimonials = [...testimonials, ...testimonials, ...testimonials];
+const allTestimonials = [...googleReviews, ...googleReviews, ...googleReviews];
 
 export function ServiceTestimonials() {
   const [paused, setPaused] = useState(false);
@@ -119,14 +75,20 @@ export function ServiceTestimonials() {
                 className="w-[260px] shrink-0 rounded-2xl border border-border bg-white p-5 shadow-soft transition hover:-translate-y-1 hover:shadow-card"
               >
                 <div className="flex items-center gap-3">
-                  <img
-                    src={t.image}
-                    alt={t.name}
-                    className="h-9 w-9 rounded-full object-cover"
-                  />
+                  {t.image ? (
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="h-9 w-9 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand/10 text-brand font-semibold shadow-soft">
+                      {t.name.charAt(0).toUpperCase()}
+                    </div>
+                  )}
                   <div className="min-w-0">
                     <p className="font-display text-sm font-semibold text-navy truncate">{t.name}</p>
-                    <p className="text-xs text-muted-foreground truncate">{t.location}</p>
+                    <p className="text-xs text-muted-foreground truncate">{t.role || t.location}</p>
                   </div>
                 </div>
 
