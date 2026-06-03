@@ -10,7 +10,6 @@ const navItems = [
   { label: "How it works", href: "/how-it-works" },
   { label: "Business", href: "/business" },
   { label: "About", href: "/about" },
-  { label: "Blog", href: "/blog" },
 ];
 
 export function Header() {

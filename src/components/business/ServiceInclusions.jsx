@@ -16,25 +16,25 @@ const inclusions = [
 
 export function ServiceInclusions() {
   return (
-    <section className="bg-cream py-16">
+    <section className="bg-cream py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-10 text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-brand">What's included</span>
-          <h2 className="mt-3 font-display text-4xl font-semibold text-navy md:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-semibold text-navy md:text-5xl">
             Comprehensive business services
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-muted-foreground">
             Everything your business needs from Cassio Dry Cleaners
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
           {inclusions.map((item) => (
-            <div key={item} className="flex items-start gap-3 rounded-xl bg-white p-5 shadow-soft">
-              <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand text-white">
-                <Check className="h-4 w-4" />
+            <div key={item} className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-3 rounded-xl bg-white p-3 sm:p-5 shadow-soft text-center sm:text-left transition-transform hover:-translate-y-1 hover:shadow-card">
+              <span className="mt-0 sm:mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand/10 text-brand">
+                <Check className="h-3.5 w-3.5 stroke-[3]" />
               </span>
-              <span className="text-sm font-medium text-navy">{item}</span>
+              <span className="text-xs sm:text-sm font-semibold text-navy leading-tight">{item}</span>
             </div>
           ))}
         </div>

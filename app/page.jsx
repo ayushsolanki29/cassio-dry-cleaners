@@ -13,7 +13,6 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { Gallery } from "@/components/home/Gallery";
 import { Business } from "@/components/home/Business";
 import { Faq } from "@/components/home/Faq";
-import { Blog } from "@/components/home/Blog";
 import { Newsletter } from "@/components/home/Newsletter";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Footer } from "@/components/common/Footer";
@@ -44,7 +43,6 @@ export default function Home() {
       <Gallery />
       <Business />
       <Faq />
-      <Blog />
       <Newsletter />
       <FinalCta />
       <Footer />

@@ -3,15 +3,13 @@ import { Footer } from "@/components/common/Footer";
 import { BusinessHero } from "@/components/business/BusinessHero";
 import { BusinessTrustStrip } from "@/components/business/BusinessTrustStrip";
 import { IndustriesGrid } from "@/components/business/IndustriesGrid";
-import { HotelsDeepDive } from "@/components/business/HotelsDeepDive";
-import { RestaurantsDeepDive } from "@/components/business/RestaurantsDeepDive";
-import { OfficesDeepDive } from "@/components/business/OfficesDeepDive";
+import { IndustryDeepDives } from "@/components/business/IndustryDeepDives";
 import { ServiceInclusions } from "@/components/business/ServiceInclusions";
 import { OnboardingProcess } from "@/components/business/OnboardingProcess";
 import { BusinessStats } from "@/components/business/BusinessStats";
 import { CaseStudy } from "@/components/business/CaseStudy";
-import { BusinessTestimonials } from "@/components/business/BusinessTestimonials";
-import { BusinessFaq } from "@/components/business/BusinessFaq";
+import { Testimonials } from "@/components/home/Testimonials";
+import { Faq } from "@/components/home/Faq";
 import { BusinessCta } from "@/components/business/BusinessCta";
 
 export const metadata = {
@@ -26,15 +24,13 @@ export default function BusinessPage() {
       <BusinessHero />
       <BusinessTrustStrip />
       <IndustriesGrid />
-      <HotelsDeepDive />
-      <RestaurantsDeepDive />
-      <OfficesDeepDive />
+      <IndustryDeepDives />
       <ServiceInclusions />
       <OnboardingProcess />
       <BusinessStats />
       <CaseStudy />
-      <BusinessTestimonials />
-      <BusinessFaq />
+      <Testimonials />
+      <Faq />
       <BusinessCta />
       <Footer />
     </main>

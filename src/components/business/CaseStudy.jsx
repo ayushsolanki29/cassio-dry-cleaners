@@ -30,30 +30,32 @@ export function CaseStudy() {
 
             <div className="border-t border-navy/5 my-6 md:my-8" />
 
-            {/* Bottom section: 3-column breakdown */}
-            <div className="grid gap-4 sm:grid-cols-3 text-left">
-              <div className="rounded-xl bg-cream p-4 md:p-5">
-                <h3 className="font-display text-sm md:text-base font-semibold text-navy">The Challenge</h3>
-                <p className="mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">
+            {/* Bottom section: 3-column breakdown (Carousel on mobile) */}
+            <div className="flex overflow-x-auto sm:grid sm:grid-cols-3 gap-3 sm:gap-4 text-left pb-2 -mb-2 scrollbar-hide snap-x snap-mandatory">
+              
+              <div className="min-w-[85vw] sm:min-w-0 flex-shrink-0 rounded-xl sm:rounded-2xl bg-cream p-5 md:p-6 snap-center border border-border/30">
+                <h3 className="font-display text-base md:text-lg font-semibold text-navy">The Challenge</h3>
+                <p className="mt-2 md:mt-3 text-sm text-muted-foreground leading-relaxed">
                   A busy local boutique and spa needed a reliable garment and linen service with fixed, predictable weekly costs and rigid, on-time schedules to plan their daily operations.
                 </p>
               </div>
 
-              <div className="rounded-xl bg-mint p-4 md:p-5">
-                <h3 className="font-display text-sm md:text-base font-semibold text-navy">The Solution</h3>
-                <p className="mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">
+              <div className="min-w-[85vw] sm:min-w-0 flex-shrink-0 rounded-xl sm:rounded-2xl bg-mint p-5 md:p-6 snap-center border border-border/30">
+                <h3 className="font-display text-base md:text-lg font-semibold text-navy">The Solution</h3>
+                <p className="mt-2 md:mt-3 text-sm text-muted-foreground leading-relaxed">
                   Cassio implemented a structured flat-rate laundry service with fixed weekly collection schedules and 100% transparent billing, removing all cost and timing surprises.
                 </p>
               </div>
 
-              <div className="rounded-xl bg-lilac p-4 md:p-5">
-                <h3 className="font-display text-sm md:text-base font-semibold text-navy">The Results</h3>
-                <ul className="mt-2 space-y-1 text-xs md:text-sm text-muted-foreground leading-relaxed">
-                  <li>• 100% predictable billing with zero hidden fees</li>
-                  <li>• Guaranteed weekly pickup & delivery slots</li>
-                  <li>• Zero laundry-related operational delays</li>
+              <div className="min-w-[85vw] sm:min-w-0 flex-shrink-0 rounded-xl sm:rounded-2xl bg-lilac p-5 md:p-6 snap-center border border-border/30">
+                <h3 className="font-display text-base md:text-lg font-semibold text-navy">The Results</h3>
+                <ul className="mt-2 md:mt-3 space-y-1.5 text-sm text-muted-foreground leading-relaxed">
+                  <li className="flex items-start gap-1.5"><span className="text-brand">•</span> 100% predictable billing with zero hidden fees</li>
+                  <li className="flex items-start gap-1.5"><span className="text-brand">•</span> Guaranteed weekly pickup & delivery slots</li>
+                  <li className="flex items-start gap-1.5"><span className="text-brand">•</span> Zero laundry-related operational delays</li>
                 </ul>
               </div>
+
             </div>
           </div>
         </div>

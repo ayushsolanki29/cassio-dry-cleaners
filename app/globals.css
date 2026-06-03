@@ -162,4 +162,13 @@
   .bg-sun { background-color: var(--sun); }
   .bg-navy { background-color: var(--navy); }
   .bg-brand { background-color: var(--brand); }
+
+  /* Hide scrollbars but keep functionality */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
 }
