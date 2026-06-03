@@ -95,52 +95,6 @@ export function Header() {
         </motion.div>
       </header>
 
-      {/* Mobile dropdown */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0, y: -8, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -8, scale: 0.98 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="fixed left-0 right-0 z-40 flex justify-center px-4 md:hidden"
-            style={{ top: "72px" }}
-          >
-            <div className="w-full max-w-5xl mt-3 overflow-hidden rounded-2xl border border-white/15 bg-primary/60 shadow-[0_20px_60px_-10px_oklch(0.2_0.05_250/0.5)] backdrop-blur-2xl">
-              <nav className="flex flex-col p-4">
-                {navItems.map((item, i) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05, duration: 0.2, ease: "easeOut" }}
-                  >
-                    <Link href={item.href} onClick={() => setMenuOpen(false)}
-                      className="block rounded-xl px-4 py-3 text-base font-medium text-white/90 transition-colors hover:bg-white/10 hover:text-white"
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.div>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: navItems.length * 0.05, duration: 0.2 }}
-                  className="mt-1 border-t border-white/10 pt-2"
-                >
-                  <Link href="/contact#contact-form" onClick={() => setMenuOpen(false)}
-                    className="block rounded-xl bg-brand px-4 py-3 text-center text-base font-semibold text-white transition hover:opacity-90"
-                  >
-                    Contact us
-                  </Link>
-                </motion.div>
-              </nav>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Backdrop */}
       <AnimatePresence>
         {menuOpen && (
@@ -148,9 +102,54 @@ export function Header() {
             key="backdrop"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-30 md:hidden"
+            className="fixed inset-0 z-40 bg-navy/30 backdrop-blur-sm md:hidden"
             onClick={() => setMenuOpen(false)}
           />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile dropdown */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed inset-x-4 top-[84px] z-50 md:hidden overflow-hidden rounded-3xl bg-white shadow-pop border border-border/50"
+          >
+            <nav className="flex flex-col p-6 items-center space-y-1">
+              {navItems.map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05, duration: 0.2 }}
+                  className="w-full"
+                >
+                  <Link href={item.href} onClick={() => setMenuOpen(false)}
+                    className="block rounded-2xl py-3.5 text-center font-display text-xl font-semibold text-navy transition-colors active:bg-cream"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.05, duration: 0.2 }}
+                className="w-full pt-4 mt-2 border-t border-border/50"
+              >
+                <Link href="/contact#contact-form" onClick={() => setMenuOpen(false)}
+                  className="block w-full rounded-full bg-navy px-4 py-4 text-center text-base font-semibold text-white transition hover:opacity-90 shadow-sm"
+                >
+                  Contact us
+                </Link>
+              </motion.div>
+            </nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </>

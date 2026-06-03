@@ -97,7 +97,7 @@ export function StepsSection() {
           >
             {steps.map((step, i) => (
               <div
-                key={step.number}
+                key={step.title}
                 className="w-full shrink-0 snap-center px-1"
               >
                 <div className={`rounded-3xl ${step.color} overflow-hidden shadow-card`}>
@@ -162,7 +162,7 @@ export function StepsSection() {
         {/* ── DESKTOP: 3-column grid ── */}
         <StaggerList className="hidden md:grid md:grid-cols-3 md:gap-6">
           {steps.map((step) => (
-            <StaggerItem key={step.number}>
+            <StaggerItem key={step.title}>
               <div
                 className={`group flex h-full flex-col rounded-3xl ${step.color} overflow-hidden shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-pop`}
               >
