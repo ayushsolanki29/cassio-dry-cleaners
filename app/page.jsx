@@ -5,12 +5,9 @@ import { Services } from "@/components/home/Services";
 import { Promo } from "@/components/home/Promo";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { MinimalCta } from "@/components/common/MinimalCta";
-import { Features } from "@/components/home/Features";
 import { Stats } from "@/components/home/Stats";
 import { Guarantee } from "@/components/home/Guarantee";
-import { Fabrics } from "@/components/home/Fabrics";
 import { Testimonials } from "@/components/home/Testimonials";
-import { Gallery } from "@/components/home/Gallery";
 import { Business } from "@/components/home/Business";
 import { Faq } from "@/components/home/Faq";
 import { Newsletter } from "@/components/home/Newsletter";
@@ -27,7 +24,6 @@ export default function Home() {
       <Promo />
       <HowItWorks />
       <MinimalCta />
-      {/* <Features /> */}
       <Stats />
       <Guarantee />
       <MinimalCta 
@@ -38,9 +34,7 @@ export default function Home() {
         secondaryText="01494 445291"
         bgColor="bg-navy"
       />
-      {/* <Fabrics /> */}
       <Testimonials />
-      {/* <Gallery /> */}
       <Business />
       <Faq />
       <Newsletter />

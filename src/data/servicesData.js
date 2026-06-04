@@ -1,4 +1,4 @@
-import { Package, Droplet, Wind, Award, Gift, Box, Home, ShoppingBag, Shield, Clock, Leaf, Star, CheckCircle, TrendingUp } from "lucide-react";
+import { Package, Droplet, Wind, Award, Gift, Box, Shield, Clock, Leaf, Star, CheckCircle, TrendingUp } from "lucide-react";
 
 export const servicesData = {
   "dry-cleaning": {

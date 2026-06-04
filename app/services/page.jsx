@@ -8,7 +8,6 @@ import { FabricCareMatrix } from "@/components/services/FabricCareMatrix";
 import { ProcessStrip } from "@/components/services/ProcessStrip";
 import { EcoTechnology } from "@/components/services/EcoTechnology";
 import { ServiceStats } from "@/components/services/ServiceStats";
-import { GarmentGallery } from "@/components/services/GarmentGallery";
 import { ServiceTestimonials } from "@/components/services/ServiceTestimonials";
 import { ServiceFaq } from "@/components/services/ServiceFaq";
 import { ServiceAreasTeaser } from "@/components/services/ServiceAreasTeaser";
@@ -43,7 +42,6 @@ export default function ServicesPage() {
       <ProcessStrip />
       <EcoTechnology />
       <ServiceStats />
-      {/* <GarmentGallery services={services} /> */}
       <ServiceTestimonials services={services} />
       <ServiceFaq services={services} />
       <ServiceAreasTeaser />

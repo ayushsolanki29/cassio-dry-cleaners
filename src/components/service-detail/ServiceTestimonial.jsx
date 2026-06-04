@@ -9,7 +9,7 @@ export function ServiceTestimonial({ service }) {
   return (
     <TestimonialSlider
       title="What our customers say"
-      subtitle={`See why customers love our ${service?.name?.toLowerCase() || 'professional'} service.`}
+      subtitle={`See why customers love our ${service?.title?.toLowerCase() || 'professional'} service.`}
       testimonials={googleReviews}
       backgroundColor="bg-white"
       autoSlide={true}
