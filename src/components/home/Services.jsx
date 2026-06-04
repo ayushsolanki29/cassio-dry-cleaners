@@ -2,10 +2,10 @@ import { ArrowRight } from "lucide-react";
 import { FadeUp, StaggerList, StaggerItem } from "@/components/common/Animate";
 
 const services = [
-  { title: "Dry cleaning", desc: "Specialised care for suits, dresses & delicate garments.", img: "/assets/service-drycleaning.jpg", accent: "bg-mint", dot: "bg-primary" },
-  { title: "Wash & fold", desc: "Everyday laundry washed, dried and neatly folded.", img: "/assets/service-washfold.jpg", accent: "bg-sun", dot: "bg-brand" },
-  { title: "Ironing", desc: "Crisp, professional pressing for shirts and trousers.", img: "/assets/service-ironing.jpg", accent: "bg-lilac", dot: "bg-navy" },
-  { title: "Premium care", desc: "White-glove handling for luxury & couture pieces.", img: "/assets/service-premium.jpg", accent: "bg-cream", dot: "bg-primary" },
+  { title: "Dry cleaning", desc: "Specialised care for suits, dresses & delicate garments.", img: "/assets/home/s1.jpeg", accent: "bg-mint", dot: "bg-primary" },
+  { title: "Wash & fold", desc: "Everyday laundry washed, dried and neatly folded.", img: "/assets/home/s2.jpeg", accent: "bg-sun", dot: "bg-brand" },
+  { title: "Ironing", desc: "Crisp, professional pressing for shirts and trousers.", img: "/assets/home/s3.jpeg", accent: "bg-lilac", dot: "bg-navy" },
+  { title: "Premium care", desc: "White-glove handling for luxury & couture pieces.", img: "/assets/home/s4.jpeg", accent: "bg-cream", dot: "bg-primary" },
 ];
 
 export function Services() {

@@ -38,16 +38,6 @@ export function Newsletter() {
           ))}
         </StaggerList>
 
-        <FadeUp delay={0.2} className="mt-10 text-center">
-          <div className="inline-flex items-center gap-3 rounded-full border border-gray-100 bg-white px-6 py-3 shadow-sm transition-all hover:shadow-md">
-            <div className="flex -space-x-2">
-              <img src="/assets/testimonial-1.jpg" alt="Customer" className="h-8 w-8 rounded-full border-2 border-white object-cover" />
-              <img src="/assets/testimonial-2.jpg" alt="Customer" className="h-8 w-8 rounded-full border-2 border-white object-cover" />
-              <img src="/assets/testimonial-3.jpg" alt="Customer" className="h-8 w-8 rounded-full border-2 border-white object-cover" />
-            </div>
-            <p className="text-sm font-semibold text-navy">Join 5K+ happy customers</p>
-          </div>
-        </FadeUp>
 
       </div>
     </section>

@@ -4,15 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { servicesData } from "@/data/servicesData";
 
-const services = [
-  { name: "Dry Cleaning",    slug: "dry-cleaning",  image: "/assets/service-drycleaning.jpg" },
-  { name: "Wash & Fold",     slug: "wash-fold",     image: "/assets/service-washfold.jpg" },
-  { name: "Ironing",         slug: "ironing",       image: "/assets/service-ironing.jpg" },
-  { name: "Premium Care",    slug: "premium-care",  image: "/assets/service-premium.jpg" },
-  { name: "Wedding Dresses", slug: "wedding-dress", image: "/assets/service-premium.jpg" },
-  { name: "Home Textiles",   slug: "curtains-home", image: "/assets/section-towels.jpg" },
-];
+const services = Object.values(servicesData).map(({ Icon, benefits, ...service }) => ({
+  ...service,
+  iconName: Icon?.name || 'Package',
+  // Convert benefits to plain objects without Icon components
+  benefits: benefits?.map(({ Icon: BenefitIcon, ...benefit }) => ({
+    ...benefit,
+    iconName: BenefitIcon?.name || 'Shield'
+  })) || []
+  }));
 
 const INTERVAL = 3500;
 const FADE_DUR  = 0.85;
@@ -86,14 +88,14 @@ export function ServiceHero() {
             >
               <AnimatePresence mode="wait">
                 <motion.span
-                  key={services[current].name}
+                  key={services[current].title}
                   className="absolute inset-0 text-primary"
                   initial={{ y: "40%", opacity: 0, filter: "blur(6px)" }}
                   animate={{ y: 0,     opacity: 1, filter: "blur(0px)" }}
                   exit={{   y: "-40%", opacity: 0, filter: "blur(6px)" }}
                   transition={{ duration: FADE_DUR, ease: "easeInOut" }}
                 >
-                  {services[current].name}
+                  {services[current].title}
                 </motion.span>
               </AnimatePresence>
             </motion.span>
@@ -181,11 +183,11 @@ export function ServiceHero() {
                 }`}
               >
                 <img
-                  src={s.image} alt={s.name}
+                  src={s.image} alt={s.title}
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/75 to-transparent px-3 pb-3 pt-8">
-                  <p className="font-display text-xs font-semibold text-white md:text-sm">{s.name}</p>
+                  <p className="font-display text-xs font-semibold text-white md:text-sm">{s.title}</p>
                 </div>
               </Link>
             ))}

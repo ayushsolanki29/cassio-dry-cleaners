@@ -19,7 +19,7 @@ export function FeaturedSpotlight() {
           <FadeIn className="relative order-2 lg:order-1 mt-6 lg:mt-0">
             <div className="blob absolute inset-0 -z-0 bg-mint" />
             <img
-              src="/assets/service-drycleaning.jpg"
+              src="/assets/home/sp1.jpeg"
               alt="Professional dry cleaning service by Cassio"
               loading="lazy"
               className="relative z-10 h-72 w-full rounded-3xl object-cover shadow-card md:h-96"

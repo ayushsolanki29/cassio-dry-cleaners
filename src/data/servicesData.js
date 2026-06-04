@@ -6,9 +6,9 @@ export const servicesData = {
     slug: "dry-cleaning",
     Icon: Package,
     description: "Professional dry cleaning for suits, dresses, and delicate garments using eco-friendly solvents that protect fabrics.",
-    image: "/assets/service-drycleaning.jpg",
+    image: "/assets/home/s1.jpeg",
     overview: "Our dry cleaning service at Cassio uses advanced eco-friendly solvents to clean your most delicate garments without water. Perfect for suits, dresses, silk, wool, and other fabrics that require special care.",
-    
+
     includes: [
       "Eco-friendly solvent cleaning",
       "Expert stain removal treatment",
@@ -70,9 +70,9 @@ export const servicesData = {
     slug: "wash-fold",
     Icon: Droplet,
     description: "Everyday laundry service where we wash, dry, and neatly fold your clothes with care and precision.",
-    image: "/assets/service-washfold.jpg",
+    image: "/assets/home/s2.jpeg",
     overview: "Let Cassio Dry Cleaners handle your everyday laundry. We wash, dry, and fold your clothes with the same care you would at home - but with professional equipment and expertise.",
-    
+
     includes: [
       "Professional washing & drying",
       "Fabric-appropriate detergents",
@@ -134,9 +134,9 @@ export const servicesData = {
     slug: "ironing",
     Icon: Wind,
     description: "Professional ironing and pressing service for crisp, wrinkle-free shirts, trousers, and formal wear.",
-    image: "/assets/service-ironing.jpg",
+    image: "/assets/home/s3.jpeg",
     overview: "Cassio's professional ironing service delivers crisp, wrinkle-free results for all your garments. Our skilled team uses commercial-grade equipment to achieve perfect creases and a polished finish.",
-    
+
     includes: [
       "Professional steam pressing",
       "Hand-finished details",
@@ -198,9 +198,9 @@ export const servicesData = {
     slug: "premium-care",
     Icon: Award,
     description: "White-glove handling for luxury, couture, and designer garments with specialized cleaning techniques.",
-    image: "/assets/service-premium.jpg",
+    image: "/assets/home/s4.jpeg",
     overview: "Cassio's Premium Care service provides the highest level of garment care for your most valuable pieces. From designer couture to luxury fabrics, we handle each item with meticulous attention and specialized techniques.",
-    
+
     includes: [
       "Hand cleaning for delicate items",
       "Specialized luxury fabric treatment",
@@ -262,9 +262,9 @@ export const servicesData = {
     slug: "wedding-dress",
     Icon: Gift,
     description: "Specialized cleaning and preservation for bridal gowns, ensuring your precious memories are protected.",
-    image: "/assets/service-premium.jpg",
+    image: "/assets/home/s5.jpeg",
     overview: "Your wedding dress deserves the best care. Cassio Dry Cleaners specializes in bridal gown cleaning and preservation, using museum-quality techniques to protect your precious memories for years to come.",
-    
+
     includes: [
       "Pre-treatment of all stains",
       "Gentle hand cleaning",
@@ -326,9 +326,9 @@ export const servicesData = {
     slug: "leather-suede",
     Icon: Box,
     description: "Expert cleaning and restoration for leather jackets, suede coats, and luxury leather accessories.",
-    image: "/assets/service-drycleaning.jpg",
+    image: "/assets/home/s6.jpeg",
     overview: "Leather and suede require specialized care that standard dry cleaning can't provide. Cassio's leather experts use professional techniques to clean, condition, and restore your leather and suede garments.",
-    
+
     includes: [
       "Professional leather cleaning",
       "Suede brushing & restoration",
@@ -390,9 +390,9 @@ export const servicesData = {
     slug: "curtains-home",
     Icon: Home,
     description: "Professional cleaning for curtains, drapes, bedding, and all household textiles.",
-    image: "/assets/section-towels.jpg",
+    image: "/assets/home/s7.jpeg",
     overview: "Cassio Dry Cleaners provides expert cleaning for all your home textiles. From heavy drapes to delicate sheers, we handle curtains, bedding, and household fabrics with professional care.",
-    
+
     includes: [
       "Curtain & drape cleaning",
       "Bedding & duvet cleaning",

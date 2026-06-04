@@ -27,7 +27,7 @@ export default function Home() {
       <Promo />
       <HowItWorks />
       <MinimalCta />
-      <Features />
+      {/* <Features /> */}
       <Stats />
       <Guarantee />
       <MinimalCta 
@@ -38,9 +38,9 @@ export default function Home() {
         secondaryText="01494 445291"
         bgColor="bg-navy"
       />
-      <Fabrics />
+      {/* <Fabrics /> */}
       <Testimonials />
-      <Gallery />
+      {/* <Gallery /> */}
       <Business />
       <Faq />
       <Newsletter />

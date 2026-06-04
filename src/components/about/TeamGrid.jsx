@@ -1,12 +1,9 @@
 import { FadeUp, StaggerList, StaggerItem } from "@/components/common/Animate";
 
 const team = [
-  { name: "Maria Cassio", role: "Founder & CEO", image: "/assets/testimonial-1.jpg" },
-  { name: "James Thompson", role: "Operations Director", image: "/assets/testimonial-2.jpg" },
-  { name: "Sophie Chen", role: "Customer Experience Lead", image: "/assets/testimonial-3.jpg" },
-  { name: "David Martinez", role: "Head of Sustainability", image: "/assets/testimonial-2.jpg" },
-  { name: "Emma Wilson", role: "Business Development", image: "/assets/testimonial-1.jpg" },
-  { name: "Oliver Brown", role: "Quality Assurance Manager", image: "/assets/testimonial-3.jpg" }
+  { name: "Person 1", role: "Role 1", image: "https://placehold.co/600x400" },
+  { name: "Person 2", role: "Role 2", image: "https://placehold.co/600x400" },
+  { name: "Person 3", role: "Role 3", image: "https://placehold.co/600x400" },
 ];
 
 export function TeamGrid() {

@@ -43,7 +43,7 @@ export default function ServicesPage() {
       <ProcessStrip />
       <EcoTechnology />
       <ServiceStats />
-      <GarmentGallery services={services} />
+      {/* <GarmentGallery services={services} /> */}
       <ServiceTestimonials services={services} />
       <ServiceFaq services={services} />
       <ServiceAreasTeaser />

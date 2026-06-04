@@ -2,66 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FadeUp, StaggerList, StaggerItem } from "@/components/common/Animate";
 
-const services = [
-  { 
-    title: "Dry Cleaning", 
-    slug: "dry-cleaning",
-    desc: "Expert care for suits, dresses, and delicate garments using eco-friendly solvents.", 
-    img: "/assets/service-drycleaning.jpg", 
-    accent: "bg-mint",
-    dot: "bg-primary"
-  },
-  { 
-    title: "Wash & Fold", 
-    slug: "wash-fold",
-    desc: "Everyday laundry washed, dried, and neatly folded with precision.", 
-    img: "/assets/service-washfold.jpg", 
-    accent: "bg-sun",
-    dot: "bg-brand"
-  },
-  { 
-    title: "Ironing", 
-    slug: "ironing",
-    desc: "Crisp, professional pressing for shirts, trousers, and formal wear.", 
-    img: "/assets/service-ironing.jpg", 
-    accent: "bg-lilac",
-    dot: "bg-navy"
-  },
-  { 
-    title: "Premium Care", 
-    slug: "premium-care",
-    desc: "White-glove handling for luxury, couture, and designer pieces.", 
-    img: "/assets/service-premium.jpg", 
-    accent: "bg-cream",
-    dot: "bg-primary"
-  },
-  { 
-    title: "Wedding Dress", 
-    slug: "wedding-dress",
-    desc: "Specialized cleaning and preservation for bridal gowns and formal attire.", 
-    img: "/assets/service-premium.jpg", 
-    accent: "bg-mint",
-    dot: "bg-brand"
-  },
-  { 
-    title: "Leather & Suede", 
-    slug: "leather-suede",
-    desc: "Expert treatment for leather jackets, suede coats, and accessories.", 
-    img: "/assets/service-drycleaning.jpg", 
-    accent: "bg-sun",
-    dot: "bg-navy"
-  },
-  { 
-    title: "Curtains & Home", 
-    slug: "curtains-home",
-    desc: "Professional cleaning for curtains, bedding, and household textiles.", 
-    img: "/assets/section-towels.jpg", 
-    accent: "bg-lilac",
-    dot: "bg-primary"
-  }
-];
-
-export function ServicesGrid() {
+export function ServicesGrid({ services = [] }) {
   return (
     <section id="services-grid" className="flex min-h-screen items-center bg-white py-16 md:py-24">
       <div className="mx-auto w-full max-w-7xl px-6">
@@ -84,21 +25,21 @@ export function ServicesGrid() {
               >
                 <div className="relative h-36 overflow-hidden md:h-48">
                   <img
-                    src={s.img}
+                    src={s.image}
                     alt={s.title}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
                 </div>
-                <div className={`h-0.5 w-full ${s.accent} opacity-60`} />
+                <div className="h-0.5 w-full bg-primary opacity-60" />
                 <div className="flex flex-1 flex-col gap-1.5 p-3 md:gap-2 md:p-5">
                   <div className="flex items-center gap-2">
-                    <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${s.dot}`} />
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     <h3 className="font-display text-sm font-semibold text-navy md:text-lg">{s.title}</h3>
                   </div>
                   <p className="text-xs leading-relaxed text-muted-foreground md:text-sm">
-                    {s.desc.length > 70 ? s.desc.substring(0, 70) + '...' : s.desc}
+                    {s.description.length > 70 ? s.description.substring(0, 70) + '...' : s.description}
                   </p>
                   <div className="mt-auto pt-2">
                     <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary transition group-hover:gap-2 md:text-sm">
