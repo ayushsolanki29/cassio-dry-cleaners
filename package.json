@@ -1,5 +1,13 @@
 {
-  "name": "laundry-heap-ui-js",
+  "name": "cassio-dry-cleaners",
+  "version": "1.0.0",
+  "description": "Frontend for Cassio Dry Cleaners — premium dry cleaning, wash & fold, and ironing in Watford.",
+  "author": "Ayush Solanki <ayushsolanki29>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ayushsolanki29/cassio-dry-cleaners"
+  },
+  "homepage": "https://github.com/ayushsolanki29/cassio-dry-cleaners#readme",
   "private": true,
   "sideEffects": false,
   "type": "module",
