@@ -22,17 +22,17 @@ export function PageLoader() {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
         >
-          {/* Logo mark — gentle breathe */}
+          {/* Logo mark */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
             <Image
-              src="/assets/cassio-logo.jpeg"
+              src="/assets/cassio-logo.jpg"
               alt="Cassio"
-              width={300}
-              height={300}
+              width={180}
+              height={180}
               className="rounded-full opacity-90"
               priority
             />
