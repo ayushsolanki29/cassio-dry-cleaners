@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -42,7 +43,7 @@ export function Header() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <img src="/assets/cassio-logo.jpg" alt="Cassio Dry Cleaners" className="h-9 w-9 rounded-full ring-2 ring-white/30" />
+            <Image src="/assets/cassio-logo.jpg" alt="Cassio Dry Cleaners" width={36} height={36} className="rounded-full ring-2 ring-white/30" priority />
             <span className="font-display text-lg font-semibold tracking-tight text-white md:text-xl">
               Cassio<span className="hidden sm:inline"> Dry Cleaners</span><span className="text-cream">.</span>
             </span>
