@@ -2,10 +2,10 @@ import { ArrowRight } from "lucide-react";
 import { FadeUp, StaggerList, StaggerItem } from "@/components/common/Animate";
 
 const services = [
-  { title: "Dry cleaning", desc: "Specialised care for suits, dresses & delicate garments.", img: "/assets/home/s1.jpeg", accent: "bg-mint", dot: "bg-primary" },
-  { title: "Wash & fold", desc: "Everyday laundry washed, dried and neatly folded.", img: "/assets/home/s2.jpeg", accent: "bg-sun", dot: "bg-brand" },
-  { title: "Ironing", desc: "Crisp, professional pressing for shirts and trousers.", img: "/assets/home/s3.jpeg", accent: "bg-lilac", dot: "bg-navy" },
-  { title: "Premium care", desc: "White-glove handling for luxury & couture pieces.", img: "/assets/home/s4.jpeg", accent: "bg-cream", dot: "bg-primary" },
+  { title: "Dry cleaning", desc: "Specialised care for suits, dresses & delicate garments.", img: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21ca3ee45ef.jpeg", accent: "bg-mint", dot: "bg-primary" },
+  { title: "Wash & fold", desc: "Everyday laundry washed, dried and neatly folded.", img: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21ca5d66ab2.jpeg", accent: "bg-sun", dot: "bg-brand" },
+  { title: "Ironing", desc: "Crisp, professional pressing for shirts and trousers.", img: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21ca7576f95.jpeg", accent: "bg-lilac", dot: "bg-navy" },
+  { title: "Premium care", desc: "White-glove handling for luxury & couture pieces.", img: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21cb090e141.jpeg", accent: "bg-cream", dot: "bg-primary" },
 ];
 
 export function Services() {

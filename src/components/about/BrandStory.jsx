@@ -9,7 +9,7 @@ export function BrandStory() {
           <FadeUp delay={0.2} className="relative order-2 lg:order-1">
             <div className="absolute -inset-4 sm:-inset-6 rounded-3xl bg-mint/20 -rotate-3 transition-transform hover:rotate-0 duration-500" />
             <img
-              src="/assets/home/c.jpeg"
+              src="https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c98788f86.jpeg"
               alt="Cassio Dry Cleaners story"
               className="relative z-10 w-full aspect-[4/5] object-cover rounded-3xl shadow-card"
             />

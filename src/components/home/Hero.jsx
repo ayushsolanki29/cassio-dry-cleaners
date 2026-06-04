@@ -5,10 +5,10 @@ import { ArrowRight, Clock, ShieldCheck } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const services = [
-  { name: "Dry Cleaning", image: "/assets/home/h1.jpeg" },
-  { name: "Wash & Fold",  image: "/assets/home/h2.jpeg" },
-  { name: "Ironing",      image: "/assets/home/h3.jpeg" },
-  { name: "Premium Care", image: "/assets/home/h4.jpeg" },
+  { name: "Dry Cleaning", image: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c99d32de3.jpeg" },
+  { name: "Wash & Fold",  image: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c9b0d8c84.jpeg" },
+  { name: "Ironing",      image: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c9bc5bbcd.jpeg" },
+  { name: "Premium Care", image: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c9cf831ab.jpeg" },
 ];
 
 const INTERVAL = 4000;

@@ -24,7 +24,7 @@ export function Promo() {
               </div>
               <FadeIn delay={0.15} className="relative h-52 md:h-80">
                 <img
-                  src="/assets/home/b1.jpeg"
+                  src="https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c852b891d.jpeg"
                   alt="Joyful customer wrapped in fresh towels"
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover object-right"

@@ -12,7 +12,7 @@ const industriesData = [
     subtitle: "Hotels & Hospitality",
     title: "Premium service for hotel guests",
     desc: "Cassio Dry Cleaners understands the hospitality industry. We provide reliable, high-quality laundry services that keep your hotel running smoothly and your guests satisfied.",
-    image: "/assets/home/b2b2.jpeg",
+    image: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c8a69f578.jpeg",
     bgColor: "bg-mint",
     features: [
       "Daily linen and towel collection",
@@ -30,7 +30,7 @@ const industriesData = [
     subtitle: "Restaurants & Hospitality",
     title: "Professional care for hospitality",
     desc: "Cassio Dry Cleaners keeps your restaurant staff looking sharp and your linens pristine. We understand the demands of the hospitality industry and deliver accordingly.",
-    image: "/assets/home/resto.jpeg",
+    image: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21ca0bb61de.jpeg",
     bgColor: "bg-cream",
     features: [
       "Chef whites and kitchen uniforms",
@@ -48,7 +48,7 @@ const industriesData = [
     subtitle: "Offices & Coworking",
     title: "Corporate laundry solutions",
     desc: "Cassio provides convenient laundry services for offices and coworking spaces. Keep your team looking professional with our corporate garment care solutions.",
-    image: "/assets/home/office.jpeg",
+    image: "https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c9f792310.jpeg",
     bgColor: "bg-sun/20",
     features: [
       "Corporate uniform cleaning",

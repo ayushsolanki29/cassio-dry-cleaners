@@ -45,7 +45,7 @@ export function EcoTechnology() {
           <FadeIn className="relative mt-4 lg:mt-0">
             <div className="blob absolute inset-0 -z-0 bg-sun" />
             <img
-              src="/assets/home/b2.jpeg"
+              src="https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c88b92922.jpeg"
               alt="Eco-friendly cleaning at Cassio Dry Cleaners"
               loading="lazy"
               className="relative z-10 h-72 w-full rounded-3xl object-cover shadow-card md:h-96 lg:h-[500px]"

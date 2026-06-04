@@ -8,7 +8,7 @@ export function Business() {
 
         <FadeIn className="relative order-2 lg:order-1">
           <div className="overflow-hidden rounded-3xl shadow-card">
-            <img src="/assets/home/b2b.jpeg" alt="Cassio delivery driver handing off cleaned garments" loading="lazy" className="h-full w-full object-cover" />
+            <img src="https://server.speedylaundry.co.uk/cdn/uploads/images/6a21c8a69f578.jpeg" alt="Cassio delivery driver handing off cleaned garments" loading="lazy" className="h-full w-full object-cover" />
           </div>
           <div className="absolute -right-2 -top-2 rounded-2xl bg-white px-4 py-2.5 shadow-pop md:-right-3 md:-top-3 md:px-5 md:py-3">
             <p className="font-display text-xl font-semibold text-navy md:text-2xl">120+</p>
