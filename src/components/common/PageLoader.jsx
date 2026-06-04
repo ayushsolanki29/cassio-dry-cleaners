@@ -1,18 +1,54 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export function PageLoader() {
-  useEffect(() => {
-    const el = document.getElementById("inline-loader");
-    if (!el) return;
+  const [visible, setVisible] = useState(true);
 
-    // Fade out and remove the inline loader once React has hydrated
-    el.style.transition = "opacity 0.35s ease";
-    el.style.opacity = "0";
-    const t = setTimeout(() => el.remove(), 380);
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(false), 900);
     return () => clearTimeout(t);
   }, []);
 
-  return null;
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.div
+          key="loader"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
+        >
+          {/* Logo mark — gentle breathe */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <Image
+              src="/assets/cassio-logo.jpeg"
+              alt="Cassio"
+              width={300}
+              height={300}
+              className="rounded-full opacity-90"
+              priority
+            />
+          </motion.div>
+
+          {/* Thin progress line at bottom */}
+          <div className="absolute bottom-0 left-0 h-[2px] w-full bg-border/40">
+            <motion.div
+              className="h-full bg-primary"
+              initial={{ width: "0%" }}
+              animate={{ width: "100%" }}
+              transition={{ duration: 0.85, ease: [0.4, 0, 0.2, 1] }}
+            />
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
 }
