@@ -48,7 +48,7 @@ export function Footer() {
           
           <div className="lg:max-w-sm">
             <div className="flex items-center gap-3">
-              <img src="/assets/cassio-logo.jpg" alt="Cassio Dry Cleaners" className="h-10 w-10 md:h-12 md:w-12 rounded-full ring-2 ring-white/20" />
+              <img src="/assets/cassio-logo.jpeg" alt="Cassio Dry Cleaners" className="h-10 w-10 md:h-12 md:w-12 rounded-full ring-2 ring-white/20" />
               <span className="font-display text-xl md:text-2xl font-semibold">Cassio Dry Cleaners<span className="text-brand">.</span></span>
             </div>
             <p className="mt-4 text-sm text-white/70">

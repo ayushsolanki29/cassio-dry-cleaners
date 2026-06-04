@@ -14,7 +14,7 @@ const galleryImages = [
   { id: 9,  src: "/assets/blog-1.jpg",               alt: "Care tips",              span: "medium" },
   { id: 10, src: "/assets/testimonial-2.jpg",        alt: "Professional service",   span: "short" },
   { id: 11, src: "/assets/blog-2.jpg",               alt: "Fabric care",            span: "tall" },
-  { id: 12, src: "/assets/cassio-logo.jpg",          alt: "Cassio brand",           span: "medium" },
+  { id: 12, src: "/assets/cassio-logo.jpeg",          alt: "Cassio brand",           span: "medium" },
   { id: 13, src: "/assets/testimonial-3.jpg",        alt: "Customer review",        span: "short" },
   { id: 14, src: "/assets/blog-3.jpg",               alt: "Laundry tips",           span: "medium" },
   { id: 15, src: "/assets/app-mockup.jpg",           alt: "Our app",                span: "tall" },

@@ -43,7 +43,7 @@ export function Header() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/assets/cassio-logo.jpg" alt="Cassio Dry Cleaners" width={36} height={36} className="rounded-full ring-2 ring-white/30" priority />
+            <Image src="/assets/cassio-logo.jpeg" alt="Cassio Dry Cleaners" width={36} height={36} className="rounded-full ring-2 ring-white/30" priority />
             <span className="font-display text-lg font-semibold tracking-tight text-white md:text-xl">
               Cassio<span className="hidden sm:inline"> Dry Cleaners</span><span className="text-cream">.</span>
             </span>
