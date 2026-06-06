@@ -34,11 +34,48 @@ const methods = [
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [service, setService] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setLoading(true);
+    setError("");
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      service: service,
+      message: e.target.message.value,
+      otherService: service === "Other" ? e.target.otherService?.value : null,
+    };
+
+    try {
+      const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost/cassio-dry-cleaner/backend/api";
+      const response = await fetch(`${apiBase}/contact.php`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitted(true);
+        e.target.reset();
+        setService("");
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setError(data.message || "Failed to submit form. Please try again.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -109,6 +146,11 @@ export function ContactSection() {
                   </div>
 
                   <form onSubmit={handleSubmit} className="flex flex-1 flex-col space-y-5">
+                    {error && (
+                      <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-800 text-sm">
+                        {error}
+                      </div>
+                    )}
                     <div className="grid gap-5 md:grid-cols-2">
                       <div>
                         <label htmlFor="name" className="mb-2 block text-sm font-semibold text-navy">
@@ -202,9 +244,10 @@ export function ContactSection() {
 
                     <button
                       type="submit"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 font-display text-base font-semibold text-white shadow-sm transition-all hover:scale-105"
+                      disabled={loading}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-6 py-4 font-display text-base font-semibold text-white shadow-sm transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
-                      Send Message
+                      {loading ? "Sending..." : "Send Message"}
                       <Send className="h-4 w-4" />
                     </button>
                   </form>
