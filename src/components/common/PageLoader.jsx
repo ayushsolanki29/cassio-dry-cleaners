@@ -3,9 +3,13 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useFootfallTracker } from "@/hooks/useFootfallTracker";
 
 export function PageLoader() {
   const [visible, setVisible] = useState(true);
+  
+  // Track footfall on every route change
+  useFootfallTracker();
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(false), 900);

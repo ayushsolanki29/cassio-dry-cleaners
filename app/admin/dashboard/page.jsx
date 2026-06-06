@@ -5,70 +5,19 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import {
-  LogOut, Mail, Phone, MessageSquare, Calendar,
-  Search, Download, Trash2, Eye, X, Users,
-  CheckCircle, Clock, Star, Menu, ChevronDown,
-  Inbox, LayoutDashboard, Settings,
+  LogOut, Users, Menu, Activity, Globe, Inbox, LayoutDashboard, Settings
 } from "lucide-react";
-
-/* ── tiny helpers ──────────────────────────────────────── */
-
-const SERVICE_PILL = {
-  "Dry Cleaning":           "bg-sky-50    text-sky-700   border-sky-200",
-  "Wash + Iron":            "bg-emerald-50 text-emerald-700 border-emerald-200",
-  "Wash, Dry & Fold":       "bg-violet-50 text-violet-700 border-violet-200",
-  "Iron Only":              "bg-amber-50  text-amber-700  border-amber-200",
-  "Commercial / Business":  "bg-orange-50 text-orange-700 border-orange-200",
-  "Request My Area":        "bg-pink-50   text-pink-700   border-pink-200",
-  "General Inquiries":      "bg-slate-50  text-slate-600  border-slate-200",
-  "Other":                  "bg-slate-50  text-slate-500  border-slate-200",
-};
-
-function Pill({ label }) {
-  const cls = SERVICE_PILL[label] ?? "bg-slate-50 text-slate-500 border-slate-200";
-  return (
-    <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${cls}`}>
-      {label}
-    </span>
-  );
-}
-
-const AVATAR_COLORS = [
-  "from-sky-400 to-blue-600",
-  "from-violet-400 to-purple-600",
-  "from-pink-400 to-rose-600",
-  "from-amber-400 to-orange-500",
-  "from-emerald-400 to-teal-600",
-];
-
-function Avatar({ name, size = "sm" }) {
-  const initials = name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
-  const grad = AVATAR_COLORS[name.charCodeAt(0) % AVATAR_COLORS.length];
-  const sz = size === "lg" ? "h-14 w-14 text-lg" : size === "md" ? "h-10 w-10 text-sm" : "h-8 w-8 text-xs";
-  return (
-    <div className={`${sz} shrink-0 rounded-full bg-gradient-to-br ${grad} flex items-center justify-center font-bold text-white shadow-sm`}>
-      {initials}
-    </div>
-  );
-}
-
-const fmt   = d => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
-const fmtLg = d => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
-
-const SERVICES = ["Iron Only","Wash + Iron","Wash, Dry & Fold","Dry Cleaning","Commercial / Business","Request My Area","General Inquiries","Other"];
 
 /* ── component ─────────────────────────────────────────── */
 
 export default function AdminDashboard() {
   const router  = useRouter();
-
-  const [contacts, setContacts] = useState([]);
-  const [filtered, setFiltered] = useState([]);
   const [loading,  setLoading ] = useState(true);
-  const [search,   setSearch  ] = useState("");
-  const [svc,      setSvc     ] = useState("all");
-  const [selected, setSelected] = useState(null);
   const [navOpen,  setNavOpen ] = useState(false);
+  
+  const [dashboardStats, setDashboardStats] = useState({
+    totalVisitors: 0, totalContacts: 0, monthContacts: 0, monthVisitors: 0
+  });
 
   /* auth */
   useEffect(() => {
@@ -76,52 +25,35 @@ export default function AdminDashboard() {
     load();
   }, []);
 
-  /* filter */
-  useEffect(() => {
-    let f = contacts;
-    if (search) f = f.filter(c => [c.name, c.email, c.message].some(v => v?.toLowerCase().includes(search.toLowerCase())));
-    if (svc !== "all") f = f.filter(c => c.service === svc);
-    setFiltered(f);
-  }, [search, svc, contacts]);
-
   async function load() {
     try {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost/cassio-dry-cleaner/backend/api";
-      const r = await fetch(`${apiBase}/admin/contacts.php`, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
-      });
-      if (r.ok) { const d = await r.json(); setContacts(d.contacts); setFiltered(d.contacts); }
+      const opts = { headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` } };
+      
+      const [rContacts, rAllVisitors, rMonthVisitors] = await Promise.all([
+        fetch(`${apiBase}/admin/contacts.php`, opts),
+        fetch(`${apiBase}/admin/footfall/summary.php?filter=all`, opts),
+        fetch(`${apiBase}/admin/footfall/summary.php?filter=30days`, opts)
+      ]);
+
+      if (rContacts.ok) { 
+        const d = await rContacts.json(); 
+        const mContacts = d.contacts.filter(c => new Date(c.date) >= new Date(Date.now() - 30*864e5)).length;
+        
+        let tVisitors = 0, mVisitors = 0;
+        if (rAllVisitors.ok) tVisitors = (await rAllVisitors.json()).uniqueVisitors || 0;
+        if (rMonthVisitors.ok) mVisitors = (await rMonthVisitors.json()).uniqueVisitors || 0;
+
+        setDashboardStats({
+          totalVisitors: tVisitors,
+          totalContacts: d.contacts.length,
+          monthContacts: mContacts,
+          monthVisitors: mVisitors
+        });
+      }
       else router.push("/admin");
     } finally { setLoading(false); }
   }
-
-  async function del(id) {
-    if (!confirm("Delete this submission?")) return;
-    const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost/cassio-dry-cleaner/backend/api";
-    const r = await fetch(`${apiBase}/admin/contacts.php?id=${id}`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` },
-    });
-    if (r.ok) {
-      const next = contacts.filter(c => c.id !== id);
-      setContacts(next);
-      if (selected?.id === id) setSelected(null);
-    }
-  }
-
-  function exportCSV() {
-    const rows = [
-      ["Name","Email","Phone","Service","Message","Date"],
-      ...filtered.map(c => [c.name, c.email, c.phone||"", c.service, c.message.replace(/,/g,";"), fmt(c.date)]),
-    ].map(r => r.map(v => `"${v}"`).join(",")).join("\n");
-    Object.assign(document.createElement("a"), {
-      href: URL.createObjectURL(new Blob([rows], { type: "text/csv" })),
-      download: `contacts-${new Date().toISOString().slice(0,10)}.csv`,
-    }).click();
-  }
-
-  const today    = contacts.filter(c => new Date(c.date).toDateString() === new Date().toDateString()).length;
-  const thisWeek = contacts.filter(c => new Date(c.date) >= new Date(Date.now() - 7*864e5)).length;
 
   /* ── loading screen ── */
   if (loading) return (
@@ -170,11 +102,13 @@ export default function AdminDashboard() {
         {/* nav */}
         <nav className="flex-1 overflow-y-auto px-3 py-5 space-y-1">
           {[
-            { icon: LayoutDashboard, label: "Overview",  active: false },
-            { icon: Inbox,           label: "Contacts",  active: true  },
-            { icon: Settings,        label: "Settings",  active: false },
-          ].map(({ icon: Icon, label, active }) => (
+            { icon: LayoutDashboard, label: "Dashboard", active: true,  path: "/admin/dashboard" },
+            { icon: Inbox,           label: "Contacts",  active: false, path: "/admin/contacts" },
+            { icon: Activity,        label: "Footfall",  active: false, path: "/admin/footfall" },
+            { icon: Settings,        label: "Settings",  active: false, path: "/admin/settings" },
+          ].map(({ icon: Icon, label, active, path }) => (
             <button key={label}
+              onClick={() => path && router.push(path)}
               className={`flex w-full items-center gap-3 rounded-xl px-3.5 py-3 text-sm font-semibold transition-all
                 ${active ? "bg-white/15 text-white" : "text-white/50 hover:bg-white/8 hover:text-white/80"}`}
             >
@@ -209,17 +143,10 @@ export default function AdminDashboard() {
               <Menu className="h-4 w-4 text-slate-600" />
             </button>
             <div>
-              <h1 className="font-display text-lg font-bold text-navy">Contact Submissions</h1>
-              <p className="text-xs text-slate-400">{contacts.length} total &nbsp;·&nbsp; {today} today</p>
+              <h1 className="font-display text-lg font-bold text-navy">Dashboard Overview</h1>
+              <p className="text-xs text-slate-400">High-level metrics for your business</p>
             </div>
           </div>
-
-          <button onClick={exportCSV}
-            className="hidden sm:flex items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white transition-all hover:opacity-90 hover:scale-105"
-          >
-            <Download className="h-4 w-4" />
-            Export CSV
-          </button>
         </header>
 
         <div className="flex-1 overflow-y-auto">
@@ -228,11 +155,11 @@ export default function AdminDashboard() {
             {/* ── STAT CARDS ── */}
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
               {[
-                { label: "Total submissions", value: contacts.length, Icon: Users,        from: "from-sky-400",     to: "to-blue-600"    },
-                { label: "Received today",    value: today,           Icon: CheckCircle,  from: "from-emerald-400", to: "to-teal-600"    },
-                { label: "This week",         value: thisWeek,        Icon: Clock,        from: "from-amber-400",   to: "to-orange-500"  },
-                { label: "Avg. rating",       value: "4.9",           Icon: Star,         from: "from-violet-400",  to: "to-purple-600"  },
-              ].map(({ label, value, Icon, from, to }) => (
+                { label: "Total Visitors",         value: dashboardStats.totalVisitors, sub: "All time website visitors",    Icon: Users,    from: "from-sky-400",     to: "to-blue-600"    },
+                { label: "Total Submissions",      value: dashboardStats.totalContacts, sub: "All time contact forms",       Icon: Inbox,    from: "from-emerald-400", to: "to-teal-600"    },
+                { label: "This Month Submissions", value: dashboardStats.monthContacts, sub: "Last 30 days submissions",     Icon: Activity, from: "from-amber-400",   to: "to-orange-500"  },
+                { label: "This Month Visitors",    value: dashboardStats.monthVisitors, sub: "Last 30 days visitors",        Icon: Globe,    from: "from-violet-400",  to: "to-purple-600"  },
+              ].map(({ label, value, sub, Icon, from, to }) => (
                 <div key={label}
                   className="relative overflow-hidden rounded-2xl bg-white border border-slate-100 p-5 shadow-sm hover:shadow-md transition-shadow"
                 >
@@ -241,245 +168,24 @@ export default function AdminDashboard() {
                   </div>
                   <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide">{label}</p>
                   <p className="mt-2 font-display text-3xl font-bold text-navy">{value}</p>
+                  <p className="mt-1 text-[10px] text-slate-400">{sub}</p>
                 </div>
               ))}
             </div>
 
-            {/* ── FILTER BAR ── */}
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <div className="relative flex-1">
-                <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                <input
-                  value={search}
-                  onChange={e => setSearch(e.target.value)}
-                  placeholder="Search name, email or message…"
-                  className="h-10 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-sm text-navy shadow-sm placeholder:text-slate-400 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                />
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white py-24 mt-8">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50">
+                <LayoutDashboard className="h-8 w-8 text-slate-300" />
               </div>
-
-              <div className="relative sm:w-48">
-                <select
-                  value={svc}
-                  onChange={e => setSvc(e.target.value)}
-                  className="h-10 w-full appearance-none rounded-xl border border-slate-200 bg-white pl-4 pr-9 text-sm text-navy shadow-sm focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                >
-                  <option value="all">All services</option>
-                  {SERVICES.map(s => <option key={s}>{s}</option>)}
-                </select>
-                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-              </div>
-
-              <button onClick={exportCSV}
-                className="sm:hidden h-10 flex items-center justify-center gap-2 rounded-xl bg-navy px-4 text-sm font-semibold text-white"
-              >
-                <Download className="h-4 w-4" />
-                Export
-              </button>
+              <p className="font-display text-lg font-semibold text-navy">Welcome to your dashboard</p>
+              <p className="mt-2 text-sm text-slate-400 text-center max-w-md">
+                Select <span className="font-semibold text-slate-500">Contacts</span> or <span className="font-semibold text-slate-500">Footfall</span> from the sidebar menu to view detailed records and analytics.
+              </p>
             </div>
-
-            {/* count */}
-            <p className="text-xs text-slate-400 -mt-3">
-              Showing <span className="font-semibold text-navy">{filtered.length}</span> of <span className="font-semibold text-navy">{contacts.length}</span> submissions
-            </p>
-
-            {/* ── TABLE ── */}
-            {filtered.length === 0 ? (
-              <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white py-20">
-                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100">
-                  <Inbox className="h-6 w-6 text-slate-400" />
-                </div>
-                <p className="font-display text-base font-semibold text-navy">No submissions found</p>
-                <p className="mt-1 text-sm text-slate-400">Try a different search or filter</p>
-              </div>
-            ) : (
-              <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
-                {/* thead */}
-                <div className="grid grid-cols-[2fr_2fr_1.4fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  <span>Customer</span>
-                  <span>Contact</span>
-                  <span>Service</span>
-                  <span>Date</span>
-                  <span />
-                </div>
-
-                {/* rows */}
-                <div className="divide-y divide-slate-50">
-                  {filtered.map((c, i) => (
-                    <motion.div
-                      key={c.id}
-                      initial={{ opacity: 0, y: 6 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.03, duration: 0.28 }}
-                      className="group grid grid-cols-[2fr_2fr_1.4fr_1fr_80px] gap-4 items-center px-5 py-4 hover:bg-slate-50 transition-colors"
-                    >
-                      {/* customer */}
-                      <div className="flex items-center gap-3 min-w-0">
-                        <Avatar name={c.name} />
-                        <div className="min-w-0">
-                          <p className="truncate text-sm font-semibold text-navy">{c.name}</p>
-                          <p className="mt-0.5 max-w-[160px] truncate text-xs text-slate-400">{c.message}</p>
-                        </div>
-                      </div>
-
-                      {/* contact */}
-                      <div className="min-w-0 space-y-0.5">
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                          <Mail className="h-3 w-3 shrink-0 text-primary" />
-                          <span className="truncate">{c.email}</span>
-                        </div>
-                        {c.phone && (
-                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                            <Phone className="h-3 w-3 shrink-0 text-brand" />
-                            <span>{c.phone}</span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* service */}
-                      <div><Pill label={c.service} /></div>
-
-                      {/* date */}
-                      <div className="flex items-center gap-1 text-xs text-slate-400 whitespace-nowrap">
-                        <Calendar className="h-3 w-3 shrink-0" />
-                        {fmt(c.date)}
-                      </div>
-
-                      {/* actions */}
-                      <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button onClick={() => setSelected(c)}
-                          className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
-                          title="View"
-                        >
-                          <Eye className="h-3.5 w-3.5" />
-                        </button>
-                        <button onClick={() => del(c.id)}
-                          className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-50 text-red-500 hover:bg-red-500 hover:text-white transition-colors"
-                          title="Delete"
-                        >
-                          <Trash2 className="h-3.5 w-3.5" />
-                        </button>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            )}
 
           </div>
         </div>
       </div>
-
-      {/* ════════ DETAIL DRAWER ════════ */}
-      <AnimatePresence>
-        {selected && (
-          <>
-            {/* backdrop */}
-            <motion.div
-              key="bg"
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-50 bg-navy/20 backdrop-blur-sm"
-              onClick={() => setSelected(null)}
-            />
-
-            {/* drawer */}
-            <motion.div
-              key="drawer"
-              initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
-              transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed inset-y-0 right-0 z-50 flex w-full max-w-[420px] flex-col bg-white shadow-2xl"
-            >
-              {/* drawer header */}
-              <div className="flex shrink-0 items-center justify-between border-b border-slate-100 px-6 py-5">
-                <div className="flex items-center gap-3">
-                  <Avatar name={selected.name} size="md" />
-                  <div>
-                    <p className="font-display text-base font-bold text-navy leading-tight">{selected.name}</p>
-                    <p className="text-xs text-slate-400 mt-0.5">{fmtLg(selected.date)}</p>
-                  </div>
-                </div>
-                <button onClick={() => setSelected(null)}
-                  className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-100 hover:bg-slate-200 transition-colors"
-                >
-                  <X className="h-4 w-4 text-slate-500" />
-                </button>
-              </div>
-
-              {/* drawer body */}
-              <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
-
-                {/* service badge */}
-                <div>
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Service</p>
-                  <Pill label={selected.service} />
-                </div>
-
-                {/* contact */}
-                <div className="space-y-2">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Contact info</p>
-                  <a href={`mailto:${selected.email}`}
-                    className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3 transition-all hover:border-primary/30 hover:bg-sky-50 group"
-                  >
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-sky-100">
-                      <Mail className="h-4 w-4 text-sky-600" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-[10px] text-slate-400">Email address</p>
-                      <p className="truncate text-sm font-semibold text-navy group-hover:text-primary transition-colors">{selected.email}</p>
-                    </div>
-                  </a>
-
-                  {selected.phone ? (
-                    <a href={`tel:${selected.phone}`}
-                      className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3 transition-all hover:border-orange-200 hover:bg-orange-50 group"
-                    >
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-100">
-                        <Phone className="h-4 w-4 text-orange-600" />
-                      </div>
-                      <div>
-                        <p className="text-[10px] text-slate-400">Phone number</p>
-                        <p className="text-sm font-semibold text-navy group-hover:text-brand transition-colors">{selected.phone}</p>
-                      </div>
-                    </a>
-                  ) : (
-                    <div className="flex items-center gap-3 rounded-xl border border-dashed border-slate-200 bg-slate-50/50 px-4 py-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-100">
-                        <Phone className="h-4 w-4 text-slate-300" />
-                      </div>
-                      <p className="text-sm text-slate-400">No phone provided</p>
-                    </div>
-                  )}
-                </div>
-
-                {/* message */}
-                <div>
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Message</p>
-                  <div className="rounded-xl border border-slate-100 bg-slate-50 px-4 py-4">
-                    <p className="text-sm leading-relaxed text-navy whitespace-pre-wrap">{selected.message}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* drawer footer */}
-              <div className="shrink-0 flex items-center gap-3 border-t border-slate-100 bg-slate-50/80 px-6 py-4">
-                <button
-                  onClick={() => { del(selected.id); setSelected(null); }}
-                  className="flex items-center gap-2 rounded-full border border-red-200 bg-white px-4 py-2.5 text-sm font-semibold text-red-500 transition-all hover:bg-red-500 hover:text-white hover:border-red-500"
-                >
-                  <Trash2 className="h-3.5 w-3.5" />
-                  Delete
-                </button>
-                <button
-                  onClick={() => setSelected(null)}
-                  className="ml-auto flex items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white transition-all hover:opacity-90"
-                >
-                  Close
-                </button>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
