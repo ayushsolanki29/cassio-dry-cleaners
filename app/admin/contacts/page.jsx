@@ -57,6 +57,18 @@ const fmtLg = d => new Date(d).toLocaleDateString("en-GB", { day: "numeric", mon
 
 const SERVICES = ["Iron Only","Wash + Iron","Wash, Dry & Fold","Dry Cleaning","Commercial / Business","Request My Area","General Inquiries","Other"];
 
+const DATE_FILTERS = [
+  { label: "All time", value: "all" },
+  { label: "Today", value: "today" },
+  { label: "Yesterday", value: "yesterday" },
+  { label: "7 Days", value: "7days" },
+  { label: "30 Days", value: "30days" },
+  { label: "Last Month", value: "lastmonth" },
+  { label: "Last 3 Months", value: "3months" },
+  { label: "Last 6 Months", value: "6months" },
+  { label: "This Year", value: "thisyear" },
+];
+
 /* ── component ─────────────────────────────────────────── */
 
 export default function AdminContacts() {
@@ -72,6 +84,7 @@ export default function AdminContacts() {
   const [hasMore, setHasMore] = useState(true);
   const [search, setSearch] = useState("");
   const [svc, setSvc] = useState("all");
+  const [dateFilter, setDateFilter] = useState("all");
   
   // UI states
   const [initialLoading, setInitialLoading] = useState(true);
@@ -91,7 +104,7 @@ export default function AdminContacts() {
         });
         if (res.ok) {
           const d = await res.json();
-          if (d.success) setStats({ total: d.total, today: d.today, thisWeek: d.thisWeek, avgRating: "4.9" });
+          if (d.success) setStats({ total: d.total, today: d.today, thisWeek: d.thisWeek, thisMonth: d.thisMonth });
         }
       } catch (err) {}
     };
@@ -102,7 +115,7 @@ export default function AdminContacts() {
   const fetchContacts = useCallback(async (pageNum, reset = false) => {
     try {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost/cassio-dry-cleaner/backend/api";
-      const params = new URLSearchParams({ page: pageNum, limit: 10, search, service: svc });
+      const params = new URLSearchParams({ page: pageNum, limit: 10, search, service: svc, dateFilter });
       
       const res = await fetch(`${apiBase}/admin/contacts.php?${params.toString()}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` }
@@ -126,7 +139,7 @@ export default function AdminContacts() {
     } catch (err) {
       console.error(err);
     }
-  }, [search, svc]);
+  }, [search, svc, dateFilter]);
 
   // Initial load and filter changes
   useEffect(() => {
@@ -141,7 +154,7 @@ export default function AdminContacts() {
     }, 300);
     
     return () => clearTimeout(timer);
-  }, [search, svc, fetchContacts]);
+  }, [search, svc, dateFilter, fetchContacts]);
 
   // Load more trigger
   useEffect(() => {
@@ -176,7 +189,7 @@ export default function AdminContacts() {
     // For export, we fetch all records without limits matching the current filter
     try {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost/cassio-dry-cleaner/backend/api";
-      const params = new URLSearchParams({ search, service: svc }); // No page/limit to fetch all filtered
+      const params = new URLSearchParams({ search, service: svc, dateFilter }); // No page/limit to fetch all filtered
       const res = await fetch(`${apiBase}/admin/contacts.php?${params.toString()}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` }
       });
@@ -307,7 +320,7 @@ export default function AdminContacts() {
                 { label: "Total submissions", value: stats.total,    Icon: Users,       from: "from-sky-400",     to: "to-blue-600" },
                 { label: "Received today",    value: stats.today,    Icon: CheckCircle, from: "from-emerald-400", to: "to-teal-600" },
                 { label: "This week",         value: stats.thisWeek, Icon: Clock,       from: "from-amber-400",   to: "to-orange-500" },
-                { label: "Avg. rating",       value: "4.9",          Icon: Star,        from: "from-violet-400",  to: "to-purple-600" },
+                { label: "This month",        value: stats.thisMonth,Icon: Calendar,    from: "from-violet-400",  to: "to-purple-600" },
               ].map(({ label, value, Icon, from, to }) => (
                 <div key={label} className="relative overflow-hidden rounded-2xl bg-white border border-slate-100 p-5 shadow-sm">
                   <div className={`absolute right-3 top-3 h-10 w-10 rounded-xl bg-gradient-to-br ${from} ${to} flex items-center justify-center shadow-sm`}>
@@ -339,6 +352,17 @@ export default function AdminContacts() {
                 >
                   <option value="all">All services</option>
                   {SERVICES.map(s => <option key={s}>{s}</option>)}
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+              </div>
+
+              <div className="relative sm:w-48">
+                <select
+                  value={dateFilter}
+                  onChange={e => setDateFilter(e.target.value)}
+                  className="h-10 w-full appearance-none rounded-xl border border-slate-200 bg-white pl-4 pr-9 text-sm text-navy shadow-sm focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
+                >
+                  {DATE_FILTERS.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
                 </select>
                 <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
               </div>

@@ -1,0 +1,7 @@
+{
+    "name": "cassio/backend",
+    "description": "PHP Backend for Cassio Dry Cleaners",
+    "require": {
+        "phpmailer/phpmailer": "^6.9.1"
+    }
+}

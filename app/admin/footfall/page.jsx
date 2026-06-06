@@ -42,6 +42,10 @@ const DATE_FILTERS = [
   { label: "Yesterday", value: "yesterday" },
   { label: "7 Days", value: "7days" },
   { label: "30 Days", value: "30days" },
+  { label: "Last Month", value: "lastmonth" },
+  { label: "Last 3 Months", value: "3months" },
+  { label: "Last 6 Months", value: "6months" },
+  { label: "This Year", value: "thisyear" },
 ];
 
 /* ── component ─────────────────────────────────────────── */
@@ -52,7 +56,7 @@ export default function FootfallDashboard() {
   // Data states
   const [activity, setActivity] = useState([]);
   const [summary, setSummary] = useState({
-    uniqueVisitors: 0, uniqueIps: 0, totalSessions: 0, totalInteractions: 0, engagement: 'N/A', topRegion: 'N/A', topSource: 'N/A'
+    uniqueVisitors: 0, uniqueIps: 0, totalSessions: 0, totalInteractions: 0, thisMonthTraffic: 0, last3MonthsTraffic: 0
   });
   const [totalRecords, setTotalRecords] = useState(0);
 
@@ -155,9 +159,9 @@ export default function FootfallDashboard() {
       if (res.ok) {
         const d = await res.json();
         const rows = [
-          ["Visitor ID", "IP Address", "Location", "Device", "Browser", "OS", "Page", "Referrer", "Date"],
+          ["Visitor ID", "Device", "Browser", "OS", "Page", "Referrer", "Date"],
           ...d.activity.map(v => [
-            v.visitor_id, v.ip_address, `${v.city}, ${v.country}`, v.device_type, v.browser, v.os, v.page_url, v.referrer, fmt(v.created_at)
+            v.visitor_id, v.device_type, v.browser, v.os, v.page_url, v.referrer, fmt(v.created_at)
           ]),
         ].map(r => r.map(val => `"${val}"`).join(",")).join("\n");
         Object.assign(document.createElement("a"), {
@@ -172,17 +176,13 @@ export default function FootfallDashboard() {
 
   // Skeleton Row Component
   const SkeletonRow = () => (
-    <div className="grid grid-cols-[2fr_1.5fr_1.5fr_1fr_80px] gap-4 items-center px-5 py-4 border-t border-slate-50 animate-pulse">
+    <div className="grid grid-cols-[2fr_1.5fr_1fr_80px] gap-4 items-center px-5 py-4 border-t border-slate-50 animate-pulse">
       <div className="flex items-center gap-3">
         <div className="h-8 w-8 rounded-full bg-slate-200" />
         <div className="space-y-2 flex-1">
           <div className="h-4 w-24 rounded bg-slate-200" />
           <div className="h-3 w-32 rounded bg-slate-100" />
         </div>
-      </div>
-      <div className="space-y-2">
-        <div className="h-4 w-28 rounded bg-slate-200" />
-        <div className="h-3 w-20 rounded bg-slate-100" />
       </div>
       <div className="space-y-2">
         <div className="h-4 w-24 rounded bg-slate-200" />
@@ -281,10 +281,10 @@ export default function FootfallDashboard() {
             {/* ── STAT CARDS ── */}
             <div className="shrink-0 grid grid-cols-2 gap-4 lg:grid-cols-4">
               {[
-                { label: "Unique Visitors", value: summary.uniqueVisitors, sub: `${summary.uniqueIps} unique IPs`, Icon: Users, from: "from-sky-400", to: "to-blue-600" },
+                { label: "Unique Visitors", value: summary.uniqueVisitors, sub: "Total recorded visitors", Icon: Users, from: "from-sky-400", to: "to-blue-600" },
                 { label: "Total Sessions", value: summary.totalSessions, sub: `${summary.totalInteractions} recorded interactions`, Icon: Activity, from: "from-emerald-400", to: "to-teal-600" },
-                { label: "Engagement", value: summary.engagement, sub: "Based on visit activity", Icon: Star, from: "from-violet-400", to: "to-purple-600" },
-                { label: "Geography", value: summary.topRegion, sub: summary.topSource, Icon: Globe, from: "from-amber-400", to: "to-orange-500" },
+                { label: "This Month", value: summary.thisMonthTraffic, sub: "Unique visitors this month", Icon: Timer, from: "from-violet-400", to: "to-purple-600" },
+                { label: "Last 3 Months", value: summary.last3MonthsTraffic, sub: "Unique visitors past 90 days", Icon: Calendar, from: "from-amber-400", to: "to-orange-500" },
               ].map(({ label, value, sub, Icon, from, to }) => (
                 <div key={label} className="relative overflow-hidden rounded-2xl bg-white border border-slate-100 p-5 shadow-sm">
                   <div className={`absolute right-3 top-3 h-10 w-10 rounded-xl bg-gradient-to-br ${from} ${to} flex items-center justify-center shadow-sm`}>
@@ -302,7 +302,7 @@ export default function FootfallDashboard() {
               <div className="relative flex-1">
                 <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                 <input value={search} onChange={e => setSearch(e.target.value)}
-                  placeholder="Search Visitor ID, IP, location, page or referrer…"
+                  placeholder="Search Visitor ID, page or referrer…"
                   className="h-10 w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 text-sm text-navy shadow-sm focus:border-primary/50 focus:ring-2 focus:ring-primary/20 transition-all"
                 />
               </div>
@@ -324,8 +324,8 @@ export default function FootfallDashboard() {
             {/* ── TABLE ── */}
             {initialLoading ? (
               <div className="flex-1 flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
-                <div className="shrink-0 grid grid-cols-[2fr_1.5fr_1.5fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  <span>Visitor & Page</span><span>Location</span><span>Environment</span><span>Timestamp</span><span />
+                <div className="shrink-0 grid grid-cols-[2fr_1.5fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                  <span>Visitor & Page</span><span>Environment</span><span>Timestamp</span><span />
                 </div>
                 <div className="flex-1 overflow-y-auto">
                   {[1, 2, 3, 4, 5].map(i => <SkeletonRow key={i} />)}
@@ -341,31 +341,20 @@ export default function FootfallDashboard() {
               </div>
             ) : (
               <div className="flex-1 flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
-                <div className="shrink-0 grid grid-cols-[2fr_1.5fr_1.5fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  <span>Visitor & Page</span><span>Location</span><span>Environment</span><span>Timestamp</span><span />
+                <div className="shrink-0 grid grid-cols-[2fr_1.5fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                  <span>Visitor & Page</span><span>Environment</span><span>Timestamp</span><span />
                 </div>
 
                 <div className="flex-1 overflow-y-auto divide-y divide-slate-50">
                   {activity.map((v, i) => (
                     <motion.div key={v.id} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0, duration: 0.2 }}
-                      className="group grid grid-cols-[2fr_1.5fr_1.5fr_1fr_80px] gap-4 items-center px-5 py-4 hover:bg-slate-50 transition-colors"
+                      className="group grid grid-cols-[2fr_1.5fr_1fr_80px] gap-4 items-center px-5 py-4 hover:bg-slate-50 transition-colors"
                     >
                       <div className="flex items-center gap-3 min-w-0">
                         <Avatar name={v.visitor_id} />
                         <div className="min-w-0">
                           <p className="truncate text-sm font-semibold text-navy">{v.visitor_id}</p>
                           <p className="mt-0.5 truncate text-xs text-slate-400">{v.page_url ? new URL(v.page_url).pathname : "Unknown"}</p>
-                        </div>
-                      </div>
-
-                      <div className="min-w-0 space-y-0.5">
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                          <MapPin className="h-3 w-3 shrink-0 text-brand" />
-                          <span className="truncate">{v.city ? `${v.city}, ${v.country}` : "Unknown Location"}</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                          <Globe className="h-3 w-3 shrink-0 text-sky-500" />
-                          <span>{v.ip_address}</span>
                         </div>
                       </div>
 
@@ -457,18 +446,6 @@ export default function FootfallDashboard() {
                   <div className="rounded-xl border border-slate-100 bg-slate-50 p-3">
                     <p className="text-[10px] text-slate-400 mb-1">Session ID</p>
                     <p className="text-xs font-mono text-slate-600 truncate">{selected.session_id}</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Location & Network</p>
-                  <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-emerald-100"><MapPin className="h-4 w-4 text-emerald-600" /></div>
-                    <div className="min-w-0"><p className="text-[10px] text-slate-400">Location</p><p className="truncate text-sm font-semibold text-navy">{selected.city ? `${selected.city}, ${selected.country}` : "Unknown"}</p></div>
-                  </div>
-                  <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-sky-100"><Globe className="h-4 w-4 text-sky-600" /></div>
-                    <div className="min-w-0"><p className="text-[10px] text-slate-400">IP Address</p><p className="truncate text-sm font-semibold text-navy">{selected.ip_address}</p></div>
                   </div>
                 </div>
 

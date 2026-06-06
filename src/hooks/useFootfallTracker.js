@@ -11,8 +11,16 @@ export function useFootfallTracker() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // 1. Do not track admin side
+    if (pathname && pathname.startsWith("/admin")) return;
+
     const trackPage = async () => {
       try {
+        // 2. Check 7-day cookie
+        if (document.cookie.includes("footfall_tracked=1")) {
+          return; // Already tracked within the last 7 days
+        }
+
         let visitorId = localStorage.getItem("visitor_id");
         if (!visitorId) {
           visitorId = `VIS-${generateId()}`;
@@ -58,16 +66,26 @@ export function useFootfallTracker() {
         };
 
         const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost/cassio-dry-cleaner/backend/api";
-        await fetch(`${apiBase}/footfall/track.php`, {
+        const res = await fetch(`${apiBase}/footfall/track.php`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
+          keepalive: true, // Prevents request cancellation if user navigates away fast
         });
+
+        if (res.ok) {
+          // Set cookie to expire in 7 days (604800 seconds)
+          document.cookie = `footfall_tracked=1; max-age=604800; path=/`;
+        }
       } catch (err) {
         console.error("Failed to track footfall", err);
       }
     };
 
-    trackPage();
+    // Defer tracking until browser main thread is idle (Non-blocking)
+    const deferExecution = window.requestIdleCallback || ((cb) => setTimeout(cb, 1000));
+    deferExecution(() => {
+      trackPage();
+    });
   }, [pathname]);
 }
