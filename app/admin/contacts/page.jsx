@@ -26,7 +26,7 @@ const SERVICE_PILL = {
 function Pill({ label }) {
   const cls = SERVICE_PILL[label] ?? "bg-slate-50 text-slate-500 border-slate-200";
   return (
-    <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${cls}`}>
+    <span className={`inline-flex items-center whitespace-nowrap rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${cls}`}>
       {label}
     </span>
   );
@@ -375,11 +375,13 @@ export default function AdminContacts() {
             {/* ── TABLE ── */}
             {initialLoading ? (
               <div className="flex-1 flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
-                <div className="shrink-0 grid grid-cols-[2fr_2fr_1.4fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  <span>Customer</span><span>Contact</span><span>Service</span><span>Date</span><span />
-                </div>
-                <div className="flex-1 overflow-y-auto">
-                  {[1, 2, 3, 4, 5].map(i => <SkeletonRow key={i} />)}
+                <div className="overflow-x-auto flex-1 flex flex-col">
+                  <div className="shrink-0 grid min-w-[800px] grid-cols-[2fr_2fr_1.4fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                    <span>Customer</span><span>Contact</span><span>Service</span><span>Date</span><span />
+                  </div>
+                  <div className="flex-1 overflow-y-auto min-w-[800px]">
+                    {[1, 2, 3, 4, 5].map(i => <SkeletonRow key={i} />)}
+                  </div>
                 </div>
               </div>
             ) : contacts.length === 0 ? (
@@ -392,12 +394,13 @@ export default function AdminContacts() {
               </div>
             ) : (
               <div className="flex-1 flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm">
-                <div className="shrink-0 grid grid-cols-[2fr_2fr_1.4fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
-                  <span>Customer</span><span>Contact</span><span>Service</span><span>Date</span><span />
-                </div>
+                <div className="overflow-x-auto flex-1 flex flex-col">
+                  <div className="shrink-0 grid min-w-[800px] grid-cols-[2fr_2fr_1.4fr_1fr_80px] gap-4 border-b border-slate-100 bg-slate-50 px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400">
+                    <span>Customer</span><span>Contact</span><span>Service</span><span>Date</span><span />
+                  </div>
 
-                <div className="flex-1 overflow-y-auto divide-y divide-slate-50">
-                  {contacts.map((c, i) => (
+                  <div className="flex-1 overflow-y-auto min-w-[800px] divide-y divide-slate-50">
+                    {contacts.map((c, i) => (
                     <motion.div
                       key={c.id}
                       initial={{ opacity: 0, y: 6 }}
@@ -462,6 +465,7 @@ export default function AdminContacts() {
                   )}
                 </div>
               </div>
+            </div>
             )}
           </div>
         </div>

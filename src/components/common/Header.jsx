@@ -43,9 +43,9 @@ export function Header() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/assets/cassio-logo.jpeg" alt="Cassio Dry Cleaners" width={36} height={36} className="rounded-full ring-2 ring-white/30" priority />
+            <Image src="/assets/logo.svg" alt="Cassio Dry Cleaners" width={62} height={62} className="rounded-full ring-2 ring-white/30" priority unoptimized />
             <span className="font-display text-lg font-semibold tracking-tight text-white md:text-xl">
-              Cassio<span className="hidden sm:inline"> Dry Cleaners</span><span className="text-cream">.</span>
+              Cassio<span className="hidden sm:inline"> Dry Cleaners</span><span className="text-brand">.</span>
             </span>
           </Link>
 
@@ -118,7 +118,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed inset-x-4 top-[84px] z-50 md:hidden overflow-hidden rounded-3xl bg-white shadow-pop border border-border/50"
+            className="fixed inset-x-4 top-[112px] z-50 md:hidden overflow-hidden rounded-3xl bg-white shadow-pop border border-border/50"
           >
             <nav className="flex flex-col p-6 items-center space-y-1">
               {navItems.map((item, i) => (

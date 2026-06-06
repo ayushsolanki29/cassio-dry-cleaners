@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import {
-  LogOut, Users, Menu, Activity, Globe, Inbox, LayoutDashboard, Settings
+  LogOut, Users, Menu, Activity, Globe, Inbox, LayoutDashboard, Settings, Calendar
 } from "lucide-react";
 
 /* ── component ─────────────────────────────────────────── */
@@ -16,7 +16,7 @@ export default function AdminDashboard() {
   const [navOpen,  setNavOpen ] = useState(false);
   
   const [dashboardStats, setDashboardStats] = useState({
-    totalVisitors: 0, totalContacts: 0, monthContacts: 0, monthVisitors: 0
+    totalVisitors: 0, totalContacts: 0, monthContacts: 0, monthVisitors: 0, weekContacts: 0, weekVisitors: 0
   });
 
   /* auth */
@@ -30,25 +30,30 @@ export default function AdminDashboard() {
       const apiBase = process.env.NEXT_PUBLIC_API_URL || "http://localhost/cassio-dry-cleaner/backend/api";
       const opts = { headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}` } };
       
-      const [rContacts, rAllVisitors, rMonthVisitors] = await Promise.all([
+      const [rContacts, rAllVisitors, rMonthVisitors, rWeekVisitors] = await Promise.all([
         fetch(`${apiBase}/admin/contacts.php`, opts),
         fetch(`${apiBase}/admin/footfall/summary.php?filter=all`, opts),
-        fetch(`${apiBase}/admin/footfall/summary.php?filter=30days`, opts)
+        fetch(`${apiBase}/admin/footfall/summary.php?filter=30days`, opts),
+        fetch(`${apiBase}/admin/footfall/summary.php?filter=7days`, opts)
       ]);
 
       if (rContacts.ok) { 
         const d = await rContacts.json(); 
         const mContacts = d.contacts.filter(c => new Date(c.date) >= new Date(Date.now() - 30*864e5)).length;
+        const wContacts = d.contacts.filter(c => new Date(c.date) >= new Date(Date.now() - 7*864e5)).length;
         
-        let tVisitors = 0, mVisitors = 0;
+        let tVisitors = 0, mVisitors = 0, wVisitors = 0;
         if (rAllVisitors.ok) tVisitors = (await rAllVisitors.json()).uniqueVisitors || 0;
         if (rMonthVisitors.ok) mVisitors = (await rMonthVisitors.json()).uniqueVisitors || 0;
+        if (rWeekVisitors.ok) wVisitors = (await rWeekVisitors.json()).uniqueVisitors || 0;
 
         setDashboardStats({
           totalVisitors: tVisitors,
           totalContacts: d.contacts.length,
           monthContacts: mContacts,
-          monthVisitors: mVisitors
+          monthVisitors: mVisitors,
+          weekContacts: wContacts,
+          weekVisitors: wVisitors
         });
       }
       else router.push("/admin");
@@ -173,11 +178,24 @@ export default function AdminDashboard() {
               ))}
             </div>
 
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white py-24 mt-8">
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white py-16 mt-8">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-50">
                 <LayoutDashboard className="h-8 w-8 text-slate-300" />
               </div>
               <p className="font-display text-lg font-semibold text-navy">Welcome to your dashboard</p>
+              
+              <div className="my-6 flex flex-col sm:flex-row items-center gap-6 rounded-xl bg-slate-50 px-8 py-5 border border-slate-100">
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-navy">{dashboardStats.weekContacts}</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mt-1">Submissions this week</p>
+                </div>
+                <div className="hidden sm:block h-10 w-px bg-slate-200"></div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-navy">{dashboardStats.weekVisitors}</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mt-1">Visitors this week</p>
+                </div>
+              </div>
+
               <p className="mt-2 text-sm text-slate-400 text-center max-w-md">
                 Select <span className="font-semibold text-slate-500">Contacts</span> or <span className="font-semibold text-slate-500">Footfall</span> from the sidebar menu to view detailed records and analytics.
               </p>

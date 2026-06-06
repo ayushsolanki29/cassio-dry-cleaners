@@ -36,6 +36,12 @@ function Avatar({ name, size = "sm" }) {
 const fmt = d => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" });
 const fmtLg = d => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
 
+const formatVisitorId = (id) => {
+  if (!id) return "Unknown";
+  if (id.startsWith("VIS-")) return "Visitor " + id.replace("VIS-", "").substring(0, 6).toUpperCase();
+  return id;
+};
+
 const DATE_FILTERS = [
   { label: "All time", value: "all" },
   { label: "Today", value: "today" },
@@ -351,9 +357,9 @@ export default function FootfallDashboard() {
                       className="group grid grid-cols-[2fr_1.5fr_1fr_80px] gap-4 items-center px-5 py-4 hover:bg-slate-50 transition-colors"
                     >
                       <div className="flex items-center gap-3 min-w-0">
-                        <Avatar name={v.visitor_id} />
+                        <Avatar name={formatVisitorId(v.visitor_id)} />
                         <div className="min-w-0">
-                          <p className="truncate text-sm font-semibold text-navy">{v.visitor_id}</p>
+                          <p className="truncate text-sm font-semibold text-navy">{formatVisitorId(v.visitor_id)}</p>
                           <p className="mt-0.5 truncate text-xs text-slate-400">{v.page_url ? new URL(v.page_url).pathname : "Unknown"}</p>
                         </div>
                       </div>
@@ -419,9 +425,9 @@ export default function FootfallDashboard() {
             >
               <div className="flex shrink-0 items-center justify-between border-b border-slate-100 px-6 py-5">
                 <div className="flex items-center gap-3">
-                  <Avatar name={selected.visitor_id} size="md" />
+                  <Avatar name={formatVisitorId(selected.visitor_id)} size="md" />
                   <div>
-                    <p className="font-display text-base font-bold text-navy leading-tight">{selected.visitor_id}</p>
+                    <p className="font-display text-base font-bold text-navy leading-tight">{formatVisitorId(selected.visitor_id)}</p>
                     <p className="text-xs text-slate-400 mt-0.5">{fmtLg(selected.created_at)}</p>
                   </div>
                 </div>

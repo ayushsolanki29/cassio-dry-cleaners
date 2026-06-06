@@ -26,7 +26,7 @@ define('SMTP_PORT', (int)(getenv('SMTP_PORT') ?: 465)); // 587=tls, 465=ssl
 define('SMTP_SECURE', getenv('SMTP_SECURE') ?: 'ssl');  // 'tls' for 587, 'ssl' for 465
 define('SMTP_USER', getenv('SMTP_USER') ?: 'info@speedylaundry.co.uk');
 define('SMTP_PASS', getenv('SMTP_PASS') ?: 'ThisLostGost@^57777');
-define('NOTIFICATION_EMAIL', getenv('NOTIFICATION_EMAIL') ?: 'urupanchal14@gmail.com');
+define('NOTIFICATION_EMAIL', getenv('NOTIFICATION_EMAIL') ?: 'developer.speedylaundry@gmail.com');
 
 // CORS Headers Helper
 function handleCors() {
