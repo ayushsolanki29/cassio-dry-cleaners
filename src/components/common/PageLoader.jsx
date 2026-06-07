@@ -33,7 +33,7 @@ export function PageLoader() {
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
             <Image
-              src="/assets/cassio-logo.jpg"
+              src="/assets/cassio-logo.jpeg"
               alt="Cassio"
               width={180}
               height={180}

@@ -24,9 +24,9 @@ loadEnv(__DIR__ . '/.env');
 define('SMTP_HOST', getenv('SMTP_HOST') ?: 'smtp.hostinger.com');
 define('SMTP_PORT', (int)(getenv('SMTP_PORT') ?: 465)); // 587=tls, 465=ssl
 define('SMTP_SECURE', getenv('SMTP_SECURE') ?: 'ssl');  // 'tls' for 587, 'ssl' for 465
-define('SMTP_USER', getenv('SMTP_USER') ?: 'info@speedylaundry.co.uk');
-define('SMTP_PASS', getenv('SMTP_PASS') ?: 'ThisLostGost@^57777');
-define('NOTIFICATION_EMAIL', getenv('NOTIFICATION_EMAIL') ?: 'developer.speedylaundry@gmail.com');
+define('SMTP_USER', getenv('SMTP_USER') ?: 'info@cassiodrycleaners.co.uk');
+define('SMTP_PASS', getenv('SMTP_PASS') ?: 'Red-Tiger-Mark-76');
+define('NOTIFICATION_EMAIL', getenv('NOTIFICATION_EMAIL') ?: 'ayushsolanki2901@gmail.com');
 
 // CORS Headers Helper
 function handleCors() {
@@ -38,11 +38,17 @@ function handleCors() {
     }
 }
 
-// Database Credentials
+// // Local Database Credentials
+// define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+// define('DB_USER', getenv('DB_USER') ?: 'root');
+// define('DB_PASS', getenv('DB_PASS') ?: '');
+// define('DB_NAME', getenv('DB_NAME') ?: 'cassio');
+
+// Production Database Credentials
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
-define('DB_NAME', getenv('DB_NAME') ?: 'cassio');
+define('DB_USER', getenv('DB_USER') ?: 'u344107577_cassio_user');
+define('DB_PASS', getenv('DB_PASS') ?: 'Blue-HELLO-Mark-77');
+define('DB_NAME', getenv('DB_NAME') ?: 'u344107577_cassio_db');
 
 // PDO Database Connection Helper
 function getDbConnection() {

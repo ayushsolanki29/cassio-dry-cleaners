@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Lock, Mail, Eye, EyeOff, AlertCircle, ArrowRight, ShieldCheck } from "lucide-react";
+import { Lock, Mail, Eye, EyeOff, AlertCircle, ArrowRight, ShieldCheck, Heart } from "lucide-react";
 import Image from "next/image";
 
 const fadeUp = (delay = 0) => ({
@@ -63,9 +64,13 @@ export default function AdminLoginPage() {
 
       <div className="relative z-10 w-full max-w-md">
 
-        {/* Logo chip */}
+        {/* Brand chip */}
         <motion.div {...fadeUp(0)} className="flex justify-center mb-8">
-          <div className="flex items-center gap-3 rounded-2xl bg-white px-5 py-3 shadow-soft border border-border/50">
+          <Link
+            href="/"
+            aria-label="Go to Cassio home page"
+            className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-3 shadow-soft border border-border/50 transition-all hover:-translate-y-0.5 hover:shadow-card focus:outline-none focus:ring-2 focus:ring-primary/40"
+          >
             <Image
               src="/assets/cassio-logo.jpeg"
               alt="Cassio Dry Cleaners"
@@ -73,18 +78,21 @@ export default function AdminLoginPage() {
               height={36}
               className="rounded-full ring-2 ring-primary/20"
             />
-            <span className="font-display text-lg font-semibold text-navy tracking-tight">
-              Cassio<span className="text-brand">.</span>
+            <span className="flex items-center gap-3">
+              <span className="font-display text-lg font-semibold text-navy tracking-tight">
+                Cassio<span className="text-brand">.</span>
+              </span>
+              <span className="h-5 w-px bg-border" />
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                Admin
+              </span>
             </span>
-          </div>
+          </Link>
         </motion.div>
 
         {/* Heading */}
         <motion.div {...fadeUp(0.08)} className="text-center mb-8">
-          <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary mb-4">
-            <ShieldCheck className="h-3.5 w-3.5" />
-            Admin Portal
-          </span>
           <h1 className="font-display text-4xl font-semibold text-navy">
             Welcome back
           </h1>
@@ -122,7 +130,8 @@ export default function AdminLoginPage() {
                 autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="admin@cassio.com"
+                suppressHydrationWarning
+                placeholder="Enter Admin Email"
                 className="w-full rounded-2xl border border-border bg-secondary/40 px-4 py-3.5 text-sm text-navy placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
               />
             </div>
@@ -142,7 +151,7 @@ export default function AdminLoginPage() {
                   autoComplete="current-password"
                   value={formData.password}
                   onChange={handleChange}
-                  placeholder="••••••••"
+                  placeholder="Enter Password"
                   className="w-full rounded-2xl border border-border bg-secondary/40 px-4 py-3.5 pr-12 text-sm text-navy placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all"
                 />
                 <button
@@ -181,15 +190,18 @@ export default function AdminLoginPage() {
           </form>
         </motion.div>
 
-        {/* Demo hint */}
-        <motion.div {...fadeUp(0.28)} className="mt-5 rounded-2xl bg-sun/40 border border-sun px-5 py-4 text-center">
-          <p className="text-xs font-semibold text-amber-800 mb-1">Demo credentials</p>
-          <p className="text-xs text-amber-700">admin@cassio.com &nbsp;·&nbsp; admin123</p>
-        </motion.div>
-
-        {/* Footer note */}
-        <motion.p {...fadeUp(0.34)} className="mt-6 text-center text-xs text-muted-foreground">
-          Protected area — unauthorised access is prohibited
+        <motion.p {...fadeUp(0.24)} className="mt-6 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
+          Made with
+          <Heart className="h-3.5 w-3.5 fill-red-500 text-red-500" aria-label="heart" />
+          by{" "}
+          <a
+            href="https://www.ayushsolanki.site/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-primary transition-colors hover:text-navy"
+          >
+            Ayush Solanki
+          </a>
         </motion.p>
 
       </div>

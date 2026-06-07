@@ -26,14 +26,14 @@ export function Header() {
   return (
     <>
       {/* ── Floating island nav ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-4 md:px-6 md:pt-5">
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 pt-3 md:px-6 md:pt-5">
         <motion.div
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className={`
             w-full max-w-5xl flex items-center justify-between
-            rounded-2xl px-5 py-3.5 md:px-6 md:py-4
+            rounded-full px-3 py-2 md:rounded-2xl md:px-6 md:py-4
             transition-all duration-300 ease-in-out
             ${scrolled
               ? "bg-primary/60 shadow-[0_8px_32px_-4px_oklch(0.62_0.21_252/0.4)] backdrop-blur-xl border border-white/15"
@@ -42,9 +42,9 @@ export function Header() {
           `}
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/assets/logo.svg" alt="Cassio Dry Cleaners" width={62} height={62} className="rounded-full ring-2 ring-white/30" priority unoptimized />
-            <span className="font-display text-lg font-semibold tracking-tight text-white md:text-xl">
+          <Link href="/" className="flex min-w-0 items-center gap-2 md:gap-2.5">
+            <Image src="/assets/logo.svg" alt="Cassio Dry Cleaners" width={62} height={62} className="h-14 w-14 rounded-full ring-2 ring-white/30 md:h-[62px] md:w-[62px]" priority unoptimized />
+            <span className="truncate font-display text-base font-semibold tracking-tight text-white md:text-xl">
               Cassio<span className="hidden sm:inline"> Dry Cleaners</span><span className="text-brand">.</span>
             </span>
           </Link>
@@ -72,7 +72,7 @@ export function Header() {
             <button
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Toggle menu"
-              className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-white transition hover:bg-white/25 md:hidden"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25 md:hidden"
             >
               <AnimatePresence mode="wait" initial={false}>
                 {menuOpen ? (

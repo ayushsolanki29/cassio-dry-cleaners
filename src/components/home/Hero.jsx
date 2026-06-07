@@ -64,7 +64,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-brand/10 blur-3xl" />
       <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-sun/20 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-5 pb-10 pt-24 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:pb-14 md:pt-28 lg:gap-12 lg:pb-16 lg:pt-32">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-5 pb-10 pt-28 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:pb-14 md:pt-28 lg:gap-12 lg:pb-16 lg:pt-32">
 
         {/* ── Left: text ── */}
         <div className="space-y-4 md:space-y-6">

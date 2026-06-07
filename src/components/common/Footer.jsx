@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Heart, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const cols = [
   {
@@ -86,7 +86,22 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs md:text-sm text-white/60 sm:flex-row">
-          <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Cassio Dry Cleaners. All rights reserved.</p>
+          <div className="flex flex-col items-center gap-2 sm:items-start">
+            <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Cassio Dry Cleaners | cassiodrycleaners.co.uk. All rights reserved.</p>
+            <p className="flex items-center gap-1.5 text-center text-white/50 sm:text-left">
+              Made with
+              <Heart className="h-3.5 w-3.5 fill-red-500 text-red-500" aria-label="heart" />
+              by
+              <a
+                href="https://www.ayushsolanki.site/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-white/70 transition hover:text-white"
+              >
+                Ayush Solanki
+              </a>
+            </p>
+          </div>
           <div className="flex gap-4 md:gap-6">
             <a href="/privacy" className="hover:text-white transition">Privacy Policy</a>
             <a href="/terms" className="hover:text-white transition">Terms & Conditions</a>
