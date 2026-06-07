@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 $stmt = $db->query("SELECT key_name, value FROM settings WHERE key_name IN ('admin_email', 'admin_password')");
 $settings = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
 
-$dbEmail = $settings['admin_email'] ?? 'admin@cassio.com';
+$dbEmail = $settings['admin_email'] ?? 'info@cassiodrycleaners.co.uk';
 $dbPasswordHash = $settings['admin_password'] ?? null;
 
 $isPasswordValid = false;

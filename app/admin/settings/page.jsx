@@ -28,7 +28,7 @@ export default function AdminSettings() {
         const tokenEmail = decoded.split(":")[0];
         setEmail(tokenEmail);
       } catch (e) {
-        setEmail("admin@cassio.com");
+        setEmail("info@cassiodrycleaners.co.uk");
       }
     }
   }, [router]);

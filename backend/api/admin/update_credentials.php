@@ -42,7 +42,7 @@ $stmt = $db->query("SELECT key_name, value FROM settings WHERE key_name IN ('adm
 $settings = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
 
 $currentHash = $settings['admin_password'] ?? null;
-$currentEmail = $settings['admin_email'] ?? 'admin@cassio.com';
+$currentEmail = $settings['admin_email'] ?? 'info@cassiodrycleaners.co.uk';
 
 // If no hash exists, it means default password 'admin123'
 if (!$currentHash) {

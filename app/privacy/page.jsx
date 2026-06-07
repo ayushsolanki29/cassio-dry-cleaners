@@ -97,7 +97,7 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy, please contact us:
             </p>
             <ul className="mt-4 list-none space-y-2 text-muted-foreground">
-              <li><strong>Email:</strong> hello@cassio.com</li>
+              <li><strong>Email:</strong> info@cassiodrycleaners.co.uk</li>
               <li><strong>Phone:</strong> +44 20 1234 5678</li>
               <li><strong>Address:</strong> 166 Cassiobury Dr, Watford WD17 3AJ, United Kingdom</li>
             </ul>

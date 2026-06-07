@@ -16,10 +16,10 @@ const methods = [
   {
     Icon: Mail,
     title: "Email",
-    detail: "hello@cassio.com",
+    detail: "info@cassiodrycleaners.co.uk",
     description: "We reply within 2 hours",
     color: "bg-sun/40 text-amber-800",
-    href: "mailto:hello@cassio.com"
+    href: "mailto:info@cassiodrycleaners.co.uk"
   },
   {
     Icon: MessageCircle,
@@ -174,7 +174,7 @@ export function ContactSection() {
                           id="email"
                           required
                           className="w-full rounded-xl border border-border bg-white px-4 py-3 text-sm text-navy placeholder:text-muted-foreground shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/50 transition-shadow"
-                          placeholder="john@example.com"
+                          placeholder="Enter your email"
                         />
                       </div>
                     </div>

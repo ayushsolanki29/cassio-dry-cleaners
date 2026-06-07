@@ -8,7 +8,7 @@ const faqs = [
   { q: "Can I visit your office in person?", a: "Yes! Our Watford HQ at 166 Cassiobury Dr is open Monday-Friday 8am-8pm, Saturday 9am-6pm, and Sunday 10am-4pm. Walk-ins are welcome." },
   { q: "Do you offer support in languages other than English?", a: "Yes, our team speaks multiple languages including Spanish, French, Polish, and Mandarin. Let us know your preference when you contact us." },
   { q: "What's the best way to track my order?", a: "You can track your order by calling us, emailing, or using WhatsApp. We'll provide real-time updates on your garment's status." },
-  { q: "How do I make a complaint or provide feedback?", a: "We take all feedback seriously. Please email us at hello@cassio.com or call our customer service line. We'll address your concerns promptly." }
+  { q: "How do I make a complaint or provide feedback?", a: "We take all feedback seriously. Please email us at info@cassiodrycleaners.co.uk or call our customer service line. We'll address your concerns promptly." }
 ];
 
 export function ContactFaq() {

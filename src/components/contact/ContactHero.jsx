@@ -37,7 +37,7 @@ export function ContactHero() {
                  </div>
                </a>
 
-               <a href="mailto:hello@cassio.com" className="group flex items-center gap-4 rounded-2xl bg-white p-4 shadow-sm border border-border/40 transition-all hover:shadow-card hover:-translate-y-1">
+               <a href="mailto:info@cassiodrycleaners.co.uk" className="group flex items-center gap-4 rounded-2xl bg-white p-4 shadow-sm border border-border/40 transition-all hover:shadow-card hover:-translate-y-1">
                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-sun/40 text-amber-800 transition-colors group-hover:bg-sun/60">
                    <Mail className="h-5 w-5" />
                  </div>
