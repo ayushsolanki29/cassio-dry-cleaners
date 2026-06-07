@@ -42,6 +42,23 @@ const formatVisitorId = (id) => {
   return id;
 };
 
+const getDeviceInfo = (record = {}) => {
+  const userAgent = record.user_agent || "";
+
+  let deviceType = record.device_type || "Unknown";
+  if (/Tablet|iPad/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent))) deviceType = "Tablet";
+  else if (/Mobi|Android|iPhone|iPod/i.test(userAgent)) deviceType = "Mobile";
+
+  let os = record.os || "Unknown OS";
+  if (/Android/i.test(userAgent)) os = "Android";
+  else if (/iPhone|iPad|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && /Mobile/i.test(userAgent))) os = "iOS";
+  else if (/Win/i.test(userAgent)) os = "Windows";
+  else if (/Mac/i.test(userAgent)) os = "MacOS";
+  else if (/X11|Linux/i.test(userAgent)) os = "Linux";
+
+  return { deviceType, os };
+};
+
 const DATE_FILTERS = [
   { label: "All time", value: "all" },
   { label: "Today", value: "today" },
@@ -166,9 +183,12 @@ export default function FootfallDashboard() {
         const d = await res.json();
         const rows = [
           ["Visitor ID", "Device", "Browser", "OS", "Page", "Referrer", "Date"],
-          ...d.activity.map(v => [
-            v.visitor_id, v.device_type, v.browser, v.os, v.page_url, v.referrer, fmt(v.created_at)
-          ]),
+          ...d.activity.map(v => {
+            const deviceInfo = getDeviceInfo(v);
+            return [
+              v.visitor_id, deviceInfo.deviceType, v.browser, deviceInfo.os, v.page_url, v.referrer, fmt(v.created_at)
+            ];
+          }),
         ].map(r => r.map(val => `"${val}"`).join(",")).join("\n");
         Object.assign(document.createElement("a"), {
           href: URL.createObjectURL(new Blob([rows], { type: "text/csv" })),
@@ -201,6 +221,8 @@ export default function FootfallDashboard() {
       <div className="flex justify-end"><div className="h-7 w-7 rounded-lg bg-slate-200" /></div>
     </div>
   );
+
+  const selectedDeviceInfo = selected ? getDeviceInfo(selected) : null;
 
   return (
     <div className="flex h-screen overflow-hidden bg-[#f5f6fa] font-body">
@@ -352,47 +374,51 @@ export default function FootfallDashboard() {
                 </div>
 
                 <div className="flex-1 overflow-y-auto divide-y divide-slate-50">
-                  {activity.map((v, i) => (
-                    <motion.div key={v.id} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0, duration: 0.2 }}
-                      className="group grid grid-cols-[2fr_1.5fr_1fr_80px] gap-4 items-center px-5 py-4 hover:bg-slate-50 transition-colors"
-                    >
-                      <div className="flex items-center gap-3 min-w-0">
-                        <Avatar name={formatVisitorId(v.visitor_id)} />
-                        <div className="min-w-0">
-                          <p className="truncate text-sm font-semibold text-navy">{formatVisitorId(v.visitor_id)}</p>
-                          <p className="mt-0.5 truncate text-xs text-slate-400">{v.page_url ? new URL(v.page_url).pathname : "Unknown"}</p>
-                        </div>
-                      </div>
+                  {activity.map((v) => {
+                    const deviceInfo = getDeviceInfo(v);
 
-                      <div className="min-w-0 space-y-0.5">
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                          {v.device_type === "Mobile" ? <Smartphone className="h-3 w-3 shrink-0 text-primary" /> : <Monitor className="h-3 w-3 shrink-0 text-primary" />}
-                          <span className="truncate">{v.device_type} • {v.os}</span>
+                    return (
+                      <motion.div key={v.id} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0, duration: 0.2 }}
+                        className="group grid grid-cols-[2fr_1.5fr_1fr_80px] gap-4 items-center px-5 py-4 hover:bg-slate-50 transition-colors"
+                      >
+                        <div className="flex items-center gap-3 min-w-0">
+                          <Avatar name={formatVisitorId(v.visitor_id)} />
+                          <div className="min-w-0">
+                            <p className="truncate text-sm font-semibold text-navy">{formatVisitorId(v.visitor_id)}</p>
+                            <p className="mt-0.5 truncate text-xs text-slate-400">{v.page_url ? new URL(v.page_url).pathname : "Unknown"}</p>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                          <Activity className="h-3 w-3 shrink-0 text-slate-400" />
-                          <span>{v.browser}</span>
-                        </div>
-                      </div>
 
-                      <div className="min-w-0 space-y-0.5">
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                          <Clock className="h-3 w-3 shrink-0 text-violet-500" />
-                          <span>{new Date(v.created_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}</span>
+                        <div className="min-w-0 space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                            {deviceInfo.deviceType === "Mobile" || deviceInfo.deviceType === "Tablet" ? <Smartphone className="h-3 w-3 shrink-0 text-primary" /> : <Monitor className="h-3 w-3 shrink-0 text-primary" />}
+                            <span className="truncate">{deviceInfo.deviceType} • {deviceInfo.os}</span>
+                          </div>
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                            <Activity className="h-3 w-3 shrink-0 text-slate-400" />
+                            <span>{v.browser}</span>
+                          </div>
                         </div>
-                        <div className="flex items-center gap-1 text-xs text-slate-400 whitespace-nowrap">
-                          <Calendar className="h-3 w-3 shrink-0" />
-                          {new Date(v.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
-                        </div>
-                      </div>
 
-                      <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <button onClick={() => setSelected(v)} className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white" title="View Details">
-                          <Eye className="h-3.5 w-3.5" />
-                        </button>
-                      </div>
-                    </motion.div>
-                  ))}
+                        <div className="min-w-0 space-y-0.5">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                            <Clock className="h-3 w-3 shrink-0 text-violet-500" />
+                            <span>{new Date(v.created_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}</span>
+                          </div>
+                          <div className="flex items-center gap-1 text-xs text-slate-400 whitespace-nowrap">
+                            <Calendar className="h-3 w-3 shrink-0" />
+                            {new Date(v.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short" })}
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <button onClick={() => setSelected(v)} className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white" title="View Details">
+                            <Eye className="h-3.5 w-3.5" />
+                          </button>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                   
                   {/* Infinity Scroll Anchor & Feedback */}
                   {hasMore && (
@@ -458,8 +484,8 @@ export default function FootfallDashboard() {
                 <div className="space-y-3">
                   <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Device Info</p>
                   <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-violet-100">{selected.device_type === "Mobile" ? <Smartphone className="h-4 w-4 text-violet-600" /> : <Monitor className="h-4 w-4 text-violet-600" />}</div>
-                    <div className="min-w-0"><p className="text-[10px] text-slate-400">Device & OS</p><p className="truncate text-sm font-semibold text-navy">{selected.device_type} • {selected.os}</p></div>
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-violet-100">{selectedDeviceInfo?.deviceType === "Mobile" || selectedDeviceInfo?.deviceType === "Tablet" ? <Smartphone className="h-4 w-4 text-violet-600" /> : <Monitor className="h-4 w-4 text-violet-600" />}</div>
+                    <div className="min-w-0"><p className="text-[10px] text-slate-400">Device & OS</p><p className="truncate text-sm font-semibold text-navy">{selectedDeviceInfo?.deviceType} • {selectedDeviceInfo?.os}</p></div>
                   </div>
                   <div className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-100"><Activity className="h-4 w-4 text-amber-600" /></div>

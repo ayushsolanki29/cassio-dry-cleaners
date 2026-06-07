@@ -36,8 +36,8 @@ export function useFootfallTracker() {
         const userAgent = window.navigator.userAgent;
         
         let deviceType = "Desktop";
-        if (/Mobi|Android/i.test(userAgent)) deviceType = "Mobile";
-        else if (/Tablet|iPad/i.test(userAgent)) deviceType = "Tablet";
+        if (/Tablet|iPad/i.test(userAgent) || (/Android/i.test(userAgent) && !/Mobile/i.test(userAgent))) deviceType = "Tablet";
+        else if (/Mobi|Android|iPhone|iPod/i.test(userAgent)) deviceType = "Mobile";
 
         let browser = "Unknown";
         if (userAgent.indexOf("Chrome") > -1) browser = "Chrome";
@@ -47,11 +47,11 @@ export function useFootfallTracker() {
         else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("rv:") > -1) browser = "IE";
 
         let os = "Unknown OS";
-        if (userAgent.indexOf("Win") > -1) os = "Windows";
-        else if (userAgent.indexOf("Mac") > -1) os = "MacOS";
-        else if (userAgent.indexOf("X11") > -1 || userAgent.indexOf("Linux") > -1) os = "Linux";
-        else if (userAgent.indexOf("Android") > -1) os = "Android";
-        else if (userAgent.indexOf("like Mac") > -1) os = "iOS";
+        if (/Android/i.test(userAgent)) os = "Android";
+        else if (/iPhone|iPad|iPod/i.test(userAgent) || (/Macintosh/i.test(userAgent) && /Mobile/i.test(userAgent))) os = "iOS";
+        else if (/Win/i.test(userAgent)) os = "Windows";
+        else if (/Mac/i.test(userAgent)) os = "MacOS";
+        else if (/X11|Linux/i.test(userAgent)) os = "Linux";
 
         const payload = {
           visitorId,
