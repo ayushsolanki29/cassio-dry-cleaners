@@ -9,8 +9,11 @@ import { SocialLinks } from "@/components/contact/SocialLinks";
 import { ContactCta } from "@/components/contact/ContactCta";
 
 export const metadata = {
-  title: "Contact Us | Cassio Dry Cleaners",
-  description: "Get in touch with Cassio Dry Cleaners. We reply in under 2 hours. Phone, email, WhatsApp, or live chat support available.",
+  title: "Contact Us | Laundry & Dry Cleaners near me in Watford | Cassio",
+  description: "Get in touch with Cassio Dry Cleaners. We reply in under 2 hours. Phone, email, WhatsApp support available for laundry and dry cleaning in Watford.",
+  alternates: {
+    canonical: "/contact",
+  }
 };
 
 export default function ContactPage() {

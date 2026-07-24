@@ -11,8 +11,11 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { ProcessCta } from "@/components/how-it-works/ProcessCta";
 
 export const metadata = {
-  title: "How It Works — Cassio Dry Cleaners | Simple 4-Step Process",
-  description: "Discover how Cassio makes professional dry cleaning effortless. From pickup to delivery in 24-48 hours with real-time tracking and eco-friendly care.",
+  title: "How It Works | Laundry Service Process | Cassio",
+  description: "Discover how Cassio makes professional dry cleaning effortless. From pickup to delivery in 24-48 hours with real-time tracking and eco-friendly care in Watford.",
+  alternates: {
+    canonical: "/how-it-works",
+  }
 };
 
 export default function HowItWorksPage() {

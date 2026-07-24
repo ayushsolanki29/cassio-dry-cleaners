@@ -11,8 +11,11 @@ import { AboutStats } from "@/components/about/AboutStats";
 import { AboutCta } from "@/components/about/AboutCta";
 
 export const metadata = {
-  title: "About Us — Cassio Dry Cleaners | Our Story & Values",
+  title: "About Us | Eco-Friendly Dry Cleaners in Watford | Cassio",
   description: "Learn about Cassio Dry Cleaners' journey from a single shop to Watford's trusted garment care service. Discover our commitment to quality, sustainability, and customer care.",
+  alternates: {
+    canonical: "/about",
+  }
 };
 
 export default function AboutPage() {

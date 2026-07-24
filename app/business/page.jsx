@@ -13,8 +13,11 @@ import { Faq } from "@/components/home/Faq";
 import { BusinessCta } from "@/components/business/BusinessCta";
 
 export const metadata = {
-  title: "Business Solutions — Cassio Dry Cleaners | Commercial Laundry Services",
+  title: "Commercial Laundry Services in Watford | Cassio Dry Cleaners",
   description: "Professional laundry services for hotels, gyms, restaurants, and offices across Watford. Reliable, high-quality commercial garment care from Cassio Dry Cleaners.",
+  alternates: {
+    canonical: "/business",
+  }
 };
 
 export default function BusinessPage() {

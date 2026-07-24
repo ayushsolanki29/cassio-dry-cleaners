@@ -1,3 +1,11 @@
+export const metadata = {
+  title: "Best Dry Cleaners & Laundry in Watford | Cassio",
+  description: "Looking for the best dry cleaners in Watford? Cassio offers premium laundry, wash & fold, and ironing services with free 24-hour pickup and delivery.",
+  alternates: {
+    canonical: "/",
+  }
+};
+
 import { Header } from "@/components/common/Header";
 import { Hero } from "@/components/home/Hero";
 import { TrustStrip } from "@/components/home/TrustStrip";

@@ -3,7 +3,7 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef, useState } from "react";
 
-const testimonials = [
+const defaultTestimonials = [
   { name: "Emma Walker",      location: "Nascot Wood",      image: "https://randomuser.me/api/portraits/women/1.jpg",  quote: "Cassio has completely changed my weekends. My silk dresses come back perfect!", rating: 5 },
   { name: "James Bennett",    location: "Cassiobury",        image: "https://randomuser.me/api/portraits/men/1.jpg",    quote: "Used Cassio for my wedding suits - the attention to detail was incredible.", rating: 5 },
   { name: "Sophie Clarke",    location: "Croxley Green",     image: "https://randomuser.me/api/portraits/women/2.jpg",  quote: "The 24-hour turnaround is unreal. Contacted at 8pm, clothes back next evening!", rating: 5 },
@@ -21,12 +21,19 @@ const testimonials = [
   { name: "Olivia Martin",    location: "Abbots Langley",    image: "https://randomuser.me/api/portraits/women/8.jpg",  quote: "Convenient, reliable, and high quality. What more could you ask for?", rating: 5 },
 ];
 
-// Duplicate for seamless loop
-const allTestimonials = [...testimonials, ...testimonials];
-
-export function Testimonials() {
+export function Testimonials({ targetArea }) {
   const [paused, setPaused] = useState(false);
   const trackRef = useRef(null);
+
+  // If a targetArea is provided, generate a specific testimonial for it and put it first
+  const displayTestimonials = targetArea ? [
+    { name: "Local Customer", location: targetArea, image: "https://randomuser.me/api/portraits/men/9.jpg", quote: `Finding a reliable dry cleaner in ${targetArea} was tough until I found Cassio. The free pickup is a lifesaver!`, rating: 5 },
+    { name: "Happy Resident", location: targetArea, image: "https://randomuser.me/api/portraits/women/9.jpg", quote: `Cassio handles my delicate items perfectly. So glad they serve the ${targetArea} area.`, rating: 5 },
+    ...defaultTestimonials.filter(t => !t.location.toLowerCase().includes(targetArea.toLowerCase()))
+  ] : defaultTestimonials;
+
+  // Duplicate for seamless loop
+  const allTestimonials = [...displayTestimonials, ...displayTestimonials];
 
   const nudge = (dir) => {
     if (!trackRef.current) return;
