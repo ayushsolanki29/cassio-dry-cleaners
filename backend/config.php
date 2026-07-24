@@ -26,7 +26,7 @@ define('SMTP_PORT', (int)(getenv('SMTP_PORT') ?: 465)); // 587=tls, 465=ssl
 define('SMTP_SECURE', getenv('SMTP_SECURE') ?: 'ssl');  // 'tls' for 587, 'ssl' for 465
 define('SMTP_USER', getenv('SMTP_USER') ?: 'info@cassiodrycleaners.co.uk');
 define('SMTP_PASS', getenv('SMTP_PASS') ?: 'Red-Tiger-Mark-76');
-define('NOTIFICATION_EMAIL', getenv('NOTIFICATION_EMAIL') ?: 'ayushsolanki2901@gmail.com');
+define('NOTIFICATION_EMAIL', getenv('NOTIFICATION_EMAIL') ?: 'info@cassiodrycleaners.co.uk');
 
 // CORS Headers Helper
 function handleCors() {
